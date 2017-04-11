@@ -1,0 +1,51 @@
+div#player {
+  top: 231px;
+  left: 155px;
+  overflow: hidden;
+  width: 8.5rem;
+  position: absolute;
+  image-rendering: pixelated;
+  margin-left: -4.5rem;
+  margin-top: -4.5rem;
+}
+
+img.playerSprite {
+  width: 73rem;
+  image-rendering: pixelated;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+}
+
+@keyframes walkDown {
+  100% {
+    transform: translateX(-1168px);
+  }
+}
+@keyframes walkRight {
+  100% {
+    transform: translateX(-1168px);
+  }
+}
+@keyframes walkLeft{
+  100% {
+    transform: translateX(-1168px);
+  }
+}
+@keyframes walkUp{
+  100% {
+    transform: translateX(-1168px);
+  }
+}
+
+.walkRightAnim {
+  animation: walkRight 700ms steps(8) infinite;
+}
+.walkLeftAnim {
+  animation: walkLeft 700ms steps(8) infinite;
+}
+.walkUpAnim {
+  animation: walkUp 700ms steps(8) infinite;
+}
+.walkDownAnim {
+  animation: walkDown 700ms steps(8) infinite;
+}

@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+}
+
+section.gameScreen {
+  width: 80%;
+  height: 50rem;
+  margin: auto;
+  border: 0.5px solid white;
+  margin-top: 10rem;
+  background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
