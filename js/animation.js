@@ -1,6 +1,6 @@
-$(document).ready(function (e) {
+$(document).ready(function () {
 
-  $('.gameScreen').click(function(e) {
+  $('.walkableArea').click(function(e) {
     // When the player clicks somewhere on the screen (walkable area)
 
     // store the current position of the player Sprite
@@ -10,7 +10,8 @@ $(document).ready(function (e) {
     // get the difference of where the player has clicked, minus where the sprite is
     var playerPositionXDiff = e.pageX - playerPositionX;
     var playerPositionYDiff = e.pageY - playerPositionY;
-
+    var timeToWalk = (Math.abs(playerPositionXDiff) + Math.abs(playerPositionYDiff)) * 5;
+    console.log(timeToWalk);
     // if the sprite is being told to move right of it's original position...
     if((playerPositionXDiff > 0) && ((Math.abs(playerPositionXDiff)) > (Math.abs(playerPositionYDiff)))) {
       // use the correct (facing the correct direction) image
@@ -33,7 +34,7 @@ $(document).ready(function (e) {
     $('#player').stop().animate({
         top: e.pageY,
         left: e.pageX
-     }, 1500, function () {
+     }, timeToWalk, function () {
       // when the sprite reaches the clicked location, stop the animation
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
      });
