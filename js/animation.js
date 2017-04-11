@@ -13,7 +13,6 @@ $(document).ready(function (e) {
 
     // if the sprite is being told to move right of it's original position...
     if((playerPositionXDiff > 0) && ((Math.abs(playerPositionXDiff)) > (Math.abs(playerPositionYDiff)))) {
-      console.log("Moving right");
       // use the correct (facing the correct direction) image
       $("#player").html('<img class="playerSprite" src="assets/images/TheDetectiveRight.png">');
       // and add the class which is linked to the animation
@@ -21,15 +20,12 @@ $(document).ready(function (e) {
 
       // Same logic for each other direction
     } else if ((playerPositionYDiff > 0 ) && ((Math.abs(playerPositionXDiff)) < (Math.abs(playerPositionYDiff)))) {
-      console.log("Moving down");
       $("#player").html('<img class="playerSprite" src="assets/images/TheDetective.png">');
       $(".playerSprite").addClass("walkDownAnim");
     } else if ((playerPositionYDiff < 0 ) && ((Math.abs(playerPositionXDiff)) < (Math.abs(playerPositionYDiff)))) {
-      console.log("Moving up");
       $("#player").html('<img class="playerSprite" src="assets/images/TheDetectiveUp.png">');
       $(".playerSprite").addClass("walkUpAnim");
     } else if ((playerPositionXDiff < 0) && ((Math.abs(playerPositionXDiff)) > (Math.abs(playerPositionYDiff)))) {
-      console.log("Moving left");
       $("#player").html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
       $(".playerSprite").addClass("walkLeftAnim");
     }
