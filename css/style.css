@@ -4,7 +4,7 @@ body {
 section.walkableArea {
   width: 950px;
   height: 10rem;
-  margin-top: 14.2rem;
+  margin-top: 3.8rem;
   margin-left: 2rem;
   position: absolute;
   z-index: 1;
@@ -14,22 +14,49 @@ section.scene {
   height: 24rem;
   border: 0.5px solid grey;
   margin: auto;
+  overflow: hidden;
 }
 img.sceneOne {
   position: absolute;
   z-index: -1;
+  margin-top: -10.2rem;
+}
+#victim, #shards, #head {
+/*  border: 0.5px solid white;*/
+  position: relative;
+  z-index: 2;
 }
 #victim {
   width: 10rem;
   height: 6rem;
-  top: 253px;
-  left: 336px;
-  position: absolute;
-  z-index: 2;
+  top: 250px;
+  left: 286px;
+
 }
+#shards {
+  width: 8rem;
+  height: 2rem;
+  top: 125px;
+  left: 438px;
+}
+#head {
+  width: 2rem;
+  height: 2rem;
+  top: 141px;
+  left: 229px;
+}
+
 .playerSpeak {
   margin-top: 2rem;
   margin-left: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  max-width: 50%;
+}
+.playerAction {
+  margin-top: 22rem;
+  margin-left: 1rem;
   font-size: 1.5rem;
   color: white;
   position: absolute;

@@ -1,9 +1,9 @@
 div#player {
-  top: 235px;
-  left: 134px;
+  top: 20rem;
+  left: 30%;
   overflow: hidden;
-  width: 8.5rem;
-  position: relative;
+  width: 6.5rem;
+  position: absolute;
   image-rendering: pixelated;
   margin-left: -4.5rem;
   margin-top: -8.5rem;
