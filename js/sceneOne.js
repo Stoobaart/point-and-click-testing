@@ -28,10 +28,10 @@ $(document).ready(function () {
     } else if (distance < 35 && action === "Look at" || distance > -280 && action === "Look at") {
       $(".playerSpeak").html("Looks like the last known whereabouts of our victim... a John Doe");
       speakClear();
-      }
-    });
+    }
+  });
 
-    $("#shards").click(function(e) {
+  $("#shards").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#shards").position().left) + ($("#shards").position().top)) - (($("#player").position().left) + ($("#player").position().top));
     if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at") {
@@ -39,8 +39,8 @@ $(document).ready(function () {
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
       $(".playerSpeak").html("Shards of glass... There's blood everywhere.");
       speakClear();     
-      }
-    });
+    }
+  });
 
     $("#head").click(function(e) {
     var action = $(".playerAction").html();
@@ -50,7 +50,37 @@ $(document).ready(function () {
     } else if (distance < 35 && action === "Look at" || distance > -60 && action === "Look at") {
       $(".playerSpeak").html("There are ways to get ahead in life, and this aint one of 'em, unless you're the murderer...Then this is Exactly how you get a head");
       speakClear(); 
-      }
-    });
+    }
+  });
+
+  $("#car").click(function(e) {
+    var action = $(".playerAction").html();
+    var distance = (($("#car").position().left) + ($("#car").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    if (action === "Look at") {
+      $(".playerSpeak").html("My wheels, she aint much to look at, but it beats walking");
+      speakClear(); 
+    }
+  });
+
+  $("#brokenWindow").click(function(e) {
+    var action = $(".playerAction").html();
+    var distance = (($("#brokenWindow").position().left) + ($("#brokenWindow").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    console.log(distance);
+    if (distance > -65 && action === "Look at" || distance < -400 && action === "Look at") {
+      getCloser();
+    } else if (distance < -65 && action === "Look at" || distance > -400 && action === "Look at") {
+      $(".playerSpeak").html("I guess this is where these shards of glass came from. What does this have to do with the murder? Could this be a robbery gone wrong?");
+      speakClear(); 
+    }
+  });
+
+  $("#handPrint").click(function(e) {
+    var action = $(".playerAction").html();
+    var distance = (($("#handPrint").position().left) + ($("#handPrint").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    if (action === "Look at") {
+      $(".playerSpeak").html("I should run this for prints back at HQ");
+      speakClear(); 
+    }
+  });
 
 });

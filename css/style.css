@@ -4,7 +4,7 @@ body {
 section.walkableArea {
   width: 950px;
   height: 10rem;
-  margin-top: 3.8rem;
+  margin-top: -10.6rem;
   margin-left: 2rem;
   position: absolute;
   z-index: 1;
@@ -19,10 +19,10 @@ section.scene {
 img.sceneOne {
   position: absolute;
   z-index: -1;
-  margin-top: -10.2rem;
+  margin-top: -24.8rem;
 }
-#victim, #shards, #head {
-/*  border: 0.5px solid white;*/
+#victim, #shards, #head, #car, #brokenWindow, #handPrint {
+  border: 0.5px solid white;
   position: relative;
   z-index: 2;
 }
@@ -31,7 +31,6 @@ img.sceneOne {
   height: 6rem;
   top: 250px;
   left: 286px;
-
 }
 #shards {
   width: 8rem;
@@ -44,6 +43,24 @@ img.sceneOne {
   height: 2rem;
   top: 141px;
   left: 229px;
+}
+#car {
+  width: 9rem;
+  height: 7rem;
+  top: -59px;
+  left: 2px;
+}
+#brokenWindow {
+  width: 6rem;
+  height: 4rem;
+  top: -277px;
+  left: 490px;
+}
+#handPrint {
+  width: 2rem;
+  height: 3rem;
+  top: -227px;
+  left: 640px;
 }
 
 .playerSpeak {
