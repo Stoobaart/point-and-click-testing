@@ -1,12 +1,12 @@
 div#player {
-  top: 231px;
-  left: 155px;
+  top: 235px;
+  left: 134px;
   overflow: hidden;
   width: 8.5rem;
   position: absolute;
   image-rendering: pixelated;
   margin-left: -4.5rem;
-  margin-top: -4.5rem;
+  margin-top: -8.5rem;
 }
 
 img.playerSprite {

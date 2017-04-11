@@ -1,15 +1,23 @@
 body {
   background-color: black;
 }
-
 section.walkableArea {
-  width: 80%;
-  height: 50rem;
-  margin: auto;
-  border: 0.5px solid white;
-  margin-top: 10rem;
+  width: 91%;
+  height: 10rem;
+  margin-top: 14.2rem;
+  margin-left: 2rem;
+  position: absolute;
+  z-index: 1;
 }
-
+section.scene {
+  width: 1000px;
+  height: 24rem;
+  border: 0.5px solid white;
+}
+img.sceneOne {
+  position: absolute;
+  z-index: -1;
+}
 
 
 

@@ -11,7 +11,6 @@ $(document).ready(function () {
     var playerPositionXDiff = e.pageX - playerPositionX;
     var playerPositionYDiff = e.pageY - playerPositionY;
     var timeToWalk = (Math.abs(playerPositionXDiff) + Math.abs(playerPositionYDiff)) * 5;
-    console.log(timeToWalk);
     // if the sprite is being told to move right of it's original position...
     if((playerPositionXDiff > 0) && ((Math.abs(playerPositionXDiff)) > (Math.abs(playerPositionYDiff)))) {
       // use the correct (facing the correct direction) image
