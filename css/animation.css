@@ -3,7 +3,7 @@ div#player {
   left: 134px;
   overflow: hidden;
   width: 8.5rem;
-  position: absolute;
+  position: relative;
   image-rendering: pixelated;
   margin-left: -4.5rem;
   margin-top: -8.5rem;

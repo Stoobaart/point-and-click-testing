@@ -32,13 +32,29 @@ $(document).ready(function () {
     // run the animation (.stop is there to allow you to change direction before the end of each animation)
     $('#player').stop().animate({
         top: e.pageY,
-        left: e.pageX
+        left: e.pageX - 50
      }, timeToWalk, function () {
       // when the sprite reaches the clicked location, stop the animation
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
      });
  
   });
+  $("#victim").click(function(e) {
+    var distance = (($("#victim").position().left) + ($("#victim").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    console.log(distance);
+    if (distance > 25 || distance < -320) {
+      $(".playerSpeak").html('I need to get closer');
+      setTimeout(function() {
+        $(".playerSpeak").html("");
+      }, 3000);
+    } else {
+      $(".playerSpeak").html('Looks like the last known whereabouts of our victim... a John Doe');
+        setTimeout(function() {
+          $(".playerSpeak").html("");
+        }, 4000);
+      }
+    });
+
 
 
 

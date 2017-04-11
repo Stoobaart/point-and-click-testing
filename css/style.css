@@ -12,13 +12,28 @@ section.walkableArea {
 section.scene {
   width: 1000px;
   height: 24rem;
-  border: 0.5px solid white;
+  border: 0.5px solid grey;
+  margin: auto;
 }
 img.sceneOne {
   position: absolute;
   z-index: -1;
 }
-
+#victim {
+  width: 10rem;
+  height: 6rem;
+  top: 253px;
+  left: 336px;
+  position: absolute;
+  z-index: 2;
+}
+.playerSpeak {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+}
 
 
 
