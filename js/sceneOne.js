@@ -104,4 +104,15 @@ $(document).ready(function () {
     }
   });
 
+    $("#npcRodriguez").click(function(e) {
+    var action = $(".playerAction").html();
+    var distance = (($("#npcRodriguez").position().left) + ($("#npcRodriguez").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    if (distance > 135 && action === "Look at" || distance < -460 && action === "Look at") {
+      getCloser();
+    } else if (distance < 135 && action === "Look at" || distance > -460 && action === "Look at") {
+      $(".playerSpeak").html("Officer Rodriguez. He looks pretty shaken up. Didn't even know he smokes..");
+      speakClear(); 
+    }
+  });
+
 });

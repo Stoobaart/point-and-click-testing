@@ -81,6 +81,7 @@ img.sceneOne {
   font-size: 1.5rem;
   color: white;
   position: absolute;
+  z-index: 2;
   max-width: 50%;
 }
 .playerAction {
