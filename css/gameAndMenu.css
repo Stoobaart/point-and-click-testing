@@ -1,0 +1,75 @@
+body {
+  background-color: black;
+  font-family: 'Press Start 2P', cursive;
+  width: 1000px;
+  margin: auto;
+}
+
+.playerSpeak {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  max-width: 50%;
+}
+.npcSpeak {
+  margin-top: 16rem;
+  margin-left: 25rem;
+  font-size: 1.5rem;
+  color: yellow;
+  position: absolute;
+  z-index: 2;
+  max-width: 600px;
+}
+.options {
+  position: absolute;
+  margin-top: 2rem;
+  z-index: 2;
+}
+.talkChoices {
+  font-size: 1.5rem;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: left;
+  width: 40rem;
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+  padding-bottom: 1rem;
+}
+.greyText {
+  color: grey;
+}
+
+.playerAction {
+  margin-top: 22rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+}
+.look, .walk, .talk {
+  font-size: 1rem;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  width: 5rem;
+  height: 1.5rem;
+}
+.look:hover, .walk:hover, .talk:hover {
+  background-color: #34BEEF;
+  transition: 0.5s;
+}
+.musicBtns {
+  float: right;
+  margin-top: -1.5rem;
+}
+
+
+
+
+
+
+

@@ -15,6 +15,9 @@ $(document).ready(function () {
   $(".walk").click(function() {
     $(".playerAction").html("Walk to");
   });
+  $(".talk").click(function() {
+    $(".playerAction").html("Talk to");
+  });
   // say I need to get closer if the player is too far from an obj
   getCloser = function(){
     $(".playerSpeak").html('I need to get closer');
@@ -22,11 +25,17 @@ $(document).ready(function () {
       $(".playerSpeak").html("");
     }, 3000);
   };
-  // clear the player speak after a few seconds
+  // clear the player speach after a few seconds
   speakClear = function() {
     var words = $(".playerSpeak").html();
     setTimeout(function() {
       $(".playerSpeak").html("");
+    }, words.length * 75);
+  };
+  npcSpeakClear = function() {
+    var words = $(".npcSpeak").html();
+    setTimeout(function() {
+      $(".npcSpeak").html("");
     }, words.length * 75);
   };
 
@@ -115,7 +124,7 @@ $(document).ready(function () {
     }
   });
 
-    $("#npcRodriguez").click(function(e) {
+  $("#npcRodriguez").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#npcRodriguez").position().left) + ($("#npcRodriguez").position().top)) - (($("#player").position().left) + ($("#player").position().top));
     if (distance > 135 && action === "Look at" || distance < -460 && action === "Look at") {
@@ -125,5 +134,4 @@ $(document).ready(function () {
       speakClear(); 
     }
   });
-
 });

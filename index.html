@@ -4,15 +4,19 @@
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/animation.js"></script>
-  <script type="text/javascript" src="js/sceneOne.js"></script>
+  <script type="text/javascript" src="js/crimeScene.js"></script>
+  <script type="text/javascript" src="js/rodriguezConvo.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/gameAndMenu.css">
+  <link rel="stylesheet" type="text/css" href="css/crimeScene.css">
   <link rel="stylesheet" type="text/css" href="css/animation.css">
 </head>
 <body>
   <audio loop id="crimeSceneMusic" src="assets/music/crimeScene.wav"></audio>
   <section class="scene">
   <section class="playerSpeak"></section>
+  <section class="options"><button class="talkChoices victim">Tell me about the victim</button><button class="talkChoices suspects">Any suspects?</button><button class="talkChoices witnesses">Any witnesses?</button><button class="talkChoices bye">Chat to ya later, Hot Rod</button></section>
+  <section class="npcSpeak"></section>
   <section class="playerAction">Walk to</section>
   <div id="victim"></div>
   <div id="shards"></div>
@@ -31,14 +35,33 @@
         <img class="npcSprite" src="assets/images/officerRodriguez.png">
       </div>
   </section>
-  <section class="actionChoices">
-    <button class="look">Look</button>
-    <button class="walk">Walk</button>
-  </section>
-  <section class="musicBtns">
-    <button class="playMusic">Play Music</button>
-    <button class="stopMusic">Stop Music</button>
+
+  <section class="menuArea">
+    <section class="actionChoices">
+      <button class="look">Look</button>
+      <button class="walk">Walk</button>
+      <button class="talk">Talk</button>
+    </section>
+    <section class="musicBtns">
+      <button class="playMusic">Play Music</button>
+      <button class="stopMusic">Stop Music</button>
+    </section>
+    <div class="inventory"></div>
   </section>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

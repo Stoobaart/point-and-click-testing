@@ -1,9 +1,3 @@
-body {
-  background-color: black;
-  font-family: 'Press Start 2P', cursive;
-  width: 1000px;
-  margin: auto;
-}
 section.walkableArea {
   width: 950px;
   height: 10rem;
@@ -76,42 +70,3 @@ img.sceneOne {
   top: -189px;
   left: 749px;
 }
-
-.playerSpeak {
-  margin-top: 2rem;
-  margin-left: 2rem;
-  font-size: 1.5rem;
-  color: white;
-  position: absolute;
-  z-index: 2;
-  max-width: 50%;
-}
-.playerAction {
-  margin-top: 22rem;
-  margin-left: 1rem;
-  font-size: 1.5rem;
-  color: white;
-  position: absolute;
-}
-.look, .walk {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-  width: 5rem;
-  height: 1.5rem;
-}
-.look:hover, .walk:hover {
-  background-color: #34BEEF;
-  transition: 0.5s;
-}
-.musicBtns {
-  float: right;
-  margin-top: -1.5rem;
-}
-
-
-
-
-
-
-
