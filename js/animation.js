@@ -2,7 +2,8 @@ $(document).ready(function () {
 
   $('.walkableArea').click(function(e) {
 
-    if(e.pageY > 300){
+    if(e.pageY > 369){
+      console.log(e.pageY);
       $("#npcRodriguez").addClass("inFront");
     } else {
       $("#npcRodriguez").removeClass("inFront");

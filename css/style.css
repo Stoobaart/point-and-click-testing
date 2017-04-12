@@ -1,6 +1,8 @@
 body {
   background-color: black;
   font-family: 'Press Start 2P', cursive;
+  width: 1000px;
+  margin: auto;
 }
 section.walkableArea {
   width: 950px;
@@ -14,8 +16,8 @@ section.scene {
   width: 1000px;
   height: 24rem;
   border: 0.5px solid grey;
-  margin: auto;
   overflow: hidden;
+  margin-top: 5rem;
 }
 img.sceneOne {
   position: absolute;
@@ -91,8 +93,17 @@ img.sceneOne {
   color: white;
   position: absolute;
 }
-
-
+.look, .walk {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  width: 5rem;
+  height: 1.5rem;
+}
+.look:hover, .walk:hover {
+  background-color: #34BEEF;
+  transition: 0.5s;
+}
 
 
 
