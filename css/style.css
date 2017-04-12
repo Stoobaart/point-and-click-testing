@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  font-family: 'Press Start 2P', cursive;
 }
 section.walkableArea {
   width: 950px;

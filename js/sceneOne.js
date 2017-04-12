@@ -27,6 +27,7 @@ $(document).ready(function () {
       getCloser();
     } else if (distance < 35 && action === "Look at" || distance > -280 && action === "Look at") {
       $(".playerSpeak").html("Looks like the last known whereabouts of our victim... a John Doe");
+      setTimeout(speakClear, 250);
       speakClear();
     }
   });
@@ -65,7 +66,6 @@ $(document).ready(function () {
   $("#brokenWindow").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#brokenWindow").position().left) + ($("#brokenWindow").position().top)) - (($("#player").position().left) + ($("#player").position().top));
-    console.log(distance);
     if (distance > -65 && action === "Look at" || distance < -400 && action === "Look at") {
       getCloser();
     } else if (distance < -65 && action === "Look at" || distance > -400 && action === "Look at") {
