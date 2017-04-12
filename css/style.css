@@ -104,6 +104,10 @@ img.sceneOne {
   background-color: #34BEEF;
   transition: 0.5s;
 }
+.musicBtns {
+  float: right;
+  margin-top: -1.5rem;
+}
 
 
 

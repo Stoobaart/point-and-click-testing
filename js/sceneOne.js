@@ -1,18 +1,28 @@
 $(document).ready(function () {
+  // play crime scene music
+  $('#crimeSceneMusic')[0].play();
+  $(".stopMusic").click(function() {
+    $('#crimeSceneMusic')[0].pause();
+  })  
+  $(".playMusic").click(function() {
+    $('#crimeSceneMusic')[0].play();
+  })
+
+  // change player action choice
   $(".look").click(function() {
     $(".playerAction").html("Look at");
   });
   $(".walk").click(function() {
     $(".playerAction").html("Walk to");
   });
-
+  // say I need to get closer if the player is too far from an obj
   getCloser = function(){
     $(".playerSpeak").html('I need to get closer');
     setTimeout(function() {
       $(".playerSpeak").html("");
     }, 3000);
   };
-
+  // clear the player speak after a few seconds
   speakClear = function() {
     var words = $(".playerSpeak").html();
     setTimeout(function() {
@@ -20,6 +30,7 @@ $(document).ready(function () {
     }, words.length * 75);
   };
 
+  // All functions for looking at stuff on the screen
   $("#victim").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($(this).position().left) + ($(this).position().top)) - (($("#player").position().left) + ($("#player").position().top));
