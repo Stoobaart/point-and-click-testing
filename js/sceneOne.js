@@ -83,4 +83,26 @@ $(document).ready(function () {
     }
   });
 
+  $("#urine").click(function(e) {
+    var action = $(".playerAction").html();
+    var distance = (($("#urine").position().left) + ($("#urine").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at") {
+      getCloser();
+    } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
+      $(".playerSpeak").html("A puddle of urine... I should scoop some up for analysis");
+      speakClear();     
+    }
+  });
+
+  $("#syringe").click(function(e) {
+    var action = $(".playerAction").html();
+    var distance = (($("#syringe").position().left) + ($("#syringe").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    if (distance > 35 && action === "Look at" || distance < -160 && action === "Look at") {
+      getCloser();
+    } else if (distance < 35 && action === "Look at" || distance > -160 && action === "Look at") {
+      $(".playerSpeak").html("Hmmm, Could this be related? Or maybe some crack head left it here? This place is pretty seedy...");
+      speakClear(); 
+    }
+  });
+
 });

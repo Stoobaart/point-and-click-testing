@@ -4,7 +4,7 @@ body {
 section.walkableArea {
   width: 950px;
   height: 10rem;
-  margin-top: -10.6rem;
+  margin-top: -14rem;
   margin-left: 2rem;
   position: absolute;
   z-index: 1;
@@ -19,10 +19,9 @@ section.scene {
 img.sceneOne {
   position: absolute;
   z-index: -1;
-  margin-top: -24.8rem;
+  margin-top: -28rem;
 }
-#victim, #shards, #head, #car, #brokenWindow, #handPrint {
-  border: 0.5px solid white;
+#victim, #shards, #head, #car, #brokenWindow, #handPrint, #urine, #syringe {
   position: relative;
   z-index: 2;
 }
@@ -61,6 +60,18 @@ img.sceneOne {
   height: 3rem;
   top: -227px;
   left: 640px;
+}
+#urine {
+  width: 8rem;
+  height: 2rem;
+  top: -99px;
+  left: 634px;
+}
+#syringe {
+  width: 3rem;
+  height: 2rem;
+  top: -189px;
+  left: 749px;
 }
 
 .playerSpeak {
