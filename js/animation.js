@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  $('#crimeSceneMusic')[0].play();
   $('.walkableArea').click(function(e) {
 
     if(e.pageY > 369){
