@@ -8,13 +8,35 @@ div#player {
   margin-left: -4.5rem;
   margin-top: -8.5rem;
 }
-
 img.playerSprite {
   width: 73rem;
   image-rendering: pixelated;
   filter: blur(0);
   -webkit-filter: blur(0);
 }
+div#npcRodriguez {
+  top: -18rem;
+  left: 52rem;
+  overflow: hidden;
+  width: 6.5rem;
+  position: relative;
+  image-rendering: pixelated;
+}
+img.npcSprite {
+  width: 130rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  animation: rodriguez 2800ms steps(15) infinite;
+}
+@keyframes rodriguez {
+  100% {
+    transform: translateX(-2080px);
+  }
+}
+.inFront {
+  z-index: -1;
+}
+
 
 @keyframes walkDown {
   100% {

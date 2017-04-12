@@ -1,6 +1,12 @@
 $(document).ready(function () {
 
   $('.walkableArea').click(function(e) {
+
+    if(e.pageY > 300){
+      $("#npcRodriguez").addClass("inFront");
+    } else {
+      $("#npcRodriguez").removeClass("inFront");
+    }
     // confirm the players action choice
     var action = $(".playerAction").html();
     // When the player clicks somewhere on the screen (walkable area)
@@ -20,7 +26,6 @@ $(document).ready(function () {
         $("#player").html('<img class="playerSprite" src="assets/images/TheDetectiveRight.png">');
         // and add the class which is linked to the animation
         $(".playerSprite").addClass("walkRightAnim");
-
         // Same logic for each other direction
       } else if ((playerPositionYDiff > 0 ) && ((Math.abs(playerPositionXDiff)) < (Math.abs(playerPositionYDiff)))) {
         $("#player").html('<img class="playerSprite" src="assets/images/TheDetective.png">');

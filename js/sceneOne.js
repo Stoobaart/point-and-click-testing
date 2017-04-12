@@ -27,7 +27,6 @@ $(document).ready(function () {
       getCloser();
     } else if (distance < 35 && action === "Look at" || distance > -280 && action === "Look at") {
       $(".playerSpeak").html("Looks like the last known whereabouts of our victim... a John Doe");
-      setTimeout(speakClear, 250);
       speakClear();
     }
   });
