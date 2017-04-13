@@ -1,6 +1,18 @@
+var aboutVictim = null;
+var suspects = false;
+var witnesses = false;
+
 $(document).ready(function () {
-  // play crime scene music
-  $('#crimeSceneMusic')[0].play();
+  
+  // init the crime scene
+  startCrimeScene = function(){
+    $('#crimeSceneMusic')[0].play();
+    suspects = false;
+    witnesses = false;
+    aboutVictim = false;
+  };
+  startCrimeScene();
+  // crime scene music control
   $(".stopMusic").click(function() {
     $('#crimeSceneMusic')[0].pause();
   })  
@@ -25,7 +37,7 @@ $(document).ready(function () {
       $(".playerSpeak").html("");
     }, 3000);
   };
-  // clear the player speach after a few seconds
+  // clear speach after a few seconds
   speakClear = function() {
     var words = $(".playerSpeak").html();
     setTimeout(function() {
@@ -50,6 +62,9 @@ $(document).ready(function () {
       speakClear();
     }
   });
+  $("#victim").hover(function(){
+    $(".helper").html("Victim's body");
+  });
 
   $("#shards").click(function(e) {
     var action = $(".playerAction").html();
@@ -61,16 +76,25 @@ $(document).ready(function () {
       speakClear();     
     }
   });
+  $("#shards").hover(function(){
+    $(".helper").html("Bloody shards");
+  });
 
   $("#head").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#head").position().left) + ($("#head").position().top)) - (($("#player").position().left) + ($("#player").position().top));
     if (distance > 35 && action === "Look at" || distance < -260 && action === "Look at") {
       getCloser();
-    } else if (distance < 35 && action === "Look at" || distance > -260 && action === "Look at") {
+    } else if (distance < 35 && action === "Look at" && aboutVictim == false || distance > -260 && action === "Look at" && aboutVictim == false) {
       $(".playerSpeak").html("There are ways to get ahead in life, and this aint one of 'em, unless you're the murderer...Then this is Exactly how you get a head");
       speakClear(); 
+    } else if (distance < 35 && action === "Look at" && aboutVictim == true || distance > -260 && action === "Look at" && aboutVictim == true) {
+      $(".playerSpeak").html("Twisted off... who... or what could do this?");
+      speakClear(); 
     }
+  });
+  $("#head").hover(function(){
+    $(".helper").html("Victim's head");
   });
 
   $("#car").click(function(e) {
@@ -80,6 +104,9 @@ $(document).ready(function () {
       $(".playerSpeak").html("My wheels, she aint much to look at, but it beats walking");
       speakClear(); 
     }
+  });
+  $("#car").hover(function(){
+    $(".helper").html("The Dick-Mobile");
   });
 
   $("#brokenWindow").click(function(e) {
@@ -92,6 +119,9 @@ $(document).ready(function () {
       speakClear(); 
     }
   });
+  $("#brokenWindow").hover(function(){
+    $(".helper").html("Broken window");
+  });
 
   $("#handPrint").click(function(e) {
     var action = $(".playerAction").html();
@@ -100,6 +130,9 @@ $(document).ready(function () {
       $(".playerSpeak").html("I should run this for prints back at HQ");
       speakClear(); 
     }
+  });
+  $("#handPrint").hover(function(){
+    $(".helper").html("Bloody hand print");
   });
 
   $("#urine").click(function(e) {
@@ -112,6 +145,9 @@ $(document).ready(function () {
       speakClear();     
     }
   });
+  $("#urine").hover(function(){
+    $(".helper").html("Urine puddle");
+  });
 
   $("#syringe").click(function(e) {
     var action = $(".playerAction").html();
@@ -123,6 +159,9 @@ $(document).ready(function () {
       speakClear(); 
     }
   });
+  $("#syringe").hover(function(){
+    $(".helper").html("Bloody syringe");
+  });
 
   $("#npcRodriguez").click(function(e) {
     var action = $(".playerAction").html();
@@ -133,5 +172,8 @@ $(document).ready(function () {
       $(".playerSpeak").html("Officer Rodriguez. He looks pretty shaken up. Didn't even know he smokes..");
       speakClear(); 
     }
+  });
+  $("#npcRodriguez").hover(function(){
+    $(".helper").html("Officer Rodriguez");
   });
 });
