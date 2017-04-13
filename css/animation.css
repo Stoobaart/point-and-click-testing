@@ -14,6 +14,26 @@ img.playerSprite {
   filter: blur(0);
   -webkit-filter: blur(0);
 }
+div.playerPortrait {
+  overflow: hidden;
+  width: 12.1rem;
+  image-rendering: pixelated;
+  border-radius: 5px;
+}
+img.dickFace {
+  width: 73rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -webkit-transform: translate3d(0,0,0);
+  animation: portrait 400ms steps(6) infinite;
+}
+@keyframes portrait {
+  100% {
+    transform: translateX(-1168px);
+    /*transform: rotate(0.02deg);*/
+  }
+}
+
 div#npcRodriguez {
   top: -18rem;
   left: 52rem;

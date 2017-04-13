@@ -9,11 +9,10 @@ body {
   position: absolute;
   margin-top: -1.2rem;
 }
-
 .playerSpeak {
   margin-top: 2rem;
   margin-left: 2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   position: absolute;
   z-index: 2;
@@ -22,7 +21,7 @@ body {
 .npcSpeak {
   margin-top: 16rem;
   margin-left: 25rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: yellow;
   position: absolute;
   z-index: 2;
@@ -34,7 +33,8 @@ body {
   z-index: 2;
 }
 .talkChoices {
-  font-size: 1.5rem;
+  list-style: none;
+  font-size: 1rem;
   font-family: 'Press Start 2P', cursive;
   color: white;
   text-align: left;

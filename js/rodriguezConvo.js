@@ -6,9 +6,11 @@ $(document).ready(function () {
     var action = $(".playerAction").html();
     var distance = (($("#npcRodriguez").position().left) + ($("#npcRodriguez").position().top)) - (($("#player").position().left) + ($("#player").position().top));
     if (distance > 135 && action === "Talk to" || distance < -460 && action === "Talk to") {
+      $(".playerPortrait").toggle();
       getCloser();
     } else if (distance < 135 && action === "Talk to" || distance > -460 && action === "Talk to") {
-      $(".playerSpeak").html("Officer Rodriguez. What's the deal here?");
+      $(".playerSpeach").html("Officer Rodriguez. What's the deal here?");
+      $(".playerPortrait").toggle();
       speakClear();
       setTimeout(RodriguezTalk, 3000);
     }
@@ -30,7 +32,8 @@ $(document).ready(function () {
     $(".npcSpeak").html("Male Caucasian of unknown identity, roughly 35-40 years of age, broken knee, decapitated and 5\"11...I think.");
     npcSpeakClear();
     response = function(){
-      $(".playerSpeak").html("How was he decapitated?");
+      $(".playerSpeach").html("How was he decapitated?");
+      $(".playerPortrait").toggle();
       speakClear();
     };
     setTimeout(response, 8000);
@@ -50,7 +53,8 @@ $(document).ready(function () {
     $(".npcSpeak").html("We have a possible suspect or witness down in lock up now. Some Crack head, that's his needle right there.");
     npcSpeakClear();
     response = function(){
-      $(".playerSpeak").html("I'll go shake him down after I look around");
+      $(".playerSpeach").html("I'll go shake him down after I look around");
+      $(".playerPortrait").toggle();
       speakClear();
     };
     setTimeout(response, 8000);
@@ -69,7 +73,8 @@ $(document).ready(function () {
         $(".npcSpeak").html("None apart from the crack head we caught. I'm not sure if he even knows his own name though. Think he said it was Mahflnme");
     npcSpeakClear();
     response = function(){
-      $(".playerSpeak").html("How can nobody have seen a man get his head removed?");
+      $(".playerSpeach").html("How can nobody have seen a man get his head removed?");
+      $(".playerPortrait").toggle();
       speakClear();
     };
     setTimeout(response, 8000);
