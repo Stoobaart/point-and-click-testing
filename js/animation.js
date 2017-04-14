@@ -1,9 +1,6 @@
 $(document).ready(function () {
-  $( document ).on( "mousemove", function( event ) {
-  $( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
-});
   $('.walkableArea').click(function(e) {
-    console.log(e.pageY);
+
     if(e.pageY > 369){
       $("#npcRodriguez").addClass("inFront");
     } else {
