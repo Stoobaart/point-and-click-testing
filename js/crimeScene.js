@@ -10,7 +10,7 @@ $(document).ready(function () {
     suspects = false;
     witnesses = false;
     aboutVictim = false;
-    // $(".playerPortrait").toggle();
+    $(".playerPortrait").toggle();
   };
   startCrimeScene();
   // crime scene music control
