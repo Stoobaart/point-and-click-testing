@@ -29,8 +29,7 @@ img.dickFace {
 }
 @keyframes portrait {
   100% {
-    transform: translateX(-1168px);
-    /*transform: rotate(0.02deg);*/
+    transform: translateX(-73rem);
   }
 }
 
@@ -50,7 +49,7 @@ img.npcSprite {
 }
 @keyframes rodriguez {
   100% {
-    transform: translateX(-2080px);
+    transform: translateX(-130rem);
   }
 }
 .inFront {
@@ -60,22 +59,22 @@ img.npcSprite {
 
 @keyframes walkDown {
   100% {
-    transform: translateX(-1168px);
+    transform: translateX(-73rem);
   }
 }
 @keyframes walkRight {
   100% {
-    transform: translateX(-1168px);
+    transform: translateX(-73rem);
   }
 }
 @keyframes walkLeft{
   100% {
-    transform: translateX(-1168px);
+    transform: translateX(-73rem);
   }
 }
 @keyframes walkUp{
   100% {
-    transform: translateX(-1168px);
+    transform: translateX(-73rem);
   }
 }
 

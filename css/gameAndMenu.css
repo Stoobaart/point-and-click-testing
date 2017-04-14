@@ -1,7 +1,7 @@
 body {
   background-color: black;
   font-family: 'Press Start 2P', cursive;
-  width: 1000px;
+  width: 62.6rem;
   margin: auto;
 }
 .helper {
@@ -28,7 +28,7 @@ section.menuArea {
   color: yellow;
   position: absolute;
   z-index: 2;
-  max-width: 600px;
+  max-width: 60%;
 }
 .options {
   position: absolute;
