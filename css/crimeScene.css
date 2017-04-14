@@ -1,5 +1,5 @@
 section.walkableArea {
-  width: 950px;
+  width: 59rem;
   height: 10rem;
   margin-top: -14rem;
   margin-left: 2rem;
@@ -7,7 +7,7 @@ section.walkableArea {
   z-index: 1;
 }
 section.scene {
-  width: 1000px;
+  width: 62.6rem;
   height: 24rem;
   border: 0.5px solid grey;
   overflow: hidden;
@@ -17,6 +17,7 @@ img.sceneOne {
   position: absolute;
   z-index: -1;
   margin-top: -28rem;
+  height: 24.1rem;
 }
 #victim, #shards, #head, #car, #brokenWindow, #handPrint, #urine, #syringe {
   position: relative;
