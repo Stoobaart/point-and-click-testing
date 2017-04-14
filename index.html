@@ -4,6 +4,7 @@
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/animation.js"></script>
+  <script type="text/javascript" src="js/startScreen.js"></script>
   <script type="text/javascript" src="js/crimeScene.js"></script>
   <script type="text/javascript" src="js/rodriguezConvo.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
@@ -13,45 +14,52 @@
 </head>
 <body>
   <audio loop id="crimeSceneMusic" src="assets/music/crimeScene.wav"></audio>
-  <div class="helper"></div>
-  <section class="scene">
-  <section class="playerSpeak">
-    <div class="playerPortrait">
-      <img class="dickFace" src="assets/images/DickFace.png">
-    </div>
-    <section class="playerSpeach"></section>
+  <section class="startScreen">
+    <h1 class="title">DICK DYNAMITE</h1>
+    <button class="startGameBtn">START</button>
   </section>
-  <section class="options">
-    <ul>
-      <li class="talkChoices victim">Tell me about the victim</li>
-      <li class="talkChoices suspects">Any suspects?</li>
-      <li class="talkChoices witnesses">Any witnesses?</li>
-      <li class="talkChoices bye">Chat to ya later, Hot Rod</li>
-    </ul>
-  </section>
-  <section class="npcSpeak">
-    <div class="npcPortrait">
-      <img class="rodFace" src="assets/images/rodriguezFace.png">
-    </div>
-    <section class="npcSpeach"></section>
-  </section>
-  <section class="playerAction">Walk to</section>
-  <div id="victim"></div>
-  <div id="shards"></div>
-  <div id="head"></div>
-  <div id="car"></div>
-  <div id="brokenWindow"></div>
-  <div id="handPrint"></div>
-  <div id="urine"></div>
-  <div id="syringe"></div>
-  <img class="sceneOne" src="assets/images/SceneOne.png">
-  <section class="walkableArea"></section>
-    <div id="player">
-      <img class="playerSprite" src="assets/images/TheDetective.png">
-    </div>
-    <div id="npcRodriguez">
-      <img class="npcSprite" src="assets/images/officerRodriguez.png">
-    </div>
+
+  <section class="sceneOneScreen">
+    <div class="helper"></div>
+    <section class="scene">
+    <section class="playerSpeak">
+      <div class="playerPortrait">
+        <img class="dickFace" src="assets/images/DickFace.png">
+      </div>
+      <section class="playerSpeach"></section>
+    </section>
+    <section class="options">
+      <ul>
+        <li class="talkChoices victim">Tell me about the victim</li>
+        <li class="talkChoices suspects">Any suspects?</li>
+        <li class="talkChoices witnesses">Any witnesses?</li>
+        <li class="talkChoices bye">Chat to ya later, Hot Rod</li>
+      </ul>
+    </section>
+    <section class="npcSpeak">
+      <div class="npcPortrait">
+        <img class="rodFace" src="assets/images/rodriguezFace.png">
+      </div>
+      <section class="npcSpeach"></section>
+    </section>
+    <section class="playerAction">Walk to</section>
+    <div id="victim"></div>
+    <div id="shards"></div>
+    <div id="head"></div>
+    <div id="car"></div>
+    <div id="brokenWindow"></div>
+    <div id="handPrint"></div>
+    <div id="urine"></div>
+    <div id="syringe"></div>
+    <img class="sceneOne" src="assets/images/SceneOne.png">
+    <section class="walkableArea"></section>
+      <div id="player">
+        <img class="playerSprite" src="assets/images/TheDetective.png">
+      </div>
+      <div id="npcRodriguez">
+        <img class="npcSprite" src="assets/images/officerRodriguez.png">
+      </div>
+    </section>
   </section>
 
   <section class="menuArea">

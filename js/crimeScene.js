@@ -3,10 +3,10 @@ var suspects = null;
 var witnesses = null;
 
 $(document).ready(function () {
-  
+  $(".sceneOneScreen").toggle();
+  $(".menuArea").toggle();
   // init the crime scene
   startCrimeScene = function(){
-    $('#crimeSceneMusic')[0].play();
     suspects = false;
     witnesses = false;
     aboutVictim = false;
