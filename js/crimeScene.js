@@ -1,6 +1,6 @@
 var aboutVictim = null;
-var suspects = false;
-var witnesses = false;
+var suspects = null;
+var witnesses = null;
 
 $(document).ready(function () {
   
@@ -11,6 +11,7 @@ $(document).ready(function () {
     witnesses = false;
     aboutVictim = false;
     $(".playerPortrait").toggle();
+    $(".npcPortrait").toggle();
   };
   startCrimeScene();
   // crime scene music control
@@ -48,9 +49,10 @@ $(document).ready(function () {
     }, words.length * 75);
   };
   npcSpeakClear = function() {
-    var words = $(".npcSpeak").html();
+    var words = $(".npcSpeach").html();
     setTimeout(function() {
-      $(".npcSpeak").html("");
+      $(".npcSpeach").html("");
+      $(".npcPortrait").toggle();
     }, words.length * 75);
   };
 
@@ -171,8 +173,12 @@ $(document).ready(function () {
     if (distance > 35 && action === "Look at" || distance < -160 && action === "Look at") {
       $(".playerPortrait").toggle();
       getCloser();
-    } else if (distance < 35 && action === "Look at" || distance > -160 && action === "Look at") {
+    } else if (distance < 35 && action === "Look at" && suspects == false || distance > -160 && action === "Look at" && suspects == false) {
       $(".playerSpeach").html("Hmmm, Could this be related? Or maybe some crack head left it here? This place is pretty seedy...");
+      $(".playerPortrait").toggle();
+      speakClear(); 
+    } else if (distance < 35 && action === "Look at" && suspects == true || distance > -160 && action === "Look at" && suspects == true) {
+      $(".playerSpeach").html("So this belongs to the crack head after all. I don't need it.");
       $(".playerPortrait").toggle();
       speakClear(); 
     }

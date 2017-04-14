@@ -55,6 +55,24 @@ img.npcSprite {
 .inFront {
   z-index: -1;
 }
+div.npcPortrait {
+  margin-top: -14.2rem;
+  margin-left: 24rem;
+  overflow: hidden;
+  width: 12.1rem;
+  image-rendering: pixelated;
+  border-radius: 5px;
+}
+img.rodFace {
+  width: 73rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -webkit-transform: translate3d(0,0,0);
+  animation: portrait 550ms steps(6) infinite;
+}
+section.npcSpeach {
+  margin-top: 3rem;
+}
 
 
 @keyframes walkDown {
