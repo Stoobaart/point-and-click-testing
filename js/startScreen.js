@@ -4,7 +4,7 @@ $(document).ready(function () {
     $(".startScreen").fadeIn(1500);
   }, 1000);
   $(".playTheme").click(function() {
-    $("#themeMusic").play();
+    $("#themeMusic")[0].play();
   })
   $(".startGameBtn").click(function() {
     $(".startScreen").fadeOut(1500);
