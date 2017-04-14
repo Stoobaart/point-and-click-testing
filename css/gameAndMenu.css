@@ -28,7 +28,7 @@ section.menuArea {
   color: yellow;
   position: absolute;
   z-index: 2;
-  max-width: 60%;
+  max-width: 40%;
 }
 .options {
   position: absolute;
