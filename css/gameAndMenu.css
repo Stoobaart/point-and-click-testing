@@ -9,6 +9,9 @@ body {
   position: absolute;
   margin-top: -1.2rem;
 }
+section.menuArea {
+  width: 62.6rem;
+}
 .playerSpeak {
   margin-top: 2rem;
   margin-left: 2rem;
