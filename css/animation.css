@@ -1,3 +1,6 @@
+div#log{
+  color:white;
+}
 div#player {
   top: 20rem;
   left: 30%;
