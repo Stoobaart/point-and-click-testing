@@ -30,6 +30,9 @@ section.menuArea {
   z-index: 2;
   max-width: 40%;
 }
+.npcSpeach {
+  max-width: 80%;
+}
 .options {
   position: absolute;
   margin-top: 2rem;
