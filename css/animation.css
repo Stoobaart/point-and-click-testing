@@ -32,6 +32,14 @@ img.dickFace {
     transform: translateX(-73rem);
   }
 }
+section.playerSpeach {
+  background-color: black;
+  border: 0.4rem solid grey;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  margin: 0.5rem;
+  width: 70%;
+}
 
 div#npcRodriguez {
   top: -18rem;
@@ -71,7 +79,13 @@ img.rodFace {
   animation: portrait 550ms steps(6) infinite;
 }
 section.npcSpeach {
-  margin-top: 3rem;
+  margin-top: 3rem 0.5rem 0.5rem 0.5rem;
+  background-color: black;
+  border: 0.4rem solid grey;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  float: right;
+  width: 70%;
 }
 
 

@@ -28,7 +28,7 @@ section.menuArea {
 .playerSpeak {
   margin-top: 2rem;
   margin-left: 2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: white;
   position: absolute;
   z-index: 2;
@@ -37,14 +37,11 @@ section.menuArea {
 .npcSpeak {
   margin-top: 16rem;
   margin-left: 25rem;
-  font-size: 1rem;
-  color: yellow;
+  font-size: 0.8rem;
+  color: white;
   position: absolute;
   z-index: 2;
-  max-width: 40%;
-}
-.npcSpeach {
-  max-width: 80%;
+  width: 37rem;
 }
 .options {
   position: absolute;
@@ -53,7 +50,7 @@ section.menuArea {
 }
 .talkChoices {
   list-style: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: 'Press Start 2P', cursive;
   color: white;
   text-align: left;
