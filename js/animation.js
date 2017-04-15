@@ -1,4 +1,13 @@
 $(document).ready(function () {
+
+  $(".inventoryIcon").click(function() {
+    if ($(".inventory").is(":visible")) {
+      $(".inventory").slideUp(300);
+    } else {
+    $(".inventory").slideDown(300);
+    }
+  });
+
   $('.walkableArea').click(function(e) {
 
     if(e.pageY > 369){

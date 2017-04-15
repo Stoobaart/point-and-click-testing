@@ -9,7 +9,6 @@ section.walkableArea {
 section.scene {
   width: 62.6rem;
   height: 24rem;
-  border: 0.5px solid grey;
   overflow: hidden;
   margin-top: 5rem;
 }

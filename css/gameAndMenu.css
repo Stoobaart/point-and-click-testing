@@ -17,6 +17,20 @@ h1.title {
   padding: 1rem;
   margin-left: 26.3rem;
 }
+
+div.inventory {
+  color: white;
+  width: 62.6rem;
+  height: 5rem;
+  background-color: #181717;
+  position: absolute;
+}
+div.inventoryIcon {
+  margin-top: 0.2rem;
+  color: white;
+  position: absolute;
+}
+
 .helper {
   color: white;
   position: absolute;
