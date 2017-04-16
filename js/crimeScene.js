@@ -1,6 +1,7 @@
 var aboutVictim = null;
 var suspects = null;
 var witnesses = null;
+var shardCollected = null;
 
 $(document).ready(function () {
   $(".sceneOneScreen, .menuArea").toggle();
@@ -20,16 +21,6 @@ $(document).ready(function () {
     $('#crimeSceneMusic')[0].play();
   })
 
-  // change player action choice
-  $(".look").click(function() {
-    $(".playerAction").html("Look at");
-  });
-  $(".walk").click(function() {
-    $(".playerAction").html("Walk to");
-  });
-  $(".talk").click(function() {
-    $(".playerAction").html("Talk to");
-  });
   // say I need to get closer if the player is too far from an obj
   getCloser = function(){
     $(".playerSpeach").html('I need to get closer');
@@ -78,6 +69,21 @@ $(document).ready(function () {
       $(".playerPortrait, .playerSpeach").toggle();
       $(".playerSpeach").html("Shards of glass... There's blood everywhere.");
       speakClear();     
+    } else if (distance < 60 && action === "Pick up" || distance > -220 && action === "Pick up") {
+      if (shardCollected === true) {
+        $(".playerPortrait, .playerSpeach").toggle();
+        $(".playerSpeach").html("I already have a piece");
+        speakClear();
+      } else {
+        $(".playerPortrait, .playerSpeach").toggle();
+        $(".playerSpeach").html("I'll take a small piece for analysis");
+        speakClear();
+        setTimeout(function() {
+          items.push({"name": "shard", "url": "assets/images/shard.png"});
+          updateInventory();
+        }, 1500);
+        shardCollected = true;
+      }
     }
   });
   $("#shards").hover(function(){
@@ -149,11 +155,15 @@ $(document).ready(function () {
   $("#urine").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#urine").position().left) + ($("#urine").position().top)) - (($("#player").position().left) + ($("#player").position().top));
-    if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at") {
+    if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick Up") {
       $(".playerPortrait, .playerSpeach").toggle();
       getCloser();
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
       $(".playerSpeach").html("A puddle of urine... I should scoop some up for analysis");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear();     
+    } else if (distance < 60 && action === "Pick up" || distance > -220 && action === "Pick up") {
+      $(".playerSpeach").html("I need some kind of receptacle");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear();     
     }

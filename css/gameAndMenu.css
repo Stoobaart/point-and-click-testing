@@ -25,10 +25,21 @@ div.inventory {
   background-color: #181717;
   position: absolute;
 }
+section.items {
+  width: 50rem;
+  height: 4.6rem;
+  border: 0.5px solid grey;
+  float: right;
+  margin: 0.2rem;
+}
 div.inventoryIcon {
   margin-top: 0.2rem;
   color: white;
   position: absolute;
+}
+img.item {
+  height: 4.6rem;
+  image-rendering: pixelated;
 }
 
 .helper {
@@ -85,7 +96,7 @@ section.menuArea {
   color: white;
   position: absolute;
 }
-.look, .walk, .talk {
+.look, .walk, .talk, .pickUp {
   font-size: 1rem;
   border-radius: 3px;
   margin-top: 0.5rem;
@@ -93,7 +104,7 @@ section.menuArea {
   width: 5rem;
   height: 1.5rem;
 }
-.look:hover, .walk:hover, .talk:hover {
+.look:hover, .walk:hover, .talk:hover, .pickUp:hover {
   background-color: #34BEEF;
   transition: 0.5s;
 }

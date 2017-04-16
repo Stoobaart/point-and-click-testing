@@ -1,5 +1,8 @@
+var items = [{"name": "gun", "url": "assets/images/gun.png"}];
+
 $(document).ready(function () {
 
+  // show/hide Inventory
   $(".inventoryIcon").click(function() {
     if ($(".inventory").is(":visible")) {
       $(".inventory").slideUp(300);
@@ -8,8 +11,36 @@ $(document).ready(function () {
     }
   });
 
-  $('.walkableArea').click(function(e) {
+  updateInventory = function(){
+    $(".items").html(items.map(function(item) {
+      return('<img class="item" src="' + item.url + '" name="' + item.name + '">');
+    }).join(""));
+  }
+  updateInventory();
 
+  // change player action choice
+  $(".look").click(function() {
+    $(".playerAction").html("Look at");
+  });
+  $(".walk").click(function() {
+    $(".playerAction").html("Walk to");
+  });
+  $(".talk").click(function() {
+    $(".playerAction").html("Talk to");
+  });  
+  $(".pickUp").click(function() {
+    $(".playerAction").html("Pick up");
+  });
+  $(document).on("click", ".item", function() {
+    $(".playerAction").html("Use " + this.name + " on");
+  });
+  
+  $(document).on("mouseenter", ".item", function(e) {
+    $(".helper").html(this.name);
+  });
+
+  $('.walkableArea').click(function(e) {
+    // player can walk in front or behind
     if(e.pageY > 369){
       $("#npcRodriguez").addClass("inFront");
     } else {

@@ -3,7 +3,7 @@
 <head>
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/animation.js"></script>
+  <script type="text/javascript" src="js/playerActions.js"></script>
   <script type="text/javascript" src="js/startScreen.js"></script>
   <script type="text/javascript" src="js/crimeScene.js"></script>
   <script type="text/javascript" src="js/rodriguezConvo.js"></script>
@@ -21,7 +21,7 @@
     <button class="playTheme">Play Theme</button>
   </section>
 
-  <div class="inventory"></div>
+  <div class="inventory"><section class="items"></section></div>
   <div class="inventoryIcon">Items</div>
 
   <section class="sceneOneScreen">
@@ -69,9 +69,10 @@
 
   <section class="menuArea">
     <section class="actionChoices">
+    <button class="walk">Walk</button>
       <button class="look">Look</button>
-      <button class="walk">Walk</button>
       <button class="talk">Talk</button>
+      <button class="pickUp">Pick Up</button>
     </section>
     <section class="musicBtns">
       <button class="playMusic">Play Music</button>
