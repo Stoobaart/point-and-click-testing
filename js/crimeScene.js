@@ -10,7 +10,7 @@ $(document).ready(function () {
     suspects = false;
     witnesses = false;
     aboutVictim = false;
-    $(".playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach").toggle();
+    $(".playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, .travel").toggle();
   };
   startCrimeScene();
   // crime scene music control
@@ -62,7 +62,7 @@ $(document).ready(function () {
   $("#shards").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#shards").position().left) + ($("#shards").position().top)) - (($("#player").position().left) + ($("#player").position().top));
-    if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at") {
+    if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick up") {
       $(".playerPortrait, .playerSpeach").toggle();
       getCloser();
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
@@ -117,6 +117,8 @@ $(document).ready(function () {
       $(".playerSpeach").html("My wheels, she aint much to look at, but it beats walking");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear(); 
+    } else if (action === "Walk to") {
+      $(".travel").toggle();
     }
   });
   $("#car").hover(function(){
@@ -163,7 +165,7 @@ $(document).ready(function () {
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear();     
     } else if (distance < 60 && action === "Pick up" || distance > -220 && action === "Pick up") {
-      $(".playerSpeach").html("I need some kind of receptacle");
+      $(".playerSpeach").html("I'm not using my hands, I need some kind of receptacle");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear();     
     }
@@ -182,7 +184,7 @@ $(document).ready(function () {
       $(".playerSpeach").html("Hmmm, Could this be related? Or maybe some crack head left it here? This place is pretty seedy...");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear(); 
-    } else if (distance < 35 && action === "Look at" && suspects == true || distance > -160 && action === "Look at" && suspects == true) {
+    } else if (distance < 35 && action === "Look at" && suspects == true || distance > -160 && action === "Look at" && suspects == true || distance < 35 && action === "Pick up" && suspects == true || distance > -160 && action === "Pick up" && suspects == true) {
       $(".playerSpeach").html("So this belongs to the crack head after all. I don't need it.");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear(); 
@@ -202,9 +204,33 @@ $(document).ready(function () {
       $(".playerSpeach").html("Officer Rodriguez. He looks pretty shaken up. Didn't even know he smokes..");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear(); 
+    } else if (distance < 135 && action === "Use gun on" || distance > -460 && action === "Use gun on") {
+      $(".playerSpeach").html("The only thing I want to blow Rodriguez away with is my wit");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear();
+    } else if (distance < 135 && action === "Use shard on" || distance > -460 && action === "Use shard on") {
+      $(".playerSpeach").html("I don't think he's interested in this");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear();
     }
   });
   $("#npcRodriguez").hover(function(){
     $(".helper").html("Officer Rodriguez");
   });
+
+  $(".stay").click(function() {
+    $(".travel").toggle();
+  });
+  $(".leave").click(function() {
+    $(".inventoryIcon, .inventory, .sceneOneScreen").hide();
+    $(".dickMobileInterior").toggle();
+  });
+
+
 });
+
+
+
+
+
+

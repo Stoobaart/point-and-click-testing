@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".startScreen, .inventory, .inventoryIcon").hide();
+  $(".startScreen, .inventory, .inventoryIcon, .dickMobileInterior").hide();
   setTimeout(function() {
     $(".startScreen").fadeIn(1500);
   }, 1000);

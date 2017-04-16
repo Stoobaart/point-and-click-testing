@@ -33,6 +33,7 @@ $(document).ready(function () {
   });
   $(document).on("click", ".item", function() {
     $(".playerAction").html("Use " + this.name + " on");
+    $(".inventory").slideUp(300);
   });
   
   $(document).on("mouseenter", ".item", function(e) {

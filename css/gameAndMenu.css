@@ -17,13 +17,13 @@ h1.title {
   padding: 1rem;
   margin-left: 26.3rem;
 }
-
 div.inventory {
   color: white;
   width: 62.6rem;
   height: 5rem;
   background-color: #181717;
   position: absolute;
+  z-index: 3;
 }
 section.items {
   width: 50rem;
@@ -36,12 +36,12 @@ div.inventoryIcon {
   margin-top: 0.2rem;
   color: white;
   position: absolute;
+  z-index: 3;
 }
 img.item {
   height: 4.6rem;
   image-rendering: pixelated;
 }
-
 .helper {
   color: white;
   position: absolute;
@@ -88,7 +88,6 @@ section.menuArea {
 .greyText {
   color: grey;
 }
-
 .playerAction {
   margin-top: 22rem;
   margin-left: 1rem;
@@ -112,6 +111,24 @@ section.menuArea {
   float: right;
   margin-top: -1.5rem;
 }
+div.travel {
+  color: white;
+  border: 0.2px solid grey;
+  border-radius: 3px;
+  padding: 1rem 3rem;
+  margin: 6rem 0rem 0rem 18rem;
+  z-index: 3;
+  position: absolute;
+  background-color: black;
+}
+button.leave {
+  margin-left: 8rem;
+}
+img.dickMobileInterior {
+  width: 62.6rem;
+  height: 24rem;
+}
+
 
 
 
