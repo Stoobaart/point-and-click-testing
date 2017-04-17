@@ -3,6 +3,8 @@ body {
   font-family: 'Press Start 2P', cursive;
   width: 62.6rem;
   margin: auto;
+  letter-spacing: 0.3rem;
+  line-height: 90%;
 }
 section.startScreen {
   width: 62.6rem;
