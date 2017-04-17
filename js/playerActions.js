@@ -1,4 +1,5 @@
 var items = [{"name": "gun", "url": "assets/images/gun.png"}];
+var currentScene = null;
 
 $(document).ready(function () {
 
@@ -87,4 +88,22 @@ $(document).ready(function () {
        });
     }
   });
+
+  // In car actions
+  $(".exitCar").click(function() {
+    if (currentScene = "crimeScene") {
+      $("#carDoor")[0].play();
+      $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic").toggle();
+      $(".sceneOneScreen").fadeIn(2000);
+      $('#crimeSceneMusic')[0].play();
+    }
+  });
+
+
+
+
 });
+
+
+
+

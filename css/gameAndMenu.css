@@ -124,9 +124,17 @@ div.travel {
 button.leave {
   margin-left: 8rem;
 }
-img.dickMobileInterior {
+img.dickMobileInteriorImg {
   width: 62.6rem;
   height: 24rem;
+}
+div.exitCar {
+  margin-top: -3rem;
+  margin-left: 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  position: absolute;
+  z-index: 3;
 }
 
 

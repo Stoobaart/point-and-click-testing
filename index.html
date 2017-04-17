@@ -3,6 +3,7 @@
 <head>
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/playerActions.js"></script>
   <script type="text/javascript" src="js/startScreen.js"></script>
   <script type="text/javascript" src="js/crimeScene.js"></script>
@@ -15,6 +16,7 @@
 <body>
   <audio loop id="crimeSceneMusic" src="assets/music/crimeScene.wav"></audio>
   <audio loop id="themeMusic" src="assets/music/Theme.wav" autoplay></audio>
+  <audio id="carDoor" src="assets/sfx/carDoor.wav"></audio>
   <section class="startScreen">
     <h1 class="title">DICK MALLONE</h1>
     <button class="startGameBtn">START</button>
@@ -73,7 +75,8 @@
   </section>
 
   <section class="dickMobileInterior">
-    <img class="dickMobileInterior" src="assets/images/TestCar.jpg">
+    <img class="dickMobileInteriorImg" src="assets/images/dickMobileInterior.png">
+    <div class="exitCar">Get Out</div>
   </section>
 
   <section class="menuArea">

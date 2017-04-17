@@ -1,15 +1,13 @@
-var aboutVictim = null;
-var suspects = null;
-var witnesses = null;
-var shardCollected = null;
+var aboutVictim = false;
+var suspects = false;
+var witnesses = false;
+var shardCollected = false;
 
 $(document).ready(function () {
   $(".sceneOneScreen, .menuArea").toggle();
   // init the crime scene
   startCrimeScene = function(){
-    suspects = false;
-    witnesses = false;
-    aboutVictim = false;
+    currentScene = "crimeScene";
     $(".playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, .travel").toggle();
   };
   startCrimeScene();
@@ -222,8 +220,14 @@ $(document).ready(function () {
     $(".travel").toggle();
   });
   $(".leave").click(function() {
-    $(".inventoryIcon, .inventory, .sceneOneScreen").hide();
-    $(".dickMobileInterior").toggle();
+    $(".travel").toggle();
+    $("#carDoor")[0].play();
+    $(".inventoryIcon, .inventory, .sceneOneScreen, .stopMusic, .playMusic ").hide();
+    $(".dickMobileInterior").fadeIn(2000);
+    setTimeout(function(){
+      $(".dickMobileInteriorImg").effect("shake", {times:3}, 200);
+    }, 1500);
+    $('#crimeSceneMusic')[0].pause();
   });
 
 
