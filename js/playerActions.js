@@ -43,7 +43,10 @@ $(document).ready(function () {
 
   $('.walkableArea').click(function(e) {
     // player can walk in front or behind
-    if(e.pageY > 369){
+    var rodPos = $("#npcRodriguez").position().top;
+    var dickPos = e.pageY - 129;
+    console.log("player pos: " + dickPos + " Rod pos: " + rodPos);
+    if(dickPos >= rodPos){
       $("#npcRodriguez").addClass("inFront");
     } else {
       $("#npcRodriguez").removeClass("inFront");
