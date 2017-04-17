@@ -53,9 +53,6 @@ $(document).ready(function () {
       speakClear();
     }
   });
-  $("#victim").hover(function(){
-    $(".helper").html("Victim's body");
-  });
 
   $("#shards").click(function(e) {
     var action = $(".playerAction").html();
@@ -84,9 +81,6 @@ $(document).ready(function () {
       }
     }
   });
-  $("#shards").hover(function(){
-    $(".helper").html("Bloody shards");
-  });
 
   $("#head").click(function(e) {
     var action = $(".playerAction").html();
@@ -104,9 +98,6 @@ $(document).ready(function () {
       speakClear(); 
     }
   });
-  $("#head").hover(function(){
-    $(".helper").html("Victim's head");
-  });
 
   $("#car").click(function(e) {
     var action = $(".playerAction").html();
@@ -118,9 +109,6 @@ $(document).ready(function () {
     } else if (action === "Walk to") {
       $(".travel").toggle();
     }
-  });
-  $("#car").hover(function(){
-    $(".helper").html("The Dick-Mobile");
   });
   
   $("#brokenWindow").click(function(e) {
@@ -135,9 +123,6 @@ $(document).ready(function () {
       speakClear(); 
     }
   });
-  $("#brokenWindow").hover(function(){
-    $(".helper").html("Broken window");
-  });
 
   $("#handPrint").click(function(e) {
     var action = $(".playerAction").html();
@@ -147,9 +132,6 @@ $(document).ready(function () {
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear(); 
     }
-  });
-  $("#handPrint").hover(function(){
-    $(".helper").html("Bloody hand print");
   });
 
   $("#urine").click(function(e) {
@@ -178,9 +160,6 @@ $(document).ready(function () {
       }, 1500);
     }
   });
-  $("#urine").hover(function(){
-    $(".helper").html("Urine puddle");
-  });
 
   $("#syringe").click(function(e) {
     var action = $(".playerAction").html();
@@ -197,9 +176,6 @@ $(document).ready(function () {
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear(); 
     }
-  });
-  $("#syringe").hover(function(){
-    $(".helper").html("Bloody syringe");
   });
 
   $("#npcRodriguez").click(function(e) {
@@ -221,9 +197,6 @@ $(document).ready(function () {
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear();
     }
-  });
-  $("#npcRodriguez").hover(function(){
-    $(".helper").html("Officer Rodriguez");
   });
 });
 

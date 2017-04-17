@@ -37,15 +37,23 @@ $(document).ready(function () {
     $(".inventory").slideUp(300);
   });
   
+  // Helper logic
   $(document).on("mouseenter", ".item", function(e) {
     $(".helper").html(this.name);
+  }).on("mouseout", ".item", function(e) {
+    $(".helper").html("");
   });
+  $(document).on("mouseenter", ".thing", function(e) {
+    $(".helper").html($(e.target).attr('name'));
+  }).on("mouseout", ".thing", function(e) {
+    $(".helper").html("");
+  });
+
 
   $('.walkableArea').click(function(e) {
     // player can walk in front or behind
     var rodPos = $("#npcRodriguez").position().top;
     var dickPos = e.pageY - 129;
-    console.log("player pos: " + dickPos + " Rod pos: " + rodPos);
     if(dickPos >= rodPos){
       $("#npcRodriguez").addClass("inFront");
     } else {
