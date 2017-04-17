@@ -23,6 +23,8 @@ $(document).ready(function () {
     $(".npcSpeach").html("It's not great, Dick. Somebody got messed up here real good....or bad.. I'm so confused right now..");
     npcSpeakClear();
     setTimeout(toggleOptions, 6000);
+    $(".walk, .look, .talk, .pickUp").prop('disabled',true);
+    $(".playerAction").html("");
   }
 
   $(".victim").click(function(){
@@ -101,5 +103,7 @@ $(document).ready(function () {
     $(".npcSpeach").html("See ya bud");
     npcSpeakClear();
     toggleOptions();
+    $(".walk, .look, .talk, .pickUp").prop('disabled',false);
+    $(".playerAction").html("Walk to");
   });
 });

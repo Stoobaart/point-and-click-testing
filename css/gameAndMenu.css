@@ -13,6 +13,7 @@ section.startScreen {
 h1.title {
   color: white;
   font-size: 7rem;
+  line-height: 100%;
 }
 .startGameBtn {
   width: 6rem;
