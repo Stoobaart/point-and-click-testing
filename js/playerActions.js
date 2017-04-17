@@ -21,16 +21,16 @@ $(document).ready(function () {
 
   // change player action choice
   $(".look").click(function() {
-    $(".playerAction").html("Look at");
+    $(".playerAction, .playerActionCar").html("Look at");
   });
   $(".walk").click(function() {
-    $(".playerAction").html("Walk to");
+    $(".playerAction, .playerActionCar").html("Walk to");
   });
   $(".talk").click(function() {
-    $(".playerAction").html("Talk to");
+    $(".playerAction, .playerActionCar").html("Talk to");
   });  
   $(".pickUp").click(function() {
-    $(".playerAction").html("Pick up");
+    $(".playerAction, .playerActionCar").html("Pick up");
   });
   $(document).on("click", ".item", function() {
     $(".playerAction").html("Use " + this.name + " on");
@@ -88,6 +88,20 @@ $(document).ready(function () {
        });
     }
   });
+  // exiting a scene/getting into car
+  $(".stay").click(function() {
+    $(".travel").toggle();
+  });
+  $(".leave").click(function() {
+    $(".travel").toggle();
+    $("#carDoor")[0].play();
+    $(".inventoryIcon, .inventory, .sceneOneScreen, .stopMusic, .playMusic ").hide();
+    $(".dickMobileInterior").fadeIn(2000);
+    setTimeout(function(){
+      $(".dickMobileInteriorImg, .cupEmptyImg").effect("shake", {times:3}, 200);
+    }, 1500);
+    $('#crimeSceneMusic')[0].pause();
+  });
 
   // In car actions
   $(".exitCar").click(function() {
@@ -98,7 +112,23 @@ $(document).ready(function () {
       $('#crimeSceneMusic')[0].play();
     }
   });
-
+  $(".cupEmpty").click(function(e) {
+    var action = $(".playerAction").html();
+    if (action === "Look at"){
+      $(".playerSpeach").html("I should have thrown this away a looong time ago");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear(); 
+    } else if (action === "Pick up"){
+      $(".playerPortrait, .playerSpeach").toggle();
+        $(".playerSpeach").html("I'll find a trash can for this");
+        speakClear();
+        setTimeout(function() {
+          items.push({"name": "cup", "url": "assets/images/cupEmpty.png"});
+          updateInventory();
+        }, 1500);
+        $(".cupEmpty").remove();
+    }
+  });
 
 
 

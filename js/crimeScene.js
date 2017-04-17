@@ -155,7 +155,7 @@ $(document).ready(function () {
   $("#urine").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#urine").position().left) + ($("#urine").position().top)) - (($("#player").position().left) + ($("#player").position().top));
-    if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick Up") {
+    if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick Up" || distance > 60 && action === "Use cup on" || distance < -220 && action === "Use cup on") {
       $(".playerPortrait, .playerSpeach").toggle();
       getCloser();
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
@@ -166,6 +166,16 @@ $(document).ready(function () {
       $(".playerSpeach").html("I'm not using my hands, I need some kind of receptacle");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear();     
+    } else if (distance < 60 && action === "Use cup on" || distance > -220 && action === "Use cup on") {
+      $(".playerSpeach").html("Perhaps there's use for you yet cup! Not sure how much to take. Let's fill it up just incase");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear(); 
+      var itemtoRemove = "cup";
+      items.splice($.inArray(itemtoRemove, items), 1);
+      setTimeout(function() {
+        items.push({"name": "cup of pee", "url": "assets/images/cupFull.png"});
+        updateInventory();
+      }, 1500);
     }
   });
   $("#urine").hover(function(){
@@ -215,22 +225,6 @@ $(document).ready(function () {
   $("#npcRodriguez").hover(function(){
     $(".helper").html("Officer Rodriguez");
   });
-
-  $(".stay").click(function() {
-    $(".travel").toggle();
-  });
-  $(".leave").click(function() {
-    $(".travel").toggle();
-    $("#carDoor")[0].play();
-    $(".inventoryIcon, .inventory, .sceneOneScreen, .stopMusic, .playMusic ").hide();
-    $(".dickMobileInterior").fadeIn(2000);
-    setTimeout(function(){
-      $(".dickMobileInteriorImg").effect("shake", {times:3}, 200);
-    }, 1500);
-    $('#crimeSceneMusic')[0].pause();
-  });
-
-
 });
 
 

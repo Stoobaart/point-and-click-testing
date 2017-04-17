@@ -37,6 +37,7 @@ div.inventoryIcon {
   color: white;
   position: absolute;
   z-index: 3;
+  font-size: 1.5rem;
 }
 img.item {
   height: 4.6rem;
@@ -95,6 +96,13 @@ section.menuArea {
   color: white;
   position: absolute;
 }
+.playerActionCar {
+  margin-top: -2rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+}
 .look, .walk, .talk, .pickUp {
   font-size: 1rem;
   border-radius: 3px;
@@ -124,12 +132,25 @@ div.travel {
 button.leave {
   margin-left: 8rem;
 }
+section.dickMobileInterior {
+  margin-top: 5rem;
+}
 img.dickMobileInteriorImg {
   width: 62.6rem;
   height: 24rem;
 }
+div.cupEmpty {
+  position: absolute;
+  z-index: 2;
+  margin-top: -18rem;
+  margin-left: 52rem;
+}
+img.cupEmptyImg {
+  width: 13rem;
+  image-rendering: pixelated;
+}
 div.exitCar {
-  margin-top: -3rem;
+  margin-top: -16rem;
   margin-left: 1.5rem;
   color: white;
   font-size: 1.2rem;
