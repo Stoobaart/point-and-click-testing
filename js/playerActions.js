@@ -1,5 +1,6 @@
 var items = [{"name": "gun", "url": "assets/images/gun.png"}];
 var currentScene = null;
+var itemToRemove = null;
 
 $(document).ready(function () {
 
@@ -18,6 +19,17 @@ $(document).ready(function () {
     }).join(""));
   }
   updateInventory();
+
+  findWithAttr = function(array, attr, value) {
+    for(var i = 0; i < array.length; i += 1) {
+        if(array[i][attr] === value) {
+          itemToRemove = i;
+          console.log(itemToRemove);
+          return i;
+        }
+    }
+    return -1;
+  }
 
   // change player action choice
   $(".look").click(function() {

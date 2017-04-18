@@ -152,8 +152,9 @@ $(document).ready(function () {
       $(".playerSpeach").html("Perhaps there's use for you yet cup! Not sure how much to take. Let's fill it up just incase");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear(); 
-      var itemtoRemove = "cup";
-      items.splice($.inArray(itemtoRemove, items), 1);
+      $(".playerAction").html("Walk to");
+      findWithAttr(items, 'name', 'cup');
+      items.splice(itemToRemove, 1);
       setTimeout(function() {
         items.push({"name": "cup of pee", "url": "assets/images/cupFull.png"});
         updateInventory();
@@ -194,6 +195,10 @@ $(document).ready(function () {
       speakClear();
     } else if (distance < 135 && action === "Use shard on" || distance > -460 && action === "Use shard on") {
       $(".playerSpeach").html("I don't think he's interested in this");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear();
+    } else if (distance < 135 && action === "Use cup of pee on" || distance > -460 && action === "Use cup of pee on") {
+      $(".playerSpeach").html("Tempting, but I think he's had a tough enough day as it is");
       $(".playerPortrait, .playerSpeach").toggle();
       speakClear();
     }
