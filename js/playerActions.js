@@ -11,7 +11,7 @@ $(document).ready(function () {
     $(".inventory").slideDown(300);
     }
   });
-
+  // used to update inventory when an item is picked up/changes/is used
   updateInventory = function(){
     $(".items").html(items.map(function(item) {
       return('<img class="item" src="' + item.url + '" name="' + item.name + '">');
@@ -99,52 +99,5 @@ $(document).ready(function () {
        });
     }
   });
-  // exiting a scene/getting into car
-  $(".stay").click(function() {
-    $(".travel").toggle();
-  });
-  $(".leave").click(function() {
-    $(".travel").toggle();
-    $("#carDoor")[0].play();
-    $(".inventoryIcon, .inventory, .sceneOneScreen, .stopMusic, .playMusic ").hide();
-    $(".dickMobileInterior").fadeIn(2000);
-    setTimeout(function(){
-      $(".dickMobileInteriorImg, .cupEmptyImg").effect("shake", {times:3}, 200);
-    }, 1500);
-    $('#crimeSceneMusic')[0].pause();
-  });
-
-  // In car actions
-  $(".exitCar").click(function() {
-    if (currentScene = "crimeScene") {
-      $("#carDoor")[0].play();
-      $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic").toggle();
-      $(".sceneOneScreen").fadeIn(2000);
-      $('#crimeSceneMusic')[0].play();
-    }
-  });
-  $(".cupEmpty").click(function(e) {
-    var action = $(".playerAction").html();
-    if (action === "Look at"){
-      $(".playerSpeach").html("I should have thrown this away a looong time ago");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear(); 
-    } else if (action === "Pick up"){
-      $(".playerPortrait, .playerSpeach").toggle();
-        $(".playerSpeach").html("I'll find a trash can for this");
-        speakClear();
-        setTimeout(function() {
-          items.push({"name": "cup", "url": "assets/images/cupEmpty.png"});
-          updateInventory();
-        }, 1500);
-        $(".cupEmpty").remove();
-    }
-  });
-
-
-
 });
-
-
-
 

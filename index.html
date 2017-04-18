@@ -2,39 +2,52 @@
 <html>
 <head>
   <title></title>
+  <!-- jquery cdns -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <!-- links to js files -->
   <script type="text/javascript" src="js/playerActions.js"></script>
   <script type="text/javascript" src="js/startScreen.js"></script>
   <script type="text/javascript" src="js/crimeScene.js"></script>
   <script type="text/javascript" src="js/rodriguezConvo.js"></script>
+  <script type="text/javascript" src="js/carAndMap.js"></script>
+  <script type="text/javascript" src="js/policeStation.js"></script>
+  <!-- retro font style -->
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <!-- links to css files -->
   <link rel="stylesheet" type="text/css" href="css/gameAndMenu.css">
   <link rel="stylesheet" type="text/css" href="css/crimeScene.css">
   <link rel="stylesheet" type="text/css" href="css/animation.css">
+  <link rel="stylesheet" type="text/css" href="css/policeStation.css">
 </head>
 <body>
+  <!-- Audio files -->
   <audio loop id="crimeSceneMusic" src="assets/music/crimeScene.wav"></audio>
   <audio loop id="themeMusic" src="assets/music/Theme.wav" autoplay></audio>
   <audio id="carDoor" src="assets/sfx/carDoor.wav"></audio>
+  <audio id="carStart" src="assets/sfx/carStart.wav"></audio>
+  <!-- Start screen -->
   <section class="startScreen">
     <h1 class="title">DICK MALLONE</h1>
     <button class="startGameBtn">START</button>
     <button class="playTheme">Play Theme</button>
   </section>
-
+  <!-- Inventory menu -->
   <div class="inventory"><section class="items"></section></div>
   <div class="inventoryIcon">Items</div>
-
+  <!-- Crime scene (scene one) -->
   <section class="sceneOneScreen">
+    <!-- shows what the user is hovering over -->
     <div class="helper"></div>
     <section class="scene">
+    <!-- players talking portrait -->
     <section class="playerSpeak">
       <div class="playerPortrait">
         <img class="dickFace" src="assets/images/DickFace.png">
       </div>
       <section class="playerSpeach"></section>
     </section>
+    <!-- convo options when talking to rodriguez -->
     <section class="options">
       <ul>
         <li class="talkChoices victim">Tell me about the victim</li>
@@ -42,18 +55,21 @@
         <li class="talkChoices witnesses">Any witnesses?</li>
         <li class="talkChoices bye">Chat to ya later, Hot Rod</li>
       </ul>
-    </section>
+    </section> 
+    <!-- rodriguez's convo portrait -->
     <section class="npcSpeak">
       <div class="npcPortrait">
         <img class="rodFace" src="assets/images/rodriguezFace.png">
       </div>
       <section class="npcSpeach"></section>
     </section>
+    <!-- leave scene pop up box -->
     <div class="travel">
       <p>Get in the Dick-Mobile?</p>
       <button class="leave">Leave</button>
       <button class="stay">Stay</button>
     </div>
+    <!-- all items of interest in the scene -->
     <section class="playerAction">Walk to</section>
     <div id="victim" class="thing" name="Victim's body"></div>
     <div id="shards" class="thing" name="Bloody shards"></div>
@@ -64,16 +80,18 @@
     <div id="urine" class="thing" name="Urine puddle"></div>
     <div id="syringe" class="thing" name="Syringe"></div>
     <img class="sceneOne" src="assets/images/SceneOne.png">
+    <!-- area where the user can click to send the character to -->
     <section class="walkableArea"></section>
       <div id="player">
         <img class="playerSprite" src="assets/images/TheDetective.png">
       </div>
+      <!-- Rodriguez sprite -->
       <div id="npcRodriguez">
         <img class="npcSprite thing" name="Officer Rodriguez" src="assets/images/officerRodriguez.png">
       </div>
     </section>
   </section>
-
+  <!-- Car interior -->
   <section class="dickMobileInterior">
     <section class="playerSpeak">
       <div class="playerPortrait">
@@ -83,12 +101,27 @@
     </section>
     <img class="dickMobileInteriorImg" src="assets/images/dickMobileInterior.png">
     <div class="exitCar">Get Out</div>
+    <!-- cup that can be picked up -->
     <div class="cupEmpty">
       <img class="cupEmptyImg" src="assets/images/cupEmpty.png">
     </div>
+    <!-- map image to link to travel map -->
+    <div class="map">
+      <img class="mapImg" src="assets/images/map.png">
+    </div>
+    <!-- Travel Map -->
+    <div class="travelMap">
+      <img class="travelMapImg" src="assets/images/travelMapImg.png">
+      <div class="stationBadge">
+        <img class="stationBadgeImg" src="assets/images/stationBadge.png">
+      </div>
+    </div>
     <section class="playerActionCar">Walk to</section>
   </section>
-
+  <section class="policeStationScene">
+    POLICE STATION!
+  </section>
+  <!-- area with action choice buttons and music start/stop buttons -->
   <section class="menuArea">
     <section class="actionChoices">
     <button class="walk">Walk</button>

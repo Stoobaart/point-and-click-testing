@@ -87,7 +87,49 @@ section.npcSpeach {
   float: right;
   width: 70%;
 }
-
+div.map {
+  margin-top: -16.2rem;
+  margin-left: 40.9rem;
+  overflow: hidden;
+  width: 7.1rem;
+  image-rendering: pixelated;
+  border-radius: 5px;
+  position: absolute;
+}
+img.mapImg {
+  width: 14rem;
+  animation: map 2500ms steps(2) infinite;
+}
+@keyframes map {
+  100% {
+    transform: translateX(-14rem);
+  }
+}
+div.travelMap {
+  margin-top: -29.2rem;
+  margin-left: -0.1rem;
+  overflow: hidden;
+  width: 38rem;
+  image-rendering: pixelated;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 3;
+}
+img.travelMapImg {
+  width: 38rem;
+}
+div.stationBadge {
+  margin-top: -33.2rem;
+  margin-left: 10.9rem;
+  width: 11rem;
+  image-rendering: pixelated;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 3;
+}
+img.stationBadgeImg {
+  width: 8rem;
+}
 
 @keyframes walkDown {
   100% {
