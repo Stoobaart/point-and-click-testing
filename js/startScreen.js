@@ -13,7 +13,8 @@ $(document).ready(function () {
     $(".startScreen").fadeOut(1500);
     $("#themeMusic").animate({volume: 0}, 1500);
     setTimeout(function() {
-      $(".menuArea, .sceneOneScreen, .inventoryIcon, #player").fadeIn(2000);
+      $(".menuArea, .sceneOneScreen, .inventoryIcon").fadeIn(2000);
+      $("#player").fadeIn(1000);
       $("#crimeSceneMusic")[0].play();
     }, 1500);
   });
