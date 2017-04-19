@@ -3,14 +3,16 @@ $(document).ready(function () {
   // init the police station
   startPoliceStation = function(){
     currentScene = "policeStationScene";
-    $(".policeStationScene, .inventoryIcon").fadeIn(1500);
+    $(".policeStationScene, .inventoryIcon, .stopMusic, .playMusic").fadeIn(1500);
     $("#player").fadeIn(700);
     $("#policeStationSceneMusic")[0].play();
   };
 
+  // click on police station door to enter
   $(".stationDoor").click(function() {
     alert("entered police station");
   });
+  // comment on car when looked at and show option to enter car
   $("div#car.thing.policeStationExteriorThing").click(function(e) {
     var action = $(".playerAction").html();
     var distance = (($("#car").position().left) + ($("#car").position().top)) - (($("#player").position().left) + ($("#player").position().top));

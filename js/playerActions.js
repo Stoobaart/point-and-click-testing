@@ -62,6 +62,19 @@ $(document).ready(function () {
     $(".helper").html("");
   });
 
+  // Music control
+  $(".stopMusic").click(function() {
+    $('#crimeSceneMusic')[0].pause();
+    $('#policeStationSceneMusic')[0].pause();
+  })  
+  $(".playMusic").click(function() {
+    if (currentScene === "crimeScene") {
+      $('#crimeSceneMusic')[0].play();
+    } else if (currentScene === "policeStationScene") {
+      $('#policeStationSceneMusic')[0].play();
+    }
+  })
+
 
   $('.walkableArea').click(function(e) {
     // player can walk in front or behind

@@ -7,17 +7,10 @@ $(document).ready(function () {
   // init the crime scene
   startCrimeScene = function(){
     currentScene = "crimeScene";
-    $(".menuArea, .sceneOneScreen, .inventoryIcon").fadeIn(2000);
+    $(".menuArea, .sceneOneScreen, .inventoryIcon, .stopMusic, .playMusic").fadeIn(2000);
     $("#player").fadeIn(1000);
     $("#crimeSceneMusic")[0].play();
   };
-  // crime scene music control
-  $(".stopMusic").click(function() {
-    $('#crimeSceneMusic')[0].pause();
-  })  
-  $(".playMusic").click(function() {
-    $('#crimeSceneMusic')[0].play();
-  })
 
   // say I need to get closer if the player is too far from an obj
   getCloser = function(){

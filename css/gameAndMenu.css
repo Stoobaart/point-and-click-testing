@@ -36,7 +36,7 @@ section.items {
   margin: 0.2rem;
 }
 div.inventoryIcon {
-  margin-top: 0.2rem;
+  margin-top: 0.4rem;
   color: white;
   position: absolute;
   z-index: 3;
