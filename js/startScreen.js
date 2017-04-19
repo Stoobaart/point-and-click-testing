@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // hide everything and fade in the start screen
-  $(".startScreen, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, #player").hide();
+  $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, #player").hide();
   setTimeout(function() {
     $(".startScreen").fadeIn(1500);
   }, 1000);
@@ -12,11 +12,11 @@ $(document).ready(function () {
   $(".startGameBtn").click(function() {
     $(".startScreen").fadeOut(1500);
     $("#themeMusic").animate({volume: 0}, 1500);
-    setTimeout(function() {
-      $(".menuArea, .sceneOneScreen, .inventoryIcon").fadeIn(2000);
-      $("#player").fadeIn(1000);
-      $("#crimeSceneMusic")[0].play();
+    setTimeout(function(){
+      startCrimeScene();
+      $(".playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, .travel").toggle();
     }, 1500);
   });
 });
 
+    

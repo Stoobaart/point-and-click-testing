@@ -4,13 +4,13 @@ var witnesses = false;
 var shardCollected = false;
 
 $(document).ready(function () {
-  $(".sceneOneScreen, .menuArea").toggle();
   // init the crime scene
   startCrimeScene = function(){
     currentScene = "crimeScene";
-    $(".playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, .travel").toggle();
+    $(".menuArea, .sceneOneScreen, .inventoryIcon").fadeIn(2000);
+    $("#player").fadeIn(1000);
+    $("#crimeSceneMusic")[0].play();
   };
-  startCrimeScene();
   // crime scene music control
   $(".stopMusic").click(function() {
     $('#crimeSceneMusic')[0].pause();

@@ -60,7 +60,7 @@ section.menuArea {
   font-size: 0.8rem;
   color: white;
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   max-width: 50%;
 }
 .npcSpeak {

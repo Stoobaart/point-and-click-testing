@@ -7,23 +7,27 @@ $(document).ready(function () {
   $(".leave").click(function() {
     $(".travel").toggle();
     $("#carDoor")[0].play();
-    $(".inventoryIcon, .inventory, .sceneOneScreen, .stopMusic, .playMusic, .travelMap, #player").hide();
+    $(".inventoryIcon, .inventory, .sceneOneScreen, .policeStationScene, .stopMusic, .playMusic, .travelMap, #player").hide();
     $(".dickMobileInterior").fadeIn(2000);
     setTimeout(function(){
       $(".dickMobileInteriorImg, .cupEmptyImg, .mapImg").effect("shake", {times:3}, 200);
     }, 1500);
     $('#crimeSceneMusic')[0].pause();
+    $('#policeStationSceneMusic')[0].pause();
   });
 
   // In car actions
   // get out of car
   $(".exitCar").click(function() {
-    if (currentScene = "crimeScene") {
-      $("#carDoor")[0].play();
-      $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic, #player").toggle();
+    if (currentScene === "crimeScene") {
       $(".sceneOneScreen").fadeIn(2000);
       $('#crimeSceneMusic')[0].play();
+    } else if (currentScene === "policeStationScene") {
+      $(".policeStationScene").fadeIn(2000);
+      $('#policeStationSceneMusic')[0].play();
     }
+    $("#carDoor")[0].play();
+    $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic, #player").toggle();
   });
   // picking up the cup
   $(".cupEmpty").click(function(e) {
@@ -53,11 +57,31 @@ $(document).ready(function () {
   });
   // click on the police station badge to travel to the station
   $(".stationBadgeImg").click(function(e) {
-    $("#carStart")[0].play();
-    setTimeout(function() {
-      $(".dickMobileInterior").fadeOut(2500);
-    }, 4000);
-    setTimeout(startPoliceStation, 6500);
+    if (currentScene === "policeStationScene") {
+      $(".playerSpeach").html("I'm already here");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear();
+    } else {
+      $("#carStart")[0].play();
+      setTimeout(function() {
+        $(".dickMobileInterior").fadeOut(2500);
+      }, 4000);
+      setTimeout(startPoliceStation, 6500);
+    }
+  });
+  // click on the crime scene icon to travel to the crime scene
+  $(".crimeSceneIconImg").click(function(e) {
+    if (currentScene === "crimeScene") {
+      $(".playerSpeach").html("I'm already here");
+      $(".playerPortrait, .playerSpeach").toggle();
+      speakClear();
+    } else {
+      $("#carStart")[0].play();
+      setTimeout(function() {
+        $(".dickMobileInterior").fadeOut(2500);
+      }, 4000);
+      setTimeout(startCrimeScene, 6500);
+    }
   });
 
 
