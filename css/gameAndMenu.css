@@ -98,6 +98,7 @@ section.menuArea {
   font-size: 1.5rem;
   color: white;
   position: absolute;
+  z-index: 3;
 }
 .playerActionCar {
   margin-top: -2rem;

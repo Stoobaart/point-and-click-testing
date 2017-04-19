@@ -7,7 +7,7 @@ $(document).ready(function () {
   $(".leave").click(function() {
     $(".travel").toggle();
     $("#carDoor")[0].play();
-    $(".inventoryIcon, .inventory, .sceneOneScreen, .stopMusic, .playMusic, .travelMap").hide();
+    $(".inventoryIcon, .inventory, .sceneOneScreen, .stopMusic, .playMusic, .travelMap, #player").hide();
     $(".dickMobileInterior").fadeIn(2000);
     setTimeout(function(){
       $(".dickMobileInteriorImg, .cupEmptyImg, .mapImg").effect("shake", {times:3}, 200);
@@ -20,7 +20,7 @@ $(document).ready(function () {
   $(".exitCar").click(function() {
     if (currentScene = "crimeScene") {
       $("#carDoor")[0].play();
-      $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic").toggle();
+      $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic, #player").toggle();
       $(".sceneOneScreen").fadeIn(2000);
       $('#crimeSceneMusic')[0].play();
     }

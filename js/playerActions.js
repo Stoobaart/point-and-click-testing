@@ -20,6 +20,7 @@ $(document).ready(function () {
   }
   updateInventory();
 
+  // function to find an object in the items array based on it's name for correct removal
   findWithAttr = function(array, attr, value) {
     for(var i = 0; i < array.length; i += 1) {
         if(array[i][attr] === value) {
@@ -66,10 +67,10 @@ $(document).ready(function () {
     // player can walk in front or behind
     var rodPos = $("#npcRodriguez").position().top;
     var dickPos = e.pageY - 129;
-    if(dickPos >= rodPos){
-      $("#npcRodriguez").addClass("inFront");
+    if(dickPos <= rodPos){
+      $("#npcRodriguez").addClass("behind");
     } else {
-      $("#npcRodriguez").removeClass("inFront");
+      $("#npcRodriguez").removeClass("behind");
     }
     // confirm the players action choice
     var action = $(".playerAction").html();
@@ -82,6 +83,7 @@ $(document).ready(function () {
     // get the difference of where the player has clicked, minus where the sprite is
     var playerPositionXDiff = e.pageX - playerPositionX;
     var playerPositionYDiff = e.pageY - playerPositionY;
+    console.log("click pos X: " + e.pageX + " click pos Y: " + e.pageY + " dick pos X: " + playerPositionXDiff + " Dick pos Y: " + playerPositionYDiff)
     var timeToWalk = (Math.abs(playerPositionXDiff) + Math.abs(playerPositionYDiff)) * 5;
     // if the sprite is being told to move right of it's original position...
     if (action === "Walk to") {

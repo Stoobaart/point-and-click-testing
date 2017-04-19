@@ -35,57 +35,58 @@
   <!-- Inventory menu -->
   <div class="inventory"><section class="items"></section></div>
   <div class="inventoryIcon">Items</div>
+  <!-- Player Sprite -->
+  <div id="player">
+    <img class="playerSprite" src="assets/images/TheDetective.png">
+  </div>
   <!-- Crime scene (scene one) -->
   <section class="sceneOneScreen">
     <!-- shows what the user is hovering over -->
     <div class="helper"></div>
     <section class="scene">
-    <!-- players talking portrait -->
-    <section class="playerSpeak">
-      <div class="playerPortrait">
-        <img class="dickFace" src="assets/images/DickFace.png">
+      <!-- players talking portrait -->
+      <section class="playerSpeak">
+        <div class="playerPortrait">
+          <img class="dickFace" src="assets/images/DickFace.png">
+        </div>
+        <section class="playerSpeach"></section>
+      </section>
+      <!-- convo options when talking to rodriguez -->
+      <section class="options">
+        <ul>
+          <li class="talkChoices victim">Tell me about the victim</li>
+          <li class="talkChoices suspects">Any suspects?</li>
+          <li class="talkChoices witnesses">Any witnesses?</li>
+          <li class="talkChoices bye">Chat to ya later, Hot Rod</li>
+        </ul>
+      </section> 
+      <!-- rodriguez's convo portrait -->
+      <section class="npcSpeak">
+        <div class="npcPortrait">
+          <img class="rodFace" src="assets/images/rodriguezFace.png">
+        </div>
+        <section class="npcSpeach"></section>
+      </section>
+      <!-- leave scene pop up box -->
+      <div class="travel">
+        <p>Get in the Dick-Mobile?</p>
+        <button class="leave">Leave</button>
+        <button class="stay">Stay</button>
       </div>
-      <section class="playerSpeach"></section>
-    </section>
-    <!-- convo options when talking to rodriguez -->
-    <section class="options">
-      <ul>
-        <li class="talkChoices victim">Tell me about the victim</li>
-        <li class="talkChoices suspects">Any suspects?</li>
-        <li class="talkChoices witnesses">Any witnesses?</li>
-        <li class="talkChoices bye">Chat to ya later, Hot Rod</li>
-      </ul>
-    </section> 
-    <!-- rodriguez's convo portrait -->
-    <section class="npcSpeak">
-      <div class="npcPortrait">
-        <img class="rodFace" src="assets/images/rodriguezFace.png">
-      </div>
-      <section class="npcSpeach"></section>
-    </section>
-    <!-- leave scene pop up box -->
-    <div class="travel">
-      <p>Get in the Dick-Mobile?</p>
-      <button class="leave">Leave</button>
-      <button class="stay">Stay</button>
-    </div>
-    <!-- all items of interest in the scene -->
-    <section class="playerAction">Walk to</section>
-    <div id="victim" class="thing" name="Victim's body"></div>
-    <div id="shards" class="thing" name="Bloody shards"></div>
-    <div id="head" class="thing" name="Victim's head"></div>
-    <div id="car" class="thing" name="Dick-mobile"></div>
-    <div id="brokenWindow" class="thing" name="Broken Window"></div>
-    <div id="handPrint" class="thing" name="Bloody hand print"></div>
-    <div id="urine" class="thing" name="Urine puddle"></div>
-    <div id="syringe" class="thing" name="Syringe"></div>
-    <img class="sceneOne" src="assets/images/SceneOne.png">
-    <!-- area where the user can click to send the character to -->
-    <section class="walkableArea"></section>
-      <div id="player">
-        <img class="playerSprite" src="assets/images/TheDetective.png">
-      </div>
-      <!-- Rodriguez sprite -->
+      <!-- all items of interest in the scene -->
+      <section class="playerAction">Walk to</section>
+      <div id="victim" class="thing" name="Victim's body"></div>
+      <div id="shards" class="thing" name="Bloody shards"></div>
+      <div id="head" class="thing" name="Victim's head"></div>
+      <div id="car" class="thing" name="Dick-mobile"></div>
+      <div id="brokenWindow" class="thing" name="Broken Window"></div>
+      <div id="handPrint" class="thing" name="Bloody hand print"></div>
+      <div id="urine" class="thing" name="Urine puddle"></div>
+      <div id="syringe" class="thing" name="Syringe"></div>
+      <img class="sceneOne" src="assets/images/SceneOne.png">
+      <!-- area where the user can click to send the character to -->
+      <section class="walkableArea"></section>
+        <!-- Rodriguez sprite -->
       <div id="npcRodriguez">
         <img class="npcSprite thing" name="Officer Rodriguez" src="assets/images/officerRodriguez.png">
       </div>
@@ -119,7 +120,10 @@
     <section class="playerActionCar">Walk to</section>
   </section>
   <section class="policeStationScene">
-    POLICE STATION!
+    <img class="policeStationImg" src="assets/images/policeStation.png">
+    <img class="policeStationForegroundImg" src="assets/images/policeStationForeground.png">
+    <section class="walkableArea policeStation"></section>
+    <section class="playerAction">Walk to</section>
   </section>
   <!-- area with action choice buttons and music start/stop buttons -->
   <section class="menuArea">

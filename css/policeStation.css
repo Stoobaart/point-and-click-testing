@@ -5,3 +5,20 @@ section.policeStationScene {
   margin-top: 5rem;
   border: 0.5px solid white;
 }
+img.policeStationImg {
+  width: 62.6rem;
+}
+img.policeStationForegroundImg {
+  margin-top: -9.6rem;
+  position: absolute;
+  width: 30rem;
+  z-index: 1;
+}
+section.walkableArea.policeStation {
+  width: 48rem;
+  height: 8rem;
+  margin-top: -8.5rem;
+  margin-left: 0rem;
+  position: absolute;
+  z-index: 1;
+}

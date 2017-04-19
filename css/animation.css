@@ -7,6 +7,7 @@ div#player {
   image-rendering: pixelated;
   margin-left: -4.5rem;
   margin-top: -8.5rem;
+  z-index: 1;
 }
 img.playerSprite {
   width: 73rem;
@@ -60,8 +61,8 @@ img.npcSprite {
     transform: translateX(-130rem);
   }
 }
-.inFront {
-  z-index: -1;
+.behind {
+  z-index: 1;
 }
 div.npcPortrait {
   margin-top: -14.2rem;
@@ -70,6 +71,7 @@ div.npcPortrait {
   width: 12.1rem;
   image-rendering: pixelated;
   border-radius: 5px;
+  z-index: 3;
 }
 img.rodFace {
   width: 73rem;
@@ -77,6 +79,7 @@ img.rodFace {
   -webkit-filter: blur(0);
   -webkit-transform: translate3d(0,0,0);
   animation: portrait 550ms steps(6) infinite;
+  z-index: 3;
 }
 section.npcSpeach {
   margin-top: 3rem 0.5rem 0.5rem 0.5rem;
@@ -86,6 +89,7 @@ section.npcSpeach {
   padding: 0.6rem;
   float: right;
   width: 70%;
+  z-index: 3;
 }
 div.map {
   margin-top: -16.2rem;

@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // hide everything and fade in the start screen
-  $(".startScreen, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene").hide();
+  $(".startScreen, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, #player").hide();
   setTimeout(function() {
     $(".startScreen").fadeIn(1500);
   }, 1000);
@@ -13,7 +13,7 @@ $(document).ready(function () {
     $(".startScreen").fadeOut(1500);
     $("#themeMusic").animate({volume: 0}, 1500);
     setTimeout(function() {
-      $(".menuArea, .sceneOneScreen, .inventoryIcon").fadeIn(2000);
+      $(".menuArea, .sceneOneScreen, .inventoryIcon, #player").fadeIn(2000);
       $("#crimeSceneMusic")[0].play();
     }, 1500);
   });
