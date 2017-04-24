@@ -10,7 +10,9 @@ $(document).ready(function () {
 
   // click on police station door to enter
   $(".stationDoor").click(function() {
-    alert("entered police station");
+    $(".policeStationScene, #player").toggle();
+    $(".policeStationInteriorScene").fadeIn(1500);
+    $("#player").fadeIn(700);
   });
   // comment on car when looked at and show option to enter car
   $("div#car.thing.policeStationExteriorThing").click(function(e) {
@@ -25,4 +27,15 @@ $(document).ready(function () {
     }
   });
 
+  // make Dick have to walk to bottom of entrance hall before he can walk up up the corridor, to stop him walking through walls!
+  $(".walkableArea.policeStationInterior").click(function(e) {
+    var playerPositionX = $("#player").position().left
+    var playerPositionY = $("#player").position().top
+    var wallX = $(".wallCorner").position().left;
+    var wallY = $(".wallCorner").position().top;
+    if ((playerPositionX > wallX) && (e.pageY < wallY) || (playerPositionY < wallY) && (e.pageX > wallX)) {
+      $('#player').stop();
+      $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
+    }
+  });
 });

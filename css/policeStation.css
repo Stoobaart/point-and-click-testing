@@ -1,42 +1,74 @@
+/*Outside police station styles*/
 section.policeStationScene {
   color: white;
   width:62.6rem;
   height: 24.1rem;
   margin-top: 5rem;
-  border: 0.5px solid white;
+/*  border: 0.5px solid white;*/
 }
 img.policeStationImg {
   width: 62.6rem;
 }
 img.policeStationForegroundImg {
-  margin-top: -9.6rem;
-  position: absolute;
+  position: relative;
+  top: -9.6rem;
   width: 30rem;
   z-index: 1;
 }
 section.walkableArea.policeStation {
-  width: 48rem;
+  width: 51.4rem;
   height: 8rem;
-  margin-top: -8.5rem;
-  margin-left: 0rem;
-  position: absolute;
+  position: relative;
   z-index: 1;
+  top: -4rem;
+  left: -2rem;
+  clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
 }
 div.stationDoor {
-  position: absolute;
+  position: relative;
   z-index: 1;
   width: 10.5rem;
   height: 8rem;
-  top: 12.2rem;
-  left: 29rem;
+  top: -16.8rem;
+  left: 25.3rem;
 }
 div#car.thing.policeStationExteriorThing {
   width: 6rem;
   height: 8rem;
-  top: -8rem;
+  top: -16rem;
   left: 0rem;
+  position: relative;
 }
 div.travel.policeStationTravel {
   top: 6rem;
   left: 0rem;
 }
+
+/*Inside police station styles*/
+section.policeStationInteriorScene {
+  margin-top: 5rem;
+}
+section.walkableArea.policeStationInterior {
+  width: 61rem;
+  height: 14rem;
+  margin-top: -14.2rem;
+  margin-left: 1.5rem;
+  position: absolute;
+  z-index: 1;
+  clip-path: polygon(5% 40%, 10% 0, 22% 0, 22% 52%, 86% 52%, 96% 52%, 97% 64%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0 81%);
+}
+.wallCorner {
+  position: relative;
+  top: -7.7rem;
+  left: 16.7rem;
+}
+
+
+
+
+
+
+
+
+
+
