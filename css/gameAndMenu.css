@@ -128,9 +128,11 @@ div.travel {
   border: 0.2px solid grey;
   border-radius: 3px;
   padding: 1rem 3rem;
-  margin: 6rem 0rem 0rem 18rem;
   z-index: 3;
-  position: absolute;
+  position: relative;
+  top: -17rem;
+  left: 13rem;
+  width: 30rem;
   background-color: black;
 }
 button.leave {

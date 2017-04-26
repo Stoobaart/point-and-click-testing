@@ -24,29 +24,36 @@ section.walkableArea.policeStation {
   left: -2rem;
   clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
 }
+section.playerAction.policeStation {
+  margin-top: -5rem;
+  margin-left: 0.5rem;
+}
 div.stationDoor {
   position: relative;
   z-index: 1;
   width: 10.5rem;
   height: 8rem;
-  top: -16.8rem;
+  top: -20.8rem;
   left: 25.3rem;
 }
 div#car.thing.policeStationExteriorThing {
   width: 6rem;
   height: 8rem;
-  top: -16rem;
+  top: -20rem;
   left: 0rem;
   position: relative;
 }
 div.travel.policeStationTravel {
-  top: 6rem;
+  top: -35rem;
   left: 0rem;
+  margin: auto;
+  width: 30rem;
 }
 
 /*Inside police station styles*/
 section.policeStationInteriorScene {
   margin-top: 5rem;
+  height: 24.2rem;
 }
 section.walkableArea.policeStationInterior {
   width: 61rem;
@@ -61,6 +68,13 @@ section.walkableArea.policeStationInterior {
   position: relative;
   top: -7.7rem;
   left: 16.7rem;
+}
+.policeStationExit {
+  position: relative;
+  width: 1.5rem;
+  height: 13rem;
+  top: -15rem;
+  left: 61rem;
 }
 
 

@@ -16,6 +16,9 @@ $(document).ready(function () {
       startCrimeScene();
       $(".playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, .travel").toggle();
     }, 1500);
+    var startX = ($("div#car.thing").position().left) + 411;
+    var startY = ($("div#car.thing").position().top) + 314;
+    $("#player").css({ top: startY, left: startX});
   });
 });
 

@@ -6,6 +6,9 @@ section.walkableArea {
   position: absolute;
   z-index: 1;
 }
+section.sceneOneScreen {
+  height: 24rem;
+}
 section.scene {
   width: 62.6rem;
   height: 24rem;

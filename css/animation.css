@@ -1,13 +1,11 @@
 div#player {
-  top: 20rem;
-  left: 30%;
   overflow: hidden;
   width: 6.5rem;
   position: absolute;
   image-rendering: pixelated;
-  margin-left: -4.5rem;
-  margin-top: -8.5rem;
   z-index: 1;
+  margin-top: -8rem;
+  margin-left: -5rem;
 }
 img.playerSprite {
   width: 73rem;

@@ -10,8 +10,13 @@ $(document).ready(function () {
 
   // click on police station door to enter
   $(".stationDoor").click(function() {
+    $("#stationDoor")[0].play();
     $(".policeStationScene, #player").toggle();
     $(".policeStationInteriorScene").fadeIn(1500);
+    var startX = ($(".policeStationExit").position().left) - 50;
+    var startY = ($(".policeStationExit").position().top) + 200;
+    $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
+    $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(700);
   });
   // comment on car when looked at and show option to enter car
@@ -37,5 +42,17 @@ $(document).ready(function () {
       $('#player').stop();
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     }
+  });
+
+  // Exit the station
+  $(".policeStationExit").click(function() {
+    $("#stationDoor")[0].play();
+    $(".policeStationInteriorScene, #player").hide();
+    $(".policeStationScene").fadeIn(1500);
+    var startX = ($(".stationDoor").position().left) + 50;
+    var startY = ($(".stationDoor").position().top) + 150;
+    $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
+    $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
+    $("#player").fadeIn(700);
   });
 });

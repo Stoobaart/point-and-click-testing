@@ -22,6 +22,9 @@ $(document).ready(function () {
     if (currentScene === "crimeScene") {
       $(".sceneOneScreen").fadeIn(2000);
       $('#crimeSceneMusic')[0].play();
+      var startX = ($("div#car.thing").position().left) + 141;
+      var startY = ($("div#car.thing").position().top) + 134;
+      $("#player").css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
     } else if (currentScene === "policeStationScene") {
       $(".policeStationScene").fadeIn(2000);
       $('#policeStationSceneMusic')[0].play();

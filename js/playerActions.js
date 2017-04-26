@@ -66,6 +66,7 @@ $(document).ready(function () {
   $(".stopMusic").click(function() {
     $('#crimeSceneMusic')[0].pause();
     $('#policeStationSceneMusic')[0].pause();
+    $('#themeMusic')[0].pause();
   })  
   $(".playMusic").click(function() {
     if (currentScene === "crimeScene") {

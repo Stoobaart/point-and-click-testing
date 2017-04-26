@@ -27,6 +27,7 @@
   <audio loop id="policeStationSceneMusic" src="assets/music/policeStationScene.wav"></audio>
   <audio id="carDoor" src="assets/sfx/carDoor.wav"></audio>
   <audio id="carStart" src="assets/sfx/carStart.wav"></audio>
+  <audio id="stationDoor" src="assets/sfx/policeStationDoor.wav"></audio>
   <!-- Start screen -->
   <section class="startScreen">
     <h1 class="title">DICK MALLONE</h1>
@@ -68,12 +69,6 @@
         </div>
         <section class="npcSpeach"></section>
       </section>
-      <!-- leave scene pop up box -->
-      <div class="travel">
-        <p>Get in the Dick-Mobile?</p>
-        <button class="leave">Leave</button>
-        <button class="stay">Stay</button>
-      </div>
       <!-- all items of interest in the scene -->
       <section class="playerAction">Walk to</section>
       <div id="victim" class="thing" name="Victim's body"></div>
@@ -92,6 +87,12 @@
         <img class="npcSprite thing" name="Officer Rodriguez" src="assets/images/officerRodriguez.png">
       </div>
     </section>
+          <!-- leave scene pop up box -->
+      <div class="travel">
+        <p>Get in the Dick-Mobile?</p>
+        <button class="leave">Leave</button>
+        <button class="stay">Stay</button>
+      </div>
   </section>
   <!-- Car interior -->
   <section class="dickMobileInterior">
@@ -129,7 +130,7 @@
     <img class="policeStationImg" src="assets/images/policeStation.png">
     <img class="policeStationForegroundImg" src="assets/images/policeStationForeground.png">
     <section class="walkableArea policeStation"></section>
-    <section class="playerAction">Walk to</section>
+    <section class="playerAction policeStation">Walk to</section>
 
     <div class="thing stationDoor" name="Station door"></div>
     <div id="car" class="thing policeStationExteriorThing" name="Dick-mobile"></div>
@@ -144,6 +145,7 @@
     <img class="policeStationInteriorSceneImg" src="assets/images/policeStationInterior.png">
     <section class="walkableArea policeStationInterior"></section>
     <div class="wallCorner"></div>
+    <div class="policeStationExit"></div>
   </section>
   <!-- area with action choice buttons and music start/stop buttons -->
   <section class="menuArea">
