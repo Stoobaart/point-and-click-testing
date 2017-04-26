@@ -2,15 +2,11 @@ $(document).ready(function () {
   $(".options").toggle();
 
   $("#npcRodriguez").click(function(e) {
-    var action = $(".playerAction").html();
     var distance = (($("#npcRodriguez").position().left) + ($("#npcRodriguez").position().top)) - (($("#player").position().left) + ($("#player").position().top));
     if (distance > 135 && action === "Talk to" || distance < -460 && action === "Talk to") {
-      $(".playerPortrait, .playerSpeach").toggle();
-      getCloser();
+      playerSpeach("I need to get closer")
     } else if (distance < 135 && action === "Talk to" || distance > -460 && action === "Talk to") {
-      $(".playerSpeach").html("Officer Rodriguez. What's the deal here?");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear();
+      playerSpeach("Officer Rodriguez. What's the deal here?")
       setTimeout(RodriguezTalk, 3000);
     }
   });
@@ -35,9 +31,7 @@ $(document).ready(function () {
     $(".npcSpeach").html("Male Caucasian of unknown identity, roughly 35-40 years of age, broken knee, decapitated and 5\"11...I think.");
     npcSpeakClear();
     response = function(){
-      $(".playerSpeach").html("How was he decapitated?");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear();
+      playerSpeach("How was he decapitated?")
     };
     setTimeout(response, 8000);
     npcResponse = function(){
@@ -59,9 +53,7 @@ $(document).ready(function () {
     $(".npcSpeach").html("We have a possible suspect or witness down in lock up now. Some Crack head, that's his needle right there.");
     npcSpeakClear();
     response = function(){
-      $(".playerSpeach").html("I'll go shake him down after I look around");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear();
+      playerSpeach("I'll go shake him down after I look around")
     };
     setTimeout(response, 8000);
     npcResponse = function(){
@@ -82,9 +74,7 @@ $(document).ready(function () {
     $(".npcSpeach").html("None apart from the crack head we caught. I'm not sure if he even knows his own name though. Think he said it was Mahflnme");
     npcSpeakClear();
     response = function(){
-      $(".playerSpeach").html("How can nobody have seen a man get his head removed?");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear();
+      playerSpeach("How can nobody have seen a man get his head removed?")
     };
     setTimeout(response, 8000);
     npcResponse = function(){

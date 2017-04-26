@@ -28,8 +28,18 @@ section.playerAction.policeStation {
   margin-top: -5rem;
   margin-left: 0.5rem;
 }
-div.stationDoor {
+div.travel.policeStationTravel {
+  top: -74rem;
+  left: 0rem;
+  margin: auto;
+  width: 30rem;
+}
+/* Things of interest */
+.stationDoor, .policeStationExteriorThing, .sign, .graffiti, .policeCar, .graffitiTwo, .station {
   position: relative;
+}
+
+div.stationDoor {
   z-index: 1;
   width: 10.5rem;
   height: 8rem;
@@ -41,13 +51,36 @@ div#car.thing.policeStationExteriorThing {
   height: 8rem;
   top: -20rem;
   left: 0rem;
-  position: relative;
 }
-div.travel.policeStationTravel {
-  top: -35rem;
-  left: 0rem;
-  margin: auto;
-  width: 30rem;
+div.sign {
+  width: 7rem;
+  height: 3.5rem;
+  top: -37rem;
+  left: 36rem;
+}
+div.graffiti {
+  width: 7rem;
+  height: 4.5rem;
+  top: -37rem;
+  left: 36rem;
+}
+div.policeCar {
+  width: 14rem;
+  height: 9.5rem;
+  top: -40rem;
+  left: 48rem;
+}
+div.graffitiTwo {
+  width: 12rem;
+  height: 6rem;
+  top: -56rem;
+  left: 44rem;
+}
+div.station {
+  width: 24rem;
+  height: 13rem;
+  top: -67rem;
+  left: 1rem;
 }
 
 /*Inside police station styles*/

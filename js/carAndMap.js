@@ -34,18 +34,13 @@ $(document).ready(function () {
   });
   // picking up the cup
   $(".cupEmpty").click(function(e) {
-    var action = $(".playerAction").html();
     // look at cup
     if (action === "Look at"){
-      $(".playerSpeach").html("I should have thrown this away a looong time ago");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear(); 
+      playerSpeach("I should have thrown this away a looong time ago")
       // pick up cup
     } else if (action === "Pick up"){
-      $(".playerPortrait, .playerSpeach").toggle();
-        $(".playerSpeach").html("I'll find a trash can for this");
-        speakClear();
-        // after talking, push cup item into items array, and update to display
+      playerSpeach("I'll find a trash can for this")
+        // after talking, push cup item into items array, and update display
         setTimeout(function() {
           items.push({"name": "cup", "url": "assets/images/cupEmpty.png"});
           updateInventory();
@@ -61,9 +56,7 @@ $(document).ready(function () {
   // click on the police station badge to travel to the station
   $(".stationBadgeImg").click(function(e) {
     if (currentScene === "policeStationScene") {
-      $(".playerSpeach").html("I'm already here");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear();
+      playerSpeach("I'm already here")
     } else {
       $("#carStart")[0].play();
       setTimeout(function() {
@@ -75,9 +68,7 @@ $(document).ready(function () {
   // click on the crime scene icon to travel to the crime scene
   $(".crimeSceneIconImg").click(function(e) {
     if (currentScene === "crimeScene") {
-      $(".playerSpeach").html("I'm already here");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear();
+      playerSpeach("I'm already here")
     } else {
       $("#carStart")[0].play();
       setTimeout(function() {
@@ -87,11 +78,4 @@ $(document).ready(function () {
     }
   });
 
-
-
-
 });
-
-
-
-

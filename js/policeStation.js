@@ -8,8 +8,8 @@ $(document).ready(function () {
     $("#policeStationSceneMusic")[0].play();
   };
 
-  // click on police station door to enter
-  $(".stationDoor").click(function() {
+  // init the interior of the police station
+  startPoliceStationInterior = function() {
     $("#stationDoor")[0].play();
     $(".policeStationScene, #player").toggle();
     $(".policeStationInteriorScene").fadeIn(1500);
@@ -18,20 +18,85 @@ $(document).ready(function () {
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(700);
-  });
-  // comment on car when looked at and show option to enter car
-  $("div#car.thing.policeStationExteriorThing").click(function(e) {
-    var action = $(".playerAction").html();
-    var distance = (($("#car").position().left) + ($("#car").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+  };
+
+  // All the things outside the police station
+  $(".stationDoor").click(function() {
     if (action === "Look at") {
-      $(".playerSpeach").html("Hope I don't need gas...");
-      $(".playerPortrait, .playerSpeach").toggle();
-      speakClear(); 
+      playerSpeach("The front door to the station. Shocking.")
+    } else if (action === "Walk to") {
+      startPoliceStationInterior();
+    } else if (action === "Pick up") {
+      playerSpeach("Seriously? That's not going to work")
+    } else if (action === "Talk to") {
+      playerSpeach("Trying to talk to doors now?...oookaaaayy")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".sign").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Damn kids messing with the sign again")
+    } else if (action === "Pick up") {
+      playerSpeach("I'll let Mack know that we need a new sign again")
+    } else if (action === "Talk to") {
+      playerSpeach("Trying to talk to signs now?...aallllrighty then")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".graffiti").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Bacon. That's original..")
+    } else if (action === "Use cup of pee on") {
+      playerSpeach("This corrosive substance would probably remove this, but right now I need it")
+    } else if (action === "Use gun on") {
+      playerSpeach("What's worse on a police station? Graffiti or bullet holes?")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".policeCar").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Aaah.. the precincts squad car. We used to have two of these")
+    } else if (action === "Use cup of pee on") {
+      playerSpeach("Seriously..? What is wrong with you?")
+    } else if (action === "Use gun on") {
+      playerSpeach("No. Just, no")
+    } else if (action === "Walk to") {
+      playerSpeach("I have my own car")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".graffitiTwo").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Red Dragons...must be a new gang in town.. and Ollie... if I get my hands on that punk...")
+    } else if (action === "Use cup of pee on") {
+      playerSpeach("This corrosive substance would probably remove this, but right now I need it")
+    } else if (action === "Use gun on") {
+      playerSpeach("What's worse on a police station? Graffiti or bullet holes?")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".station").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Home sweet home")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+
+  $("div#car.thing.policeStationExteriorThing").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Hope I don't need gas...")
     } else if (action === "Walk to") {
       $(".travel").toggle();
     }
   });
 
+// =============================INTERIOR OF THE POLICE STATION=============================
   // make Dick have to walk to bottom of entrance hall before he can walk up up the corridor, to stop him walking through walls!
   $(".walkableArea.policeStationInterior").click(function(e) {
     var playerPositionX = $("#player").position().left

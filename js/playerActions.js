@@ -1,3 +1,4 @@
+var action = "Walk to";
 var items = [{"name": "gun", "url": "assets/images/gun.png"}];
 var currentScene = null;
 var itemToRemove = null;
@@ -35,18 +36,23 @@ $(document).ready(function () {
   // change player action choice
   $(".look").click(function() {
     $(".playerAction, .playerActionCar").html("Look at");
+    action = "Look at";
   });
   $(".walk").click(function() {
     $(".playerAction, .playerActionCar").html("Walk to");
+    action = "Walk to";
   });
   $(".talk").click(function() {
     $(".playerAction, .playerActionCar").html("Talk to");
+    action = "Talk to";
   });  
   $(".pickUp").click(function() {
     $(".playerAction, .playerActionCar").html("Pick up");
+    action = "Pick up";
   });
   $(document).on("click", ".item", function() {
     $(".playerAction").html("Use " + this.name + " on");
+    action = "Use " + this.name + " on";
     $(".inventory").slideUp(300);
   });
   
@@ -76,6 +82,25 @@ $(document).ready(function () {
     }
   })
 
+  // player speach function
+  playerSpeach = function(words) {
+    $(".playerSpeach").html(words);
+    $(".playerPortrait, .playerSpeach").toggle();
+    speakClear();
+  }
+  // clear speach after a few seconds
+  speakClear = function() {
+    var words = $(".playerSpeach").html();
+    setTimeout(function() {
+      $(".playerPortrait, .playerSpeach").toggle();
+    }, words.length * 75);
+  };
+  npcSpeakClear = function() {
+    var words = $(".npcSpeach").html();
+    setTimeout(function() {
+      $(".npcPortrait, .npcSpeach").toggle();
+    }, words.length * 75);
+  };
 
   $('.walkableArea').click(function(e) {
     // player can walk in front or behind
@@ -86,8 +111,6 @@ $(document).ready(function () {
     } else {
       $("#npcRodriguez").removeClass("behind");
     }
-    // confirm the players action choice
-    var action = $(".playerAction").html();
     // When the player clicks somewhere on the screen (walkable area)
 
     // store the current position of the player Sprite
