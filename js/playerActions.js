@@ -2,6 +2,7 @@ var action = "Walk to";
 var items = [{"name": "gun", "url": "assets/images/gun.png"}];
 var currentScene = null;
 var itemToRemove = null;
+var distance = null;
 
 $(document).ready(function () {
 
@@ -20,7 +21,6 @@ $(document).ready(function () {
     }).join(""));
   }
   updateInventory();
-
   // function to find an object in the items array based on it's name for correct removal
   findWithAttr = function(array, attr, value) {
     for(var i = 0; i < array.length; i += 1) {
@@ -32,6 +32,34 @@ $(document).ready(function () {
     }
     return -1;
   }
+  // check distance of character to thing of interest
+  distanceFromThing = function(thing) {
+    distance = (($(thing).position().left) + ($(thing).position().top)) - (($("#player").position().left) + ($("#player").position().top));
+  };
+  // player speach function
+  playerSpeach = function(words) {
+    $(".playerSpeach").html(words);
+    $(".playerPortrait, .playerSpeach").toggle();
+    speakClear();
+  }
+  rodSpeach = function(words) {
+    $(".npcSpeach").html(words);
+    $(".npcPortrait, .npcSpeach").toggle();
+    npcSpeakClear();
+  }
+  // clear speach after a few seconds
+  speakClear = function() {
+    var words = $(".playerSpeach").html();
+    setTimeout(function() {
+      $(".playerPortrait, .playerSpeach").toggle();
+    }, words.length * 75);
+  };
+  npcSpeakClear = function() {
+    var words = $(".npcSpeach").html();
+    setTimeout(function() {
+      $(".npcPortrait, .npcSpeach").toggle();
+    }, words.length * 55);
+  };
 
   // change player action choice
   $(".look").click(function() {
@@ -81,26 +109,6 @@ $(document).ready(function () {
       $('#policeStationSceneMusic')[0].play();
     }
   })
-
-  // player speach function
-  playerSpeach = function(words) {
-    $(".playerSpeach").html(words);
-    $(".playerPortrait, .playerSpeach").toggle();
-    speakClear();
-  }
-  // clear speach after a few seconds
-  speakClear = function() {
-    var words = $(".playerSpeach").html();
-    setTimeout(function() {
-      $(".playerPortrait, .playerSpeach").toggle();
-    }, words.length * 75);
-  };
-  npcSpeakClear = function() {
-    var words = $(".npcSpeach").html();
-    setTimeout(function() {
-      $(".npcPortrait, .npcSpeach").toggle();
-    }, words.length * 75);
-  };
 
   $('.walkableArea').click(function(e) {
     // player can walk in front or behind

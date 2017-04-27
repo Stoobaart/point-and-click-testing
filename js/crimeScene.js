@@ -14,7 +14,7 @@ $(document).ready(function () {
 
   // All functions for looking at stuff on the screen
   $("#victim").click(function(e) {
-    var distance = (($(this).position().left) + ($(this).position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#victim");
     if (distance > 35 && action === "Look at" || distance < -280 && action === "Look at") {
       playerSpeach("I need to get closer")
     } else if (distance < 35 && action === "Look at" || distance > -280 && action === "Look at") {
@@ -23,7 +23,7 @@ $(document).ready(function () {
   });
 
   $("#shards").click(function(e) {
-    var distance = (($("#shards").position().left) + ($("#shards").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#shards");
     if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick up") {
       playerSpeach("I need to get closer")
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
@@ -43,7 +43,7 @@ $(document).ready(function () {
   });
 
   $("#head").click(function(e) {
-    var distance = (($("#head").position().left) + ($("#head").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#head");
     if (distance > 35 && action === "Look at" || distance < -260 && action === "Look at") {
       playerSpeach("I need to get closer")
     } else if (distance < 35 && action === "Look at" && aboutVictim == false || distance > -260 && action === "Look at" && aboutVictim == false) {
@@ -54,7 +54,7 @@ $(document).ready(function () {
   });
 
   $("#car").click(function(e) {
-    var distance = (($("#car").position().left) + ($("#car").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#car");
     if (action === "Look at") {
       playerSpeach("My wheels, she aint much to look at, but it beats walking")
     } else if (action === "Walk to") {
@@ -63,7 +63,7 @@ $(document).ready(function () {
   });
   
   $("#brokenWindow").click(function(e) {
-    var distance = (($("#brokenWindow").position().left) + ($("#brokenWindow").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#brokenWindow");
     if (distance > -65 && action === "Look at" || distance < -400 && action === "Look at") {
       playerSpeach("I need to get closer")
     } else if (distance < -65 && action === "Look at" || distance > -400 && action === "Look at") {
@@ -72,14 +72,13 @@ $(document).ready(function () {
   });
 
   $("#handPrint").click(function(e) {
-    var distance = (($("#handPrint").position().left) + ($("#handPrint").position().top)) - (($("#player").position().left) + ($("#player").position().top));
     if (action === "Look at") {
       playerSpeach("I should run this for prints back at HQ")
     }
   });
 
   $("#urine").click(function(e) {
-    var distance = (($("#urine").position().left) + ($("#urine").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#urine");
     if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick Up" || distance > 60 && action === "Use cup on" || distance < -220 && action === "Use cup on") {
       playerSpeach("I need to get closer")
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
@@ -99,7 +98,7 @@ $(document).ready(function () {
   });
 
   $("#syringe").click(function(e) {
-    var distance = (($("#syringe").position().left) + ($("#syringe").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#syringe");
     if (distance > 35 && action === "Look at" || distance < -160 && action === "Look at") {
       playerSpeach("I need to get closer")
     } else if (distance < 35 && action === "Look at" && suspects == false || distance > -160 && action === "Look at" && suspects == false) {
@@ -110,7 +109,7 @@ $(document).ready(function () {
   });
 
   $("#npcRodriguez").click(function(e) {
-    var distance = (($("#npcRodriguez").position().left) + ($("#npcRodriguez").position().top)) - (($("#player").position().left) + ($("#player").position().top));
+    distanceFromThing("#npcRodriguez");
     if (distance > 135 && action === "Look at" || distance < -460 && action === "Look at") {
       playerSpeach("I need to get closer")
     } else if (distance < 135 && action === "Look at" || distance > -460 && action === "Look at") {

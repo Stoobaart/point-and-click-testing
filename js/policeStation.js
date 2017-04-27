@@ -1,3 +1,5 @@
+var paperCollected = false;
+
 $(document).ready(function () {
 
   // init the police station
@@ -87,7 +89,6 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-
   $("div#car.thing.policeStationExteriorThing").click(function() {
     if (action === "Look at") {
       playerSpeach("Hope I don't need gas...")
@@ -108,16 +109,86 @@ $(document).ready(function () {
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     }
   });
-
   // Exit the station
   $(".policeStationExit").click(function() {
-    $("#stationDoor")[0].play();
-    $(".policeStationInteriorScene, #player").hide();
-    $(".policeStationScene").fadeIn(1500);
-    var startX = ($(".stationDoor").position().left) + 50;
-    var startY = ($(".stationDoor").position().top) + 150;
-    $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
-    $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
-    $("#player").fadeIn(700);
+    if (action ==="Walk to") {
+      $("#stationDoor")[0].play();
+      $(".policeStationInteriorScene, #player").hide();
+      $(".policeStationScene").fadeIn(1500);
+      var startX = ($(".stationDoor").position().left) + 50;
+      var startY = ($(".stationDoor").position().top) + 150;
+      $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
+      $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
+      $("#player").fadeIn(700);
+    } else if (action === "Look at") {
+      playerSpeach("This is the exit")
+    } else if (action === "Use gun on") {
+      playerSpeach("It's already open")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
   });
+  $(".interrogation").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Goes towards the interrogation room")
+    } else if (action === "Walk to") {
+      alert("Sorry! The interrogation room is being built!")
+    } else if (action === "Use gun on") {
+      playerSpeach("I'll use the handle instead")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".evidence").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Goes towards the analysis room")
+    } else if (action === "Walk to") {
+      alert("Sorry! The Analysis room is being built!")
+    } else if (action === "Use gun on") {
+      playerSpeach("I'll use the handle instead")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".waterDispenser").click(function() {
+    if (action === "Look at") {
+      playerSpeach("Cold, fresh water...mmmm")
+    } else if (action === "Use gun on") {
+      playerSpeach("If I can't have any water, no one can! Wait. I'm not gonna shoot up Jen's water.")
+    } else if (action === "Pick up") {
+      playerSpeach("If only the programmer could be bothered to make an animation of me getting some water. I'm sooo thirsty")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".noticeBoard").click(function() {
+    if (action === "Look at") {
+      playerSpeach("The weekly 'Hit list', this month's calendar, leaflets, and some blank paper")
+    } else if (action === "Walk to") {
+      alert("Sorry! The Analysis room is being built!")
+    } else if (action === "Use gun on") {
+      playerSpeach("I don't know why you'd try that")
+    } else if (action === "Pick up" && paperCollected === false) {
+      playerSpeach("Maybe some of this blank paper will come in handy if I need to print something")
+      setTimeout(function(){
+        items.push({"name": "paper", "url": "assets/images/paper.png"});
+        updateInventory();
+      }, 1500);
+      paperCollected = true;
+    } else if (action === "Pick up" && paperCollected === true) {
+      playerSpeach("I don't need any more paper, and I've already memorised these perps last winter")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+  $(".filingCabinets").click(function() {
+    if (action === "Look at") {
+      playerSpeach("General files. Nothing of importance")
+    } else if (action === "Use paper on") {
+      playerSpeach("Not much point in filing an empty sheet of paper now is there columbo?")
+    } else {
+      playerSpeach("I'm not sure what you want me to do here")
+    }
+  });
+
 });

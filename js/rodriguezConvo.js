@@ -13,12 +13,9 @@ $(document).ready(function () {
   toggleOptions = function(){
     $(".options").toggle();
   }
-
   RodriguezTalk = function(){
-    $(".npcPortrait, .npcSpeach").toggle();
-    $(".npcSpeach").html("It's not great, Dick. Somebody got messed up here real good....or bad.. I'm so confused right now..");
-    npcSpeakClear();
-    setTimeout(toggleOptions, 6000);
+    rodSpeach("It's not great, Dick. Somebody got messed up here real good....or bad.. I'm so confused right now..")
+    setTimeout(toggleOptions, 5500);
     $(".walk, .look, .talk, .pickUp").prop('disabled',true);
     $(".playerAction").html("");
   }
@@ -27,71 +24,51 @@ $(document).ready(function () {
     $(this).css("color", "grey");
     aboutVictim = true;
     toggleOptions();
-    $(".npcPortrait, .npcSpeach").toggle();
-    $(".npcSpeach").html("Male Caucasian of unknown identity, roughly 35-40 years of age, broken knee, decapitated and 5\"11...I think.");
-    npcSpeakClear();
+    rodSpeach("Male Caucasian of unknown identity, roughly 35-40 years of age, broken knee, decapitated and 5\"11...I think.")
     response = function(){
       playerSpeach("How was he decapitated?")
     };
-    setTimeout(response, 8000);
+    setTimeout(response, 6000);
     npcResponse = function(){
-      setTimeout(function(){
-        $(".npcPortrait, .npcSpeach").toggle();
-        $(".npcSpeach").html("His head was twisted completely off. it would take someone with incredible strength to do this");
-      }, 4000);
-      npcSpeakClear();
+      rodSpeach("His head was twisted completely off. it would take someone with incredible strength to do this")
     };
-    setTimeout(npcResponse, 6000)
-    setTimeout(toggleOptions, 15000);
+    setTimeout(npcResponse, 8000)
+    setTimeout(toggleOptions, 12500);
   });
 
   $(".suspects").click(function(){
     $(this).css("color", "grey");
     suspects = true;
     toggleOptions();
-    $(".npcPortrait, .npcSpeach").toggle();
-    $(".npcSpeach").html("We have a possible suspect or witness down in lock up now. Some Crack head, that's his needle right there.");
-    npcSpeakClear();
+    rodSpeach("We have a possible suspect or witness down in lock up now. Some Crack head, that's his needle right there.")
     response = function(){
       playerSpeach("I'll go shake him down after I look around")
     };
-    setTimeout(response, 8000);
+    setTimeout(response, 6000);
     npcResponse = function(){
-      setTimeout(function(){
-        $(".npcPortrait, .npcSpeach").toggle();
-        $(".npcSpeach").html("Good call. Something just feels wrong about all of this, Dick");
-      }, 4000);
-      npcSpeakClear();
+      rodSpeach("Good call. Something just feels wrong about all of this, Dick")
     };
-    setTimeout(npcResponse, 6000)
-    setTimeout(toggleOptions, 15000);
+    setTimeout(npcResponse, 9500)
+    setTimeout(toggleOptions, 13000);
   });
   $(".witnesses").click(function(){
     $(this).css("color", "grey");
     witnesses = true;
     toggleOptions();
-    $(".npcPortrait, .npcSpeach").toggle();
-    $(".npcSpeach").html("None apart from the crack head we caught. I'm not sure if he even knows his own name though. Think he said it was Mahflnme");
-    npcSpeakClear();
+    rodSpeach("None apart from the crack head we caught. I'm not sure if he even knows his own name though. Think he said it was Mahflnme")
     response = function(){
       playerSpeach("How can nobody have seen a man get his head removed?")
     };
-    setTimeout(response, 8000);
+    setTimeout(response, 7500);
     npcResponse = function(){
-      setTimeout(function(){
-        $(".npcPortrait, .npcSpeach").toggle();
-        $(".npcSpeach").html("Beats me, Dick. You'll need your head screwed on for this case. Sorry... I should head off.. heh heh... sigh.");
-      }, 3500);
-      npcSpeakClear();
+      rodSpeach("Beats me, Dick. You'll need your head screwed on for this case. Sorry... I should head off.. heh heh... sigh.")
     };
-    setTimeout(npcResponse, 6000)
-    setTimeout(toggleOptions, 15000);
+    setTimeout(npcResponse, 12000)
+    setTimeout(toggleOptions, 17000);
   });
   $(".bye").click(function(){
     $(this).css("color", "grey");
-    $(".npcPortrait, .npcSpeach").toggle();
-    $(".npcSpeach").html("See ya bud");
-    npcSpeakClear();
+    rodSpeach("See ya bud")
     toggleOptions();
     $(".walk, .look, .talk, .pickUp").prop('disabled',false);
     $(".playerAction").html("Walk to");

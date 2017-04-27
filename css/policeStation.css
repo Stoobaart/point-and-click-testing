@@ -97,17 +97,75 @@ section.walkableArea.policeStationInterior {
   z-index: 1;
   clip-path: polygon(5% 40%, 10% 0, 22% 0, 22% 52%, 86% 52%, 96% 52%, 97% 64%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0 81%);
 }
+section.playerAction.policeStationInterior {
+  margin-top: -2rem;
+  margin-left: 0.5rem;
+}
 .wallCorner {
   position: relative;
-  top: -7.7rem;
+  top: -14.7rem;
   left: 16.7rem;
 }
 .policeStationExit {
   position: relative;
   width: 1.5rem;
   height: 13rem;
-  top: -15rem;
+  top: -21rem;
   left: 61rem;
+}
+.interrogation {
+  position: relative;
+  width: 3rem;
+  height: 12rem;
+  top: -37rem;
+}
+.evidence {
+  position: relative;
+  width: 6rem;
+  height: 9rem;
+  top: -55.3rem;
+  left: 10rem;
+}
+.waterDispenser {
+  position: relative;
+  width: 4rem;
+  height: 6rem;
+  top: -60rem;
+  left: 31rem;
+}
+.noticeBoard {
+  position: relative;
+  width: 9rem;
+  height: 6rem;
+  top: -65rem;
+  left: 50rem;
+}
+.filingCabinets {
+  position: relative;
+  width: 9rem;
+  height: 5rem;
+  top: -71rem;
+  left: 20rem;
+}
+div#jen {
+  top: -17.2rem;
+  left: 35rem;
+  overflow: hidden;
+  width: 7.5rem;
+  height: 6.5rem;
+  position: relative;
+  image-rendering: pixelated;
+}
+img.jenSprite {
+  width: 200rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  animation: jen 7800ms steps(21) infinite;
+}
+@keyframes jen {
+  100% {
+    transform: translateX(-200rem);
+  }
 }
 
 
