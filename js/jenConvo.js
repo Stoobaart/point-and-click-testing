@@ -2,7 +2,6 @@ $(document).ready(function () {
 
   $("#jen").click(function(e) {
     distanceFromThing("#jen");
-    console.log(distance);
     if (distance > -125 && action === "Talk to" || distance < -460 && action === "Talk to") {
       playerSpeach("I need to get closer")
     } else if (distance < -125 && action === "Talk to" || distance > -460 && action === "Talk to") {
@@ -22,6 +21,7 @@ $(document).ready(function () {
   });
 
   jenTalk = function() {
+    $("img.thing.jenSprite").css("animation", "none");
     $(".walk, .look, .talk, .pickUp").prop('disabled',true);
     $(".playerAction").html("");
     playerSpeach("Hey Jen, how are things?")
@@ -52,6 +52,7 @@ $(document).ready(function () {
     setTimeout(toggleOptions, 3500)
   });
   $(".byeJen").click(function() {
+    $("img.thing.jenSprite").removeAttr("style")
     $(this).css("color", "grey");
     toggleOptions();
     playerSpeach("Chat to ya later, Jen")
