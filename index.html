@@ -13,6 +13,7 @@
   <script type="text/javascript" src="js/carAndMap.js"></script>
   <script type="text/javascript" src="js/policeStation.js"></script>
   <script type="text/javascript" src="js/jenConvo.js"></script>
+  <script type="text/javascript" src="js/analysisRoom.js"></script>
   <!-- retro font style -->
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <!-- links to css files -->
@@ -26,6 +27,7 @@
   <audio loop id="crimeSceneMusic" src="assets/music/crimeScene.wav"></audio>
   <audio loop id="themeMusic" src="assets/music/Theme.wav" autoplay></audio>
   <audio loop id="policeStationSceneMusic" src="assets/music/policeStationScene.wav"></audio>
+  <audio loop id="analysisRoomMusic" src="assets/music/analysisRoom.wav"></audio>
   <audio id="carDoor" src="assets/sfx/carDoor.wav"></audio>
   <audio id="carStart" src="assets/sfx/carStart.wav"></audio>
   <audio id="stationDoor" src="assets/sfx/policeStationDoor.wav"></audio>
@@ -166,9 +168,6 @@
       </div>
       <section class="playerSpeach"></section>
     </section>
-
-
-
     <!-- convo options when talking to Jen -->
     <section class="options">
       <ul>
@@ -184,11 +183,6 @@
       </div>
       <section class="npcSpeach"></section>
     </section>
-
-
-
-
-
     <!-- player helper -->
     <div class="helper"></div>
     <!-- police station interior scene image -->
@@ -203,10 +197,44 @@
     <div class="wallCorner"></div>
     <div class="thing policeStationExit" name="Exit"></div>
     <div class="thing interrogation" name="To interrogation room"></div>
-    <div class="thing evidence" name="To evidence room"></div>
+    <div class="thing evidence" name="To analysis room"></div>
     <div class="thing waterDispenser" name="Water dispenser"></div>
     <div class="thing noticeBoard" name="Notice board"></div>
     <div class="thing filingCabinets" name="filing cabinets"></div>
+  </section>
+
+  <section class="analysisRoomScene">
+    <!-- player portrait -->
+    <section class="playerSpeak">
+      <div class="playerPortrait">
+        <img class="dickFace" src="assets/images/DickFace.png">
+      </div>
+      <section class="playerSpeach"></section>
+    </section>
+    <!-- convo options when talking to Jenkins -->
+<!--     <section class="options">
+      <ul>
+        <li class="talkChoices aboutCrackHead">Crack head</li>
+        <li class="talkChoices aboutJenkins">Jenkins</li>
+        <li class="talkChoices byeJen">Chat to ya later, Jen</li>
+      </ul>
+    </section>  -->
+    <!-- Jenkin's convo portrait -->
+    <section class="npcSpeak">
+      <div class="npcPortrait">
+        <!-- <img class="rodFace" src="assets/images/jenFace.png"> -->
+      </div>
+      <section class="npcSpeach"></section>
+    </section>
+    <!-- player helper -->
+    <div class="helper"></div>
+    <!-- analysis room scene image -->
+    <img class="policeStationInteriorSceneImg" src="assets/images/analysisRoom.png">
+    <section class="walkableArea analysisRoom"></section>
+    <!-- selected player action -->
+    <section class="playerAction analysisRoom">Walk to</section>
+    <!-- All things in the analysis room -->
+    <div class="thing analysisExit" name="Exit"></div>
   </section>
   <!-- area with action choice buttons and music start/stop buttons -->
   <section class="menuArea">

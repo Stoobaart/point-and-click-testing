@@ -143,7 +143,7 @@ $(document).ready(function () {
     if (action === "Look at") {
       playerSpeach("Goes towards the analysis room")
     } else if (action === "Walk to") {
-      alert("Sorry! The Analysis room is being built!")
+      startAnalysisRoom();
     } else if (action === "Use gun on") {
       playerSpeach("I'll use the handle instead")
     } else {

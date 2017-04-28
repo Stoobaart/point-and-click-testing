@@ -168,7 +168,31 @@ img.jenSprite {
   }
 }
 
-
+/*Analysis room*/
+section.analysisRoomScene {
+  margin-top: 5rem;
+  height: 24.2rem;
+}
+section.walkableArea.analysisRoom {
+  width: 61rem;
+  height: 14rem;
+  margin-top: -14.2rem;
+  margin-left: 1.5rem;
+  position: absolute;
+  z-index: 1;
+  clip-path: polygon(17% 58%, 95% 57%, 100% 100%, 13% 100%);
+}
+section.playerAction.analysisRoom {
+  margin-top: -2rem;
+  margin-left: 0.5rem;
+}
+.analysisExit {
+  position: relative;
+  width: 1.5rem;
+  height: 13rem;
+  top: -15rem;
+  left: 61rem;
+}
 
 
 
