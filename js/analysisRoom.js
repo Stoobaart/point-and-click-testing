@@ -5,9 +5,9 @@ $(document).ready(function () {
     $(".analysisRoomScene").fadeIn(1500);
     $("#policeStationSceneMusic")[0].pause();
     $("#analysisRoomMusic")[0].play()
-    // var startX = ($(".policeStationExit").position().left) - 50;
-    // var startY = ($(".policeStationExit").position().top) + 200;
-    // $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
+    var startX = ($(".analysisExit").position().left) - 50;
+    var startY = ($(".analysisExit").position().top) + 200;
+    $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(700);
   }
@@ -20,9 +20,9 @@ $(document).ready(function () {
       $("#policeStationSceneMusic")[0].play();
       $("#analysisRoomMusic")[0].pause()
       $(".policeStationInteriorScene").fadeIn(1500);
-      // var startX = ($(".policeStationExit").position().left) - 50;
-      // var startY = ($(".policeStationExit").position().top) + 200;
-      // $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
+      var startX = ($(".evidence").position().left) + 50;
+      var startY = ($(".evidence").position().top) + 150;
+      $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
       $("#player").fadeIn(700);
     }

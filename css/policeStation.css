@@ -190,8 +190,34 @@ section.playerAction.analysisRoom {
   position: relative;
   width: 1.5rem;
   height: 13rem;
-  top: -15rem;
+  top: -24rem;
   left: 61rem;
+}
+div#jenkins {
+  top: -12.2rem;
+  left: 16rem;
+  overflow: hidden;
+  width: 7.5rem;
+  height: 9rem;
+  position: relative;
+  image-rendering: pixelated;
+}
+img.jenkinsSprite {
+  width: 200rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  animation: jenkins 5800ms steps(21) infinite;
+}
+@keyframes jenkins {
+  0% {
+    transform: translateX(0rem);
+  }
+  50% {
+    transform: translateX(0rem);
+  }
+  100% {
+    transform: translateX(-200rem);
+  }
 }
 
 

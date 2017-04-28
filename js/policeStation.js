@@ -5,9 +5,14 @@ $(document).ready(function () {
   // init the police station
   startPoliceStation = function(){
     currentScene = "policeStationScene";
-    $(".policeStationScene, .inventoryIcon, .stopMusic, .playMusic").fadeIn(1500);
-    $("#player").fadeIn(700);
     $("#policeStationSceneMusic")[0].play();
+    $(".policeStationScene, .inventoryIcon, .stopMusic, .playMusic").fadeIn(1500);
+    $("#player").fadeIn(500);
+    var startX = ($(".stationDoor").position().left) - 20;
+    var startY = ($(".stationDoor").position().top) - 200;
+    $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveUp.png">');
+    $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
+    $("#player").fadeIn(700);
   };
 
   // init the interior of the police station
