@@ -42,7 +42,7 @@ $(document).ready(function () {
     $(".playerPortrait, .playerSpeach").toggle();
     speakClear();
   }
-  rodSpeach = function(words) {
+  npcSpeach = function(words) {
     $(".npcSpeach").html(words);
     $(".npcPortrait, .npcSpeach").toggle();
     npcSpeakClear();
@@ -60,6 +60,10 @@ $(document).ready(function () {
       $(".npcPortrait, .npcSpeach").toggle();
     }, words.length * 55);
   };
+  // show/hide the convo options
+  toggleOptions = function(){
+    $(".options").toggle();
+  }
 
   // change player action choice
   $(".look").click(function() {

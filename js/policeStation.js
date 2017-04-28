@@ -164,8 +164,6 @@ $(document).ready(function () {
   $(".noticeBoard").click(function() {
     if (action === "Look at") {
       playerSpeach("The weekly 'Hit list', this month's calendar, leaflets, and some blank paper")
-    } else if (action === "Walk to") {
-      alert("Sorry! The Analysis room is being built!")
     } else if (action === "Use gun on") {
       playerSpeach("I don't know why you'd try that")
     } else if (action === "Pick up" && paperCollected === false) {

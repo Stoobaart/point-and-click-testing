@@ -88,6 +88,7 @@ $(document).ready(function () {
     } else if (distance < 60 && action === "Use cup on" || distance > -220 && action === "Use cup on") {
       playerSpeach("Perhaps there's use for you yet cup! Not sure how much to take. Let's fill it up just incase")
       $(".playerAction").html("Walk to");
+      action = "Walk to";
       findWithAttr(items, 'name', 'cup');
       items.splice(itemToRemove, 1);
       setTimeout(function() {
