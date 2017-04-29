@@ -219,9 +219,27 @@ img.jenkinsSprite {
     transform: translateX(-200rem);
   }
 }
-
-
-
+.volatileSubstanceMachine {
+  position: relative;
+  width: 11.5rem;
+  height: 19rem;
+  top: -44rem;
+}
+.labCabinets {
+  position: relative;
+  width: 33.5rem;
+  height: 5rem;
+  top: -61rem;
+  left: 22rem;
+}
+.gurney {
+  position: relative;
+  width: 12.5rem;
+  height: 6rem;
+  top: -53rem;
+  left: 28rem;
+  z-index: 1;
+}
 
 
 
