@@ -52,7 +52,7 @@ $(document).ready(function () {
     playerSpeach("Hey Jenkins, You were waiting for me?")
     setTimeout(function() {
       npcSpeach("Yes I'd like to talk about my findings from the murder you're looking into")
-    }, 2000)
+    }, 2500)
     setTimeout(toggleOptions, 6500);
     setTimeout(function() {
       $(".aboutBlood, .aboutVicDeath").toggle();
@@ -60,7 +60,8 @@ $(document).ready(function () {
     $(".walk, .look, .talk, .pickUp").prop('disabled',true);
     $(".playerAction").html("");
     playerAction = "";
-  }
+  };
+
   $(".aboutCase").click(function() {
     toggleOptions();
     npcSpeach("Dick, something is very strange with the blood and how the victim died")
@@ -68,6 +69,33 @@ $(document).ready(function () {
     setTimeout(function() {
       $(".aboutBlood, .aboutVicDeath, .aboutCase").toggle();
     }, 5000)
+  });
+
+  $(".aboutBlood").click(function() {
+    $(this).css("color", "grey");
+    toggleOptions();
+    npcSpeach("There's transformation happening to the blood sample. It seems to be infected by a virus that is changing the blood's molecular structure.");
+    setTimeout(function() {
+      playerSpeach("I get the feeling that shouldn't happen normally")
+    }, 7500);
+    setTimeout(function() {
+      npcSpeach("No Dick. This is extremely abnormal and definately unprecedented.")
+    }, 10000);
+    setTimeout(toggleOptions, 13000);
+  });
+
+  $(".aboutVicDeath").click(function() {
+    $(this).css("color", "grey");
+    toggleOptions();
+  });
+
+  $(".byeJenkins").click(function() {
+    $(this).css("color", "grey");
+    playerSpeach("See you shortly Jenkins")
+    toggleOptions();
+    $(".walk, .look, .talk, .pickUp").prop('disabled',false);
+    $(".playerAction").html("Walk to");
+    playerAction = "Walk to";
   });
 
 
