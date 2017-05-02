@@ -79,6 +79,14 @@ img.rodFace {
   animation: portrait 550ms steps(6) infinite;
   z-index: 3;
 }
+img.jenkinsFace {
+  width: 73rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -webkit-transform: translate3d(0,0,0);
+  animation: portrait 550ms steps(6) infinite;
+  z-index: 3;
+}
 section.npcSpeach {
   margin-top: 3rem 0.5rem 0.5rem 0.5rem;
   background-color: black;
