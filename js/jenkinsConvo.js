@@ -87,6 +87,10 @@ $(document).ready(function () {
   $(".aboutVicDeath").click(function() {
     $(this).css("color", "grey");
     toggleOptions();
+    npcSpeach("The victim's head was literally twisted off. Like a bottle cap. I've never seen anything like this.")
+    setTimeout(function() {
+      playerSpeach("So this is definately an extremely strong man")
+    }, 4500);
   });
 
   $(".byeJenkins").click(function() {
