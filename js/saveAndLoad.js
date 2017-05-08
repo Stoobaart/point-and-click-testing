@@ -11,14 +11,31 @@ $(document).ready(function () {
 
   function saveGame() {
     localStorage.items = JSON.stringify(items);
+    localStorage.currentScene = currentScene;
   }
 
   function loadGame() {
+    $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, #player").hide();
+    $('#crimeSceneMusic')[0].pause();
+    $('#policeStationSceneMusic')[0].pause();
+    $('#themeMusic')[0].pause();
+    $("#analysisRoomMusic")[0].pause()
+
     items = JSON.parse(localStorage.items);
+    currentScene = localStorage.currentScene;
     setTimeout(function() {
-      console.log(items)
+      if (currentScene === "crimeScene") {
+        startCrimeScene();
+      } else if (currentScene === "policeStationScene") {
+        startPoliceStation();
+      } else if (currentScene === "policeStationInteriorScene") {
+        $("#policeStationSceneMusic")[0].play();
+        startPoliceStationInterior();
+      } else if (currentScene === "analysisRoomScene") {
+        startAnalysisRoom();
+      }
       updateInventory()
-    }, 50)
+    }, 1100)
   }
 
 });

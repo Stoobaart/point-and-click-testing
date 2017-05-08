@@ -105,12 +105,15 @@ $(document).ready(function () {
     $('#crimeSceneMusic')[0].pause();
     $('#policeStationSceneMusic')[0].pause();
     $('#themeMusic')[0].pause();
+    $("#analysisRoomMusic")[0].pause()
   })  
   $(".playMusic").click(function() {
     if (currentScene === "crimeScene") {
       $('#crimeSceneMusic')[0].play();
     } else if (currentScene === "policeStationScene") {
       $('#policeStationSceneMusic')[0].play();
+    } else if (currentScene === "analysisRoomScene") {
+      $("#analysisRoomMusic")[0].play()
     }
   })
 

@@ -6,25 +6,23 @@ $(document).ready(function () {
   startPoliceStation = function(){
     currentScene = "policeStationScene";
     $("#policeStationSceneMusic")[0].play();
-    $(".policeStationScene, .inventoryIcon, .stopMusic, .playMusic").fadeIn(1500);
-    $("#player").fadeIn(500);
+    $(".policeStationScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic, #player").fadeIn(1000);
     var startX = ($(".stationDoor").position().left) - 20;
     var startY = ($(".stationDoor").position().top) - 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveUp.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
-    $("#player").fadeIn(700);
   };
 
   // init the interior of the police station
   startPoliceStationInterior = function() {
+    currentScene = "policeStationInteriorScene";
     $("#stationDoor")[0].play();
-    $(".policeStationScene, #player").toggle();
-    $(".policeStationInteriorScene").fadeIn(1500);
+    $(".policeStationScene, #player").hide();
+    $(".policeStationInteriorScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic, #player").fadeIn(1500);
     var startX = ($(".policeStationExit").position().left) - 50;
     var startY = ($(".policeStationExit").position().top) + 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
-    $("#player").fadeIn(700);
   };
 
   // All the things outside the police station
@@ -120,6 +118,7 @@ $(document).ready(function () {
       $("#stationDoor")[0].play();
       $(".policeStationInteriorScene, #player").hide();
       $(".policeStationScene").fadeIn(1500);
+      currentScene = "policeStationScene";
       var startX = ($(".stationDoor").position().left) + 50;
       var startY = ($(".stationDoor").position().top) + 150;
       $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');

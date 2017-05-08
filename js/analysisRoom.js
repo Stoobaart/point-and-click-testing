@@ -1,15 +1,15 @@
 $(document).ready(function () { 
   startAnalysisRoom = function() {
+    currentScene = "analysisRoomScene";
     $("#stationDoor")[0].play();
-    $(".policeStationInteriorScene, #player").toggle();
-    $(".analysisRoomScene").fadeIn(1500);
+    $(".policeStationInteriorScene, #player").hide();
+    $(".analysisRoomScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic, #player").fadeIn(1500);
     $("#policeStationSceneMusic")[0].pause();
     $("#analysisRoomMusic")[0].play()
     var startX = ($(".analysisExit").position().left) - 50;
     var startY = ($(".analysisExit").position().top) + 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
-    $("#player").fadeIn(700);
   }
 
   // All the things in the analysis room
@@ -17,6 +17,7 @@ $(document).ready(function () {
     if (action === "Walk to") {
       $("#stationDoor")[0].play();
       $(".analysisRoomScene").toggle();
+      currentScene = "policeStationInteriorScene";
       $("#policeStationSceneMusic")[0].play();
       $("#analysisRoomMusic")[0].pause()
       $(".policeStationInteriorScene").fadeIn(1500);
