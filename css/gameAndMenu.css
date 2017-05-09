@@ -20,6 +20,15 @@ h1.title {
   padding: 1rem;
   margin-left: 26.3rem;
 }
+.mainBtn {
+  width: 12rem;
+  padding: 1rem;
+  margin-left: 3rem;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  font-family: 'Press Start 2P', cursive;
+}
 div.inventory {
   color: white;
   width: 62.6rem;

@@ -11,7 +11,7 @@ $(document).ready(function () {
     $("#carDoor")[0].play();
     $(".inventoryIcon, .inventory, .sceneOneScreen, .policeStationScene, .stopMusic, .playMusic, .travelMap, #player").hide();
     $(".dickMobileInterior").fadeIn(2000);
-    if (cupPickedUp === "true") {
+    if (cupPickedUp === true) {
       $(".cupEmpty").remove();
     }
     setTimeout(function(){

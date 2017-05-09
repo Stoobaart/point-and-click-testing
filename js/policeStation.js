@@ -178,10 +178,10 @@ $(document).ready(function () {
       setTimeout(function(){
         items.push({"name": "paper", "url": "assets/images/paper.png"});
         updateInventory();
-        paperCollected = "true";
+        paperCollected = true;
       }, 1500);
       
-    } else if (action === "Pick up" && paperCollected === "true") {
+    } else if (action === "Pick up" && paperCollected === true) {
       playerSpeach("I don't need any more paper, and I've already memorised these perps last winter")
     } else {
       playerSpeach("I'm not sure what you want me to do here")

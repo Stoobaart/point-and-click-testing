@@ -1,3 +1,5 @@
+var jenkinsIntro = false;
+
 $(document).ready(function () { 
   $("#jenkins").click(function() {
     if (action === "Look at") {
@@ -49,26 +51,36 @@ $(document).ready(function () {
   });
 
   jenkinsTalk = function() {
-    playerSpeach("Hey Jenkins, You were waiting for me?")
-    setTimeout(function() {
-      npcSpeach("Yes I'd like to talk about my findings from the murder you're looking into")
-    }, 2500)
-    setTimeout(toggleOptions, 6500);
-    setTimeout(function() {
-      $(".aboutBlood, .aboutVicDeath").toggle();
-    }, 6501)
+    if (jenkinsIntro === false) {
+      jenkinsIntro = true;
+      playerSpeach("Hey Jenkins, You were waiting for me?")
+      setTimeout(function() {
+        npcSpeach("Yes I'd like to talk about my findings from the murder you're looking into")
+      }, 3000)
+      setTimeout(toggleOptions, 7000);
+      setTimeout(function() {
+        $(".aboutBlood, .aboutVicDeath, .byeJenkins").toggle();
+      }, 7000)
+    } else {
+      playerSpeach("Hey Jenkins")
+      setTimeout(function() {
+        npcSpeach("Hello again Dick, how can I help?")
+        $(".aboutCase").hide();
+      }, 2000)
+      setTimeout(toggleOptions, 4500);
+    }
     $(".walk, .look, .talk, .pickUp").prop('disabled',true);
     $(".playerAction").html("");
-    playerAction = "";
+    action = "";
   };
 
   $(".aboutCase").click(function() {
     toggleOptions();
     npcSpeach("Dick, something is very strange with the blood and how the victim died")
-    setTimeout(toggleOptions, 5000);
+    setTimeout(toggleOptions, 4500);
     setTimeout(function() {
-      $(".aboutBlood, .aboutVicDeath, .aboutCase").toggle();
-    }, 5000)
+      $(".aboutBlood, .aboutVicDeath, .aboutCase, .byeJenkins").toggle();
+    }, 4500)
   });
 
   $(".aboutBlood").click(function() {
@@ -77,11 +89,11 @@ $(document).ready(function () {
     npcSpeach("There's transformation happening to the blood sample. It seems to be infected by a virus that is changing the blood's molecular structure.");
     setTimeout(function() {
       playerSpeach("I get the feeling that shouldn't happen normally")
-    }, 7500);
+    }, 8000);
     setTimeout(function() {
       npcSpeach("No Dick. This is extremely abnormal and definately unprecedented.")
-    }, 10000);
-    setTimeout(toggleOptions, 13000);
+    }, 12500);
+    setTimeout(toggleOptions, 16000);
   });
 
   $(".aboutVicDeath").click(function() {
@@ -90,7 +102,11 @@ $(document).ready(function () {
     npcSpeach("The victim's head was literally twisted off. Like a bottle cap. I've never seen anything like this.")
     setTimeout(function() {
       playerSpeach("So this is definately an extremely strong man")
-    }, 4500);
+    }, 6000);
+    setTimeout(function() {
+      npcSpeach("If it was a man at all, Dick")
+    }, 9500);
+    setTimeout(toggleOptions, 12000)
   });
 
   $(".byeJenkins").click(function() {
@@ -99,7 +115,7 @@ $(document).ready(function () {
     toggleOptions();
     $(".walk, .look, .talk, .pickUp").prop('disabled',false);
     $(".playerAction").html("Walk to");
-    playerAction = "Walk to";
+    action = "Walk to";
   });
 
 

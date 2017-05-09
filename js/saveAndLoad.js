@@ -5,19 +5,20 @@ $(document).ready(function () {
     saveGame()
   })
 
-  $('#load').click(function() {
+  $('.load').click(function() {
     loadGame()
   })
 
   function saveGame() {
     localStorage.items = JSON.stringify(items);
     localStorage.currentScene = currentScene;
-    localStorage.cupPickedUp = cupPickedUp;
-    localStorage.paperCollected = paperCollected;
+    localStorage.cupPickedUp = JSON.stringify(cupPickedUp);
+    localStorage.paperCollected = JSON.stringify(paperCollected);
+    localStorage.jenkinsIntro = JSON.stringify(jenkinsIntro);
   }
 
   function loadGame() {
-    $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, #player").hide();
+    $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, .travel, .playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, #player").hide();
     $('#crimeSceneMusic')[0].pause();
     $('#policeStationSceneMusic')[0].pause();
     $('#themeMusic')[0].pause();
@@ -25,13 +26,18 @@ $(document).ready(function () {
 
     items = JSON.parse(localStorage.items);
     currentScene = localStorage.currentScene;
-    cupPickedUp = localStorage.cupPickedUp;
-    paperCollected = localStorage.paperCollected;
+    cupPickedUp = JSON.parse(localStorage.cupPickedUp);
+    paperCollected = JSON.parse(localStorage.paperCollected);
+    jenkinsIntro = JSON.parse(localStorage.jenkinsIntro);
     setTimeout(function() {
       if (currentScene === "crimeScene") {
         startCrimeScene();
       } else if (currentScene === "policeStationScene") {
         startPoliceStation();
+        var startX = ($(".stationDoor").position().left) + 50;
+        var startY = ($(".stationDoor").position().top) + 150;
+        $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
+        $("#player").fadeIn(700);
       } else if (currentScene === "policeStationInteriorScene") {
         $("#policeStationSceneMusic")[0].play();
         startPoliceStationInterior();
