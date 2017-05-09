@@ -193,7 +193,7 @@ section.playerAction.analysisRoom {
   top: -24rem;
   left: 61rem;
 }
-div#jenkins {
+div#jenkinsImage {
   top: -12.2rem;
   left: 16rem;
   overflow: hidden;
@@ -202,6 +202,15 @@ div#jenkins {
   position: relative;
   image-rendering: pixelated;
 }
+div#jenkins {
+  top: -68.2rem;
+  left: 18rem;
+  width: 4.5rem;
+  height: 9rem;
+  position: relative;
+  z-index: 2;
+}
+
 img.jenkinsSprite {
   width: 200rem;
   filter: blur(0);
@@ -234,13 +243,25 @@ img.jenkinsSprite {
 }
 .gurney {
   position: relative;
-  width: 12.5rem;
-  height: 6rem;
-  top: -53rem;
-  left: 28rem;
+  width: 10rem;
+  height: 10rem;
+  top: -58rem;
+  left: 19rem;
   z-index: 1;
+  overflow: hidden;
 }
-
+img.gurneySprite {
+  height: 10rem;
+  image-rendering: pixelated;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  /*animation: gurney 5800ms steps(30) infinite;*/
+}
+@keyframes gurney {
+  100% {
+    transform: translateX(-300rem);
+  }
+}
 
 
 
