@@ -12,6 +12,8 @@ $(document).ready(function () {
   function saveGame() {
     localStorage.items = JSON.stringify(items);
     localStorage.currentScene = currentScene;
+    localStorage.cupPickedUp = cupPickedUp;
+    localStorage.paperCollected = paperCollected;
   }
 
   function loadGame() {
@@ -23,6 +25,8 @@ $(document).ready(function () {
 
     items = JSON.parse(localStorage.items);
     currentScene = localStorage.currentScene;
+    cupPickedUp = localStorage.cupPickedUp;
+    paperCollected = localStorage.paperCollected;
     setTimeout(function() {
       if (currentScene === "crimeScene") {
         startCrimeScene();

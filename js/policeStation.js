@@ -6,23 +6,25 @@ $(document).ready(function () {
   startPoliceStation = function(){
     currentScene = "policeStationScene";
     $("#policeStationSceneMusic")[0].play();
-    $(".policeStationScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic, #player").fadeIn(1000);
+    $("#player").hide();
+    $(".policeStationScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic").fadeIn(1000);
     var startX = ($(".stationDoor").position().left) - 20;
     var startY = ($(".stationDoor").position().top) - 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveUp.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
+    $("#player").fadeIn(500);
   };
 
   // init the interior of the police station
   startPoliceStationInterior = function() {
     currentScene = "policeStationInteriorScene";
     $("#stationDoor")[0].play();
-    $(".policeStationScene, #player").hide();
-    $(".policeStationInteriorScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic, #player").fadeIn(1500);
+    $(".policeStationInteriorScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic").fadeIn(1000);
     var startX = ($(".policeStationExit").position().left) - 50;
     var startY = ($(".policeStationExit").position().top) + 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
+    $("#player").fadeIn(500);
   };
 
   // All the things outside the police station
@@ -30,6 +32,7 @@ $(document).ready(function () {
     if (action === "Look at") {
       playerSpeach("The front door to the station. Shocking.")
     } else if (action === "Walk to") {
+      $(".policeStationScene, #player").hide();
       startPoliceStationInterior();
     } else if (action === "Pick up") {
       playerSpeach("Seriously? That's not going to work")
@@ -117,13 +120,13 @@ $(document).ready(function () {
     if (action ==="Walk to") {
       $("#stationDoor")[0].play();
       $(".policeStationInteriorScene, #player").hide();
-      $(".policeStationScene").fadeIn(1500);
+      $(".policeStationScene").fadeIn(1000);
       currentScene = "policeStationScene";
       var startX = ($(".stationDoor").position().left) + 50;
       var startY = ($(".stationDoor").position().top) + 150;
       $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
-      $("#player").fadeIn(700);
+      $("#player").fadeIn(500);
     } else if (action === "Look at") {
       playerSpeach("This is the exit")
     } else if (action === "Use gun on") {
@@ -175,9 +178,10 @@ $(document).ready(function () {
       setTimeout(function(){
         items.push({"name": "paper", "url": "assets/images/paper.png"});
         updateInventory();
+        paperCollected = "true";
       }, 1500);
-      paperCollected = true;
-    } else if (action === "Pick up" && paperCollected === true) {
+      
+    } else if (action === "Pick up" && paperCollected === "true") {
       playerSpeach("I don't need any more paper, and I've already memorised these perps last winter")
     } else {
       playerSpeach("I'm not sure what you want me to do here")

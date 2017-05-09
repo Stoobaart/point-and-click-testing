@@ -1,7 +1,6 @@
 var aboutVictim = false;
 var suspects = false;
 var witnesses = false;
-var shardCollected = false;
 
 $(document).ready(function () {
   // init the crime scene
@@ -29,7 +28,7 @@ $(document).ready(function () {
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
       playerSpeach("Shards of glass... There's blood everywhere.")   
     } else if (distance < 60 && action === "Pick up" || distance > -220 && action === "Pick up") {
-      if (shardCollected === true) {
+      if (findWithAttr(items, 'name', 'shard') === 1) {
         playerSpeach("I already have a piece")
       } else {
         playerSpeach("I'll take a small piece for analysis")
@@ -37,7 +36,6 @@ $(document).ready(function () {
           items.push({"name": "shard", "url": "assets/images/shard.png"});
           updateInventory();
         }, 1500);
-        shardCollected = true;
       }
     }
   });

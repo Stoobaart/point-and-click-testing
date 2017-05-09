@@ -1,3 +1,5 @@
+var cupPickedUp = false;
+
 $(document).ready(function () {
 
 // exiting a scene/getting into car
@@ -9,6 +11,9 @@ $(document).ready(function () {
     $("#carDoor")[0].play();
     $(".inventoryIcon, .inventory, .sceneOneScreen, .policeStationScene, .stopMusic, .playMusic, .travelMap, #player").hide();
     $(".dickMobileInterior").fadeIn(2000);
+    if (cupPickedUp === "true") {
+      $(".cupEmpty").remove();
+    }
     setTimeout(function(){
       $(".dickMobileInteriorImg, .cupEmptyImg, .mapImg").effect("shake", {times:3}, 200);
     }, 1500);
@@ -26,11 +31,10 @@ $(document).ready(function () {
       var startY = ($("div#car.thing").position().top) + 134;
       $("#player").css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
     } else if (currentScene === "policeStationScene") {
-      $(".policeStationScene").fadeIn(2000);
-      $('#policeStationSceneMusic')[0].play();
+      startPoliceStation();
     }
     $("#carDoor")[0].play();
-    $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic, #player").toggle();
+    $(".inventoryIcon, .dickMobileInterior, .stopMusic, .playMusic").toggle();
   });
   // picking up the cup
   $(".cupEmpty").click(function(e) {
@@ -44,6 +48,7 @@ $(document).ready(function () {
         setTimeout(function() {
           items.push({"name": "cup", "url": "assets/images/cupEmpty.png"});
           updateInventory();
+          cupPickedUp = true;
         }, 1500);
         // remove cup image from car
         $(".cupEmpty").remove();

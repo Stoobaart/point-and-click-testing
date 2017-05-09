@@ -30,6 +30,7 @@ $(document).ready(function () {
           return i;
         }
     }
+    console.log(-1);
     return -1;
   }
   // check distance of character to thing of interest

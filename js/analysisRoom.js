@@ -3,13 +3,14 @@ $(document).ready(function () {
     currentScene = "analysisRoomScene";
     $("#stationDoor")[0].play();
     $(".policeStationInteriorScene, #player").hide();
-    $(".analysisRoomScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic, #player").fadeIn(1500);
+    $(".analysisRoomScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic").fadeIn(1000);
     $("#policeStationSceneMusic")[0].pause();
     $("#analysisRoomMusic")[0].play()
     var startX = ($(".analysisExit").position().left) - 50;
     var startY = ($(".analysisExit").position().top) + 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
+    $("#player").fadeIn(500);
   }
 
   // All the things in the analysis room
@@ -20,12 +21,12 @@ $(document).ready(function () {
       currentScene = "policeStationInteriorScene";
       $("#policeStationSceneMusic")[0].play();
       $("#analysisRoomMusic")[0].pause()
-      $(".policeStationInteriorScene").fadeIn(1500);
+      $(".policeStationInteriorScene").fadeIn(1000);
       var startX = ($(".evidence").position().left) + 50;
       var startY = ($(".evidence").position().top) + 150;
       $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
-      $("#player").fadeIn(700);
+      $("#player").fadeIn(500);
     }
   });
   $(".volatileSubstanceMachine").click(function() {
