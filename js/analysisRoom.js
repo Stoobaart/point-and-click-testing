@@ -80,11 +80,19 @@ $(document).ready(function () {
     } else if (action === "Pick up") {
       playerSpeach("I don't think I can fit this in my pocket")
     } else if (action === "Use gun on") {
-      playerSpeach("Shall I kill him some more?")
+      // playerSpeach("Shall I kill him some more?")
     } else if (action === "Use paper on") {
       playerSpeach("There's nothing to compare here")
     } else {
       playerSpeach("I'm not sure what you want me to here")
+    }
+  });
+  $(".robot").click(function() {
+    if (action === "Use gun on") {
+      $("img.gurneySprite4").css({"animation": "gurneyFour 600ms steps(15) normal"})
+      setTimeout(function() {
+        $("img.gurneySprite3").remove();
+      }, 40)
     }
   });
 

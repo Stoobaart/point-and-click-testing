@@ -271,6 +271,14 @@ img.gurneySprite3 {
   -webkit-filter: blur(0);
   animation: gurneyThree 600ms steps(8) infinite;
 }
+img.gurneySprite4 {
+  height: 10rem;
+  image-rendering: pixelated;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  animation: none;
+  z-index: 3;
+}
 
 @keyframes gurney {
   100% {
@@ -285,6 +293,11 @@ img.gurneySprite3 {
 @keyframes gurneyThree {
   100% {
     transform: translateX(-80rem);
+  }
+}
+@keyframes gurneyFour {
+  100% {
+    transform: translateX(-150rem);
   }
 }
 
