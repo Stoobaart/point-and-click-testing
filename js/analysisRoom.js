@@ -7,7 +7,7 @@ $(document).ready(function () {
     $("#policeStationSceneMusic")[0].pause();
     $("#analysisRoomMusic")[0].play()
     var startX = ($(".analysisExit").position().left) - 50;
-    var startY = ($(".analysisExit").position().top) + 25;
+    var startY = ($(".analysisExit").position().top) + 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(500);
@@ -19,6 +19,13 @@ $(document).ready(function () {
           setTimeout(function() {
             $("#jenkins, #jenkinsImage").remove()
           }, 1150)
+          setTimeout(function() {
+            $("img.gurneySprite").remove();
+            $("img.gurneySprite2").css({"animation": "gurneyTwo 1200ms steps(5) normal"})
+            setTimeout(function() {
+              $("img.gurneySprite2").remove();
+            }, 1100)
+          }, 5750)
         }, 5000)
       }
     }, 2000)
