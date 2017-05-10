@@ -149,8 +149,10 @@ $(document).ready(function () {
   $(".evidence").click(function() {
     if (action === "Look at") {
       playerSpeach("Goes towards the analysis room")
+    } else if (action === "Walk to" && exit === false) {
+      playerSpeach("There's no need to go back in there")
     } else if (action === "Walk to") {
-      startAnalysisRoom();
+      startAnalysisRoom()
     } else if (action === "Use gun on") {
       playerSpeach("I'll use the handle instead")
     } else {

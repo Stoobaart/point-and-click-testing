@@ -19,6 +19,7 @@ $(document).ready(function () {
     localStorage.aboutBlood = JSON.stringify(aboutBlood);
     localStorage.aboutVicDeath = JSON.stringify(aboutVicDeath);
     localStorage.jenkinsIntro = JSON.stringify(jenkinsIntro);
+    localStorage.exit = JSON.stringify(exit);
   }
 
   function loadGame() {
@@ -37,6 +38,8 @@ $(document).ready(function () {
     aboutBlood = JSON.parse(localStorage.aboutBlood);
     aboutVicDeath = JSON.parse(localStorage.aboutVicDeath);
     jenkinsIntro = JSON.parse(localStorage.jenkinsIntro);
+    exit = JSON.parse(localStorage.exit);
+
     setTimeout(function() {
       if (currentScene === "crimeScene") {
         startCrimeScene();

@@ -1,3 +1,5 @@
+var exit = true;
+
 $(document).ready(function () { 
   startAnalysisRoom = function() {
     currentScene = "analysisRoomScene";
@@ -13,17 +15,26 @@ $(document).ready(function () {
     $("#player").fadeIn(500);
     setTimeout(function() {
       if (interrogationDone === true && aboutBlood === true && aboutVicDeath === true) {
+        exit = false;
         playerSpeach("Jenkins! I think the body needs to be placed under watc..")
+        $("#save").prop('disabled',true);
         setTimeout(function() {
           $("img.gurneySprite").css({"animation": "gurney 5800ms steps(30) normal"})
           setTimeout(function() {
             $("#jenkins, #jenkinsImage").remove()
+            $("#jump")[0].play();
+            $("#robot")[0].play();
+
           }, 1150)
           setTimeout(function() {
             $("img.gurneySprite").remove();
             $("img.gurneySprite2").css({"animation": "gurneyTwo 1200ms steps(5) normal"})
             setTimeout(function() {
               $("img.gurneySprite2").remove();
+              playerSpeach("Jenkins!! NOOOOOOOO!")
+              setTimeout(function() {
+                playerSpeach("You damn killer robot!! I'll show you!!")
+              }, 2000)
             }, 1100)
           }, 5750)
         }, 5000)
@@ -33,7 +44,9 @@ $(document).ready(function () {
 
   // All the things in the analysis room
   $(".analysisExit").click(function () {
-    if (action === "Walk to") {
+    if (action === "Walk to" && exit === false) {
+      playerSpeach("I have to deal with this! There's no running away now!")
+    } else if (action === "Walk to") {
       $("#stationDoor")[0].play();
       $(".analysisRoomScene").toggle();
       currentScene = "policeStationInteriorScene";
@@ -90,9 +103,28 @@ $(document).ready(function () {
   $(".robot").click(function() {
     if (action === "Use gun on") {
       $("img.gurneySprite4").css({"animation": "gurneyFour 600ms steps(15) normal"})
+      $("#robot")[0].pause();
+      $("#gunshot")[0].play();
+      $("#electrics")[0].play();
       setTimeout(function() {
         $("img.gurneySprite3").remove();
       }, 40)
+      setTimeout(function() {
+        playerSpeach("Scrap metal....I need to find the first killer robot. And fast.")
+        setTimeout(function() {
+          $("#save").prop('disabled', false);
+          $("#stationDoor")[0].play();
+          $(".analysisRoomScene").toggle();
+          currentScene = "policeStationInteriorScene";
+          // $("#policeStationSceneMusic")[0].play();
+          $("#analysisRoomMusic")[0].pause()
+          $(".policeStationInteriorScene").fadeIn(1000);
+          var startX = ($(".evidence").position().left) + 50;
+          var startY = ($(".evidence").position().top) + 150;
+          $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
+          $("#player").fadeIn(500);
+        }, 5500)
+      }, 1500)
     }
   });
 
