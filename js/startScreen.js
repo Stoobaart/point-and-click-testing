@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // hide everything and fade in the start screen
-  $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, #player").hide();
+  $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, .interrogationRoomScene, #player").hide();
   setTimeout(function() {
     $(".startScreen").fadeIn(1500);
   }, 1000);

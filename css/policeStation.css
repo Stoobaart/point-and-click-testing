@@ -118,6 +118,7 @@ section.playerAction.policeStationInterior {
   width: 3rem;
   height: 12rem;
   top: -37rem;
+  z-index: 3;
 }
 .evidence {
   position: relative;
@@ -301,6 +302,26 @@ img.gurneySprite4 {
   }
 }
 
-
-
-
+/* Interrogation Room */
+section.interrogationRoomScene {
+  margin-top: 5rem;
+  height: 24.2rem;
+}
+section.walkableArea.interrogationRoom {
+    width: 18rem;
+    height: 8rem;
+    top: 6rem;
+    left: 34rem;
+    position: relative;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+}
+section.playerAction.interrogationRoom {
+  margin-top: 4.5rem;
+}
+.interrogationExit {
+  width: 4rem;
+  height: 15rem;
+  position: relative;
+  top: -9rem;
+  left: 53rem;
+}

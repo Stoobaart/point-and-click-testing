@@ -139,7 +139,7 @@ $(document).ready(function () {
     if (action === "Look at") {
       playerSpeach("Goes towards the interrogation room")
     } else if (action === "Walk to") {
-      alert("Sorry! The interrogation room is being built!")
+      startInterrogationRoom()
     } else if (action === "Use gun on") {
       playerSpeach("I'll use the handle instead")
     } else {

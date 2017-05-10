@@ -23,7 +23,7 @@ $(document).ready(function () {
   }
 
   function loadGame() {
-    $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, .travel, .playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, #player").hide();
+    $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, .interrogationRoomScene, .travel, .playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, #player").hide();
     $('#crimeSceneMusic')[0].pause();
     $('#policeStationSceneMusic')[0].pause();
     $('#themeMusic')[0].pause();
@@ -54,6 +54,8 @@ $(document).ready(function () {
         startPoliceStationInterior();
       } else if (currentScene === "analysisRoomScene") {
         startAnalysisRoom();
+      } else if (currentScene === "interrogationRoomScene") {
+        startInterrogationRoom();
       }
       updateInventory()
     }, 1100)

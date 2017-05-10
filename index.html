@@ -16,6 +16,7 @@
   <script type="text/javascript" src="js/jenConvo.js"></script>
   <script type="text/javascript" src="js/analysisRoom.js"></script>
   <script type="text/javascript" src="js/jenkinsConvo.js"></script>
+  <script type="text/javascript" src="js/interrogationRoom.js"></script>
   <!-- retro font style -->
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <!-- links to css files -->
@@ -245,7 +246,6 @@
     <div class="thing analysisExit" name="Exit"></div>
     <div class="thing volatileSubstanceMachine" name="Volatile substance machine"></div>
     <div class="thing labCabinets" name="Cabinets"></div>
-
     
     <div class="thing gurney" name="Gurney">
       <img class="thing gurneySprite" name="Gurney" src="assets/images/gurney.png">
@@ -259,6 +259,44 @@
     <div id="jenkins" class="thing jenkins" name="Jenkins"></div>
 
   </section>
+
+  <section class="interrogationRoomScene">
+    <!-- player portrait -->
+    <section class="playerSpeak">
+      <div class="playerPortrait">
+        <img class="dickFace" src="assets/images/DickFace.png">
+      </div>
+      <section class="playerSpeach"></section>
+    </section>
+
+    <!-- convo options when talking to the crack head -->
+    <!-- <section class="options">
+      <ul>
+        <li class="talkChoices aboutCase">What's the deal then Doc?</li>
+        <li class="talkChoices aboutBlood">Tell me about the wierdness of the blood</li>
+        <li class="talkChoices aboutVicDeath">Tell me about the victim's death</li>
+        <li class="talkChoices byeJenkins">Bye Doc Jenkins</li>
+      </ul>
+    </section> --> 
+
+    <!-- Crack head's convo portrait -->
+    <section class="npcSpeak">
+      <div class="npcPortrait">
+        <!-- <img class="jenkinsFace" src="assets/images/jenkinsFace.png"> -->
+      </div>
+      <section class="npcSpeach"></section>
+    </section>
+    <!-- player helper -->
+    <div class="helper"></div>
+    <!-- interrogation room scene image -->
+    <img class="interrogationSceneImg" src="assets/images/interrogationRoom.png">
+    <section class="walkableArea interrogationRoom"></section>
+    <!-- selected player action -->
+    <section class="playerAction interrogationRoom">Walk to</section>
+    <!-- All things in the interrogation room -->
+    <div class="thing interrogationExit" name="Exit"></div>
+  </section>
+
   <!-- area with action choice buttons and music start/stop buttons -->
   <section class="menuArea">
     <section class="actionChoices">

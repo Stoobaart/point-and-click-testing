@@ -44,8 +44,8 @@ $(document).ready(function () {
 
   // All the things in the analysis room
   $(".analysisExit").click(function () {
-    if (action === "Walk to" && exit === false) {
-      playerSpeach("I have to deal with this! There's no running away now!")
+    if (exit === false) {
+      playerSpeach("I have to deal with this Robot!")
     } else if (action === "Walk to") {
       $("#stationDoor")[0].play();
       $(".analysisRoomScene").toggle();
@@ -61,7 +61,9 @@ $(document).ready(function () {
     }
   });
   $(".volatileSubstanceMachine").click(function() {
-    if (action === "Look at") {
+    if (exit === false) {
+      playerSpeach("I have to deal with this Robot!")
+    } else if (action === "Look at") {
       playerSpeach("This is where Jenkins handles any dangerous substances. It's empty right now")
     } else if (action === "Use cup of pee on") {
       playerSpeach("I should leave the proper sciency stuff to Jenkins")
@@ -72,7 +74,9 @@ $(document).ready(function () {
     }
   });
   $(".labCabinets").click(function() {
-    if (action === "Look at") {
+    if(exit === false) {
+      playerSpeach("I have to deal with this Robot!")
+    } else if (action === "Look at") {
       playerSpeach("Various bottles of chemicals and equipment for Jenkins' work")
     } else if (action === "Pick up") {
       playerSpeach("I probably shouldn't touch ay of this stuff")
@@ -88,12 +92,12 @@ $(document).ready(function () {
     }
   });
   $(".gurney").click(function() {
-    if (action === "Look at") {
+    if (exit === false && action !== "Use gun on") {
+      playerSpeach("I have to deal with this Robot!")
+    } else if (action === "Look at") {
       playerSpeach("The victim's body... and head")
     } else if (action === "Pick up") {
       playerSpeach("I don't think I can fit this in my pocket")
-    } else if (action === "Use gun on") {
-      // playerSpeach("Shall I kill him some more?")
     } else if (action === "Use paper on") {
       playerSpeach("There's nothing to compare here")
     } else {
@@ -123,35 +127,14 @@ $(document).ready(function () {
           var startY = ($(".evidence").position().top) + 150;
           $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
           $("#player").fadeIn(500);
+          npcSpeach("Dick! I heard a gun shot! What happened?")
+          setTimeout(function() {
+            playerSpeach("Robots Jen. They got Jenkins! Don't go in there!")
+          }, 3000)
         }, 5500)
       }, 1500)
     }
   });
 
 
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
