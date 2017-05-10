@@ -1,6 +1,8 @@
 var aboutVictim = false;
 var suspects = false;
 var witnesses = false;
+var shardCollected = false;
+var weeCollected = false;
 
 $(document).ready(function () {
   // init the crime scene
@@ -28,14 +30,16 @@ $(document).ready(function () {
     } else if (distance < 60 && action === "Look at" || distance > -220 && action === "Look at") {
       playerSpeach("Shards of glass... There's blood everywhere.")   
     } else if (distance < 60 && action === "Pick up" || distance > -220 && action === "Pick up") {
-      if (findWithAttr(items, 'name', 'shard') === 1) {
+      if (shardCollected === true) {
         playerSpeach("I already have a piece")
       } else {
         playerSpeach("I'll take a small piece for analysis")
+        shardCollected = true;
         setTimeout(function() {
           items.push({"name": "shard", "url": "assets/images/shard.png"});
           updateInventory();
         }, 1500);
+        setTimeout(rodCheck, 3000);
       }
     }
   });
@@ -84,6 +88,7 @@ $(document).ready(function () {
     } else if (distance < 60 && action === "Pick up" || distance > -220 && action === "Pick up") {
       playerSpeach("I'm not using my hands, I need some kind of receptacle")   
     } else if (distance < 60 && action === "Use cup on" || distance > -220 && action === "Use cup on") {
+      weeCollected = true;
       playerSpeach("Perhaps there's use for you yet cup! Not sure how much to take. Let's fill it up just incase")
       $(".playerAction").html("Walk to");
       action = "Walk to";
@@ -93,6 +98,7 @@ $(document).ready(function () {
         items.push({"name": "cup of pee", "url": "assets/images/cupFull.png"});
         updateInventory();
       }, 1500);
+      setTimeout(rodCheck, 7000);
     }
   });
 

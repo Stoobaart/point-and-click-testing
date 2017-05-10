@@ -67,4 +67,10 @@ $(document).ready(function () {
     $(".playerAction").html("Walk to");
     action = "Walk to";
   });
+
+  rodCheck = function() {
+    if (weeCollected === true && shardCollected === true) {
+      npcSpeach("Dick, Jenkins is waiting for you back at the station. You probably shouldn't keep him waiting too long")
+    }
+  }
 });

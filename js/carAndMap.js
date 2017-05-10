@@ -25,7 +25,7 @@ $(document).ready(function () {
   // get out of car
   $(".exitCar").click(function() {
     if (currentScene === "crimeScene") {
-      $(".sceneOneScreen").fadeIn(2000);
+      $(".sceneOneScreen, #player").fadeIn(2000);
       $('#crimeSceneMusic')[0].play();
       var startX = ($("div#car.thing").position().left) + 141;
       var startY = ($("div#car.thing").position().top) + 134;
@@ -62,6 +62,8 @@ $(document).ready(function () {
   $(".stationBadgeImg").click(function(e) {
     if (currentScene === "policeStationScene") {
       playerSpeach("I'm already here")
+    } else if (shardCollected === false || weeCollected === false) {
+      playerSpeach("I need to get what clues I can from the crime scene first")
     } else {
       $("#carStart")[0].play();
       setTimeout(function() {

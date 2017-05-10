@@ -7,10 +7,21 @@ $(document).ready(function () {
     $("#policeStationSceneMusic")[0].pause();
     $("#analysisRoomMusic")[0].play()
     var startX = ($(".analysisExit").position().left) - 50;
-    var startY = ($(".analysisExit").position().top) + 200;
+    var startY = ($(".analysisExit").position().top) + 25;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(500);
+    setTimeout(function() {
+      if (interrogationDone === true && aboutBlood === true && aboutVicDeath === true) {
+        playerSpeach("Jenkins! I think the body needs to be placed under watc..")
+        setTimeout(function() {
+          $("img.gurneySprite").css({"animation": "gurney 5800ms steps(30) normal"})
+          setTimeout(function() {
+            $("#jenkins, #jenkinsImage").remove()
+          }, 1150)
+        }, 5000)
+      }
+    }, 2000)
   }
 
   // All the things in the analysis room

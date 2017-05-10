@@ -174,10 +174,10 @@ section.analysisRoomScene {
   height: 24.2rem;
 }
 section.walkableArea.analysisRoom {
-  width: 61rem;
+  width: 36rem;
   height: 14rem;
   margin-top: -14.2rem;
-  margin-left: 1.5rem;
+  margin-left: 25.5rem;
   position: absolute;
   z-index: 1;
   clip-path: polygon(17% 58%, 95% 57%, 100% 100%, 13% 100%);
@@ -194,7 +194,7 @@ section.playerAction.analysisRoom {
   left: 61rem;
 }
 div#jenkinsImage {
-  top: -12.2rem;
+  top: -21.7rem;
   left: 16rem;
   overflow: hidden;
   width: 7.5rem;
@@ -245,7 +245,7 @@ img.jenkinsSprite {
   position: relative;
   width: 10rem;
   height: 10rem;
-  top: -58rem;
+  top: -11rem;
   left: 19rem;
   z-index: 1;
   overflow: hidden;
@@ -255,7 +255,7 @@ img.gurneySprite {
   image-rendering: pixelated;
   filter: blur(0);
   -webkit-filter: blur(0);
-  /*animation: gurney 5800ms steps(30) infinite;*/
+  animation: none;
 }
 @keyframes gurney {
   100% {

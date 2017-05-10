@@ -1,4 +1,9 @@
 var jenkinsIntro = false;
+var aboutBlood = false;
+var aboutVicDeath = false;
+
+// testing variable
+var interrogationDone = true;
 
 $(document).ready(function () { 
   $("#jenkins").click(function() {
@@ -17,32 +22,32 @@ $(document).ready(function () {
       setTimeout(function() {
         npcSpeach("Ok Dick. I will test this right away");
         updateInventory();
-      }, 3000);
-      setTimeout(function() {
-        npcSpeach("Errrr, Dick?")
       }, 5000);
       setTimeout(function() {
-        playerSpeach("Yeah Jenkins? What is it?")
-      }, 6000);
-      setTimeout(function() {
-        npcSpeach("This isn't pee. It's motor oil")
+        npcSpeach("Errrr, Dick?")
       }, 8000);
       setTimeout(function() {
+        playerSpeach("Yeah Jenkins? What is it?")
+      }, 9500);
+      setTimeout(function() {
+        npcSpeach("This isn't pee. It's motor oil")
+      }, 12000);
+      setTimeout(function() {
         playerSpeach("Ah... of course. I knew that.")
-      }, 10000);
+      }, 15000);
     } else if (action === "Use cup on") {
       npcSpeach("Thank you Dick, but I am good for cups. Jen keeps us well stocked up");
     } else if (action === "Use shard on") {
       playerSpeach("Here Jenkins, I took this from the crime scene");
       setTimeout(function() {
         npcSpeach("That's quite alright Dick, I already have some of the shattered glass from the crime scene")
-      }, 3500);
+      }, 4000);
       setTimeout(function() {
         playerSpeach("So I carried this shard of bloody glass around in my pocket for no reason?")
-      }, 7500);
+      }, 9000);
       setTimeout(function() {
         npcSpeach(".......Yep.")
-      }, 12000);
+      }, 16000);
     } else if (action === "Talk to") {
       jenkinsTalk();
     } else {
@@ -85,6 +90,7 @@ $(document).ready(function () {
 
   $(".aboutBlood").click(function() {
     $(this).css("color", "grey");
+    aboutBlood = true;
     toggleOptions();
     npcSpeach("There's transformation happening to the blood sample. It seems to be infected by a virus that is changing the blood's molecular structure.");
     setTimeout(function() {
@@ -98,6 +104,7 @@ $(document).ready(function () {
 
   $(".aboutVicDeath").click(function() {
     $(this).css("color", "grey");
+    aboutVicDeath = true;
     toggleOptions();
     npcSpeach("The victim's head was literally twisted off. Like a bottle cap. I've never seen anything like this.")
     setTimeout(function() {
@@ -117,8 +124,6 @@ $(document).ready(function () {
     $(".playerAction").html("Walk to");
     action = "Walk to";
   });
-
-
 
 
 

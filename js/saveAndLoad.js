@@ -14,6 +14,10 @@ $(document).ready(function () {
     localStorage.currentScene = currentScene;
     localStorage.cupPickedUp = JSON.stringify(cupPickedUp);
     localStorage.paperCollected = JSON.stringify(paperCollected);
+    localStorage.shardCollected = JSON.stringify(shardCollected);
+    localStorage.weeCollected = JSON.stringify(weeCollected);
+    localStorage.aboutBlood = JSON.stringify(aboutBlood);
+    localStorage.aboutVicDeath = JSON.stringify(aboutVicDeath);
     localStorage.jenkinsIntro = JSON.stringify(jenkinsIntro);
   }
 
@@ -28,6 +32,10 @@ $(document).ready(function () {
     currentScene = localStorage.currentScene;
     cupPickedUp = JSON.parse(localStorage.cupPickedUp);
     paperCollected = JSON.parse(localStorage.paperCollected);
+    shardCollected = JSON.parse(localStorage.shardCollected);
+    weeCollected = JSON.parse(localStorage.weeCollected);
+    aboutBlood = JSON.parse(localStorage.aboutBlood);
+    aboutVicDeath = JSON.parse(localStorage.aboutVicDeath);
     jenkinsIntro = JSON.parse(localStorage.jenkinsIntro);
     setTimeout(function() {
       if (currentScene === "crimeScene") {
