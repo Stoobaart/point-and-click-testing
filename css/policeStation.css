@@ -325,3 +325,33 @@ section.playerAction.interrogationRoom {
   top: -9rem;
   left: 53rem;
 }
+div#crackheadImage {
+  top: -33.2rem;
+  left: 21rem;
+  overflow: hidden;
+  width: 14rem;
+  height: 25rem;
+  position: relative;
+  image-rendering: pixelated;
+  z-index: 1;
+}
+div#crackhead {
+  top: -45.2rem;
+  left: 22rem;
+  width: 5.5rem;
+  height: 9rem;
+  position: relative;
+  z-index: 2;
+}
+
+img.crackheadSprite {
+  width: 256rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  animation: crackhead 5800ms steps(14) infinite;
+}
+@keyframes crackhead {
+  100% {
+    transform: translateX(-256rem);
+  }
+}

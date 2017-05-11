@@ -1,5 +1,6 @@
 var exit = true;
 
+
 $(document).ready(function () { 
   startAnalysisRoom = function() {
     currentScene = "analysisRoomScene";

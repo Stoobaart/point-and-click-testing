@@ -2,10 +2,6 @@ var jenkinsIntro = false;
 var aboutBlood = false;
 var aboutVicDeath = false;
 
-// TEST
-// testing variable
-var interrogationDone = true;
-
 $(document).ready(function () { 
   $("#jenkins").click(function() {
     if (action === "Look at") {
