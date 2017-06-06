@@ -16,22 +16,25 @@ $(document).ready(function () {
     $("#player").fadeIn(500);
     setTimeout(function() {
       if (interrogationDone === true && aboutBlood === true && aboutVicDeath === true) {
+        $("#jenkins, #jenkinsImage, img.gurneySprite, img.gurneySprite2, img.gurneySprite3").show()
+        $("img.gurneySprite2, img.gurneySprite").css({"animation": "none"})
         exit = false;
         playerSpeach("Jenkins! I think the body needs to be placed under watc..")
         $("#save").prop('disabled',true);
         setTimeout(function() {
           $("img.gurneySprite").css({"animation": "gurney 5800ms steps(30) normal"})
+          $("#terror")[0].play();
           setTimeout(function() {
-            $("#jenkins, #jenkinsImage").remove()
+            $("#jenkins, #jenkinsImage").hide()
             $("#jump")[0].play();
             $("#robot")[0].play();
 
           }, 1150)
           setTimeout(function() {
-            $("img.gurneySprite").remove();
-            $("img.gurneySprite2").css({"animation": "gurneyTwo 1200ms steps(5) normal"})
+            $("img.gurneySprite").hide();
+            $("img.gurneySprite2").show().css({"animation": "gurneyTwo 1200ms steps(5) normal"})
             setTimeout(function() {
-              $("img.gurneySprite2").remove();
+              $("img.gurneySprite2").hide();
               playerSpeach("Jenkins!! NOOOOOOOO!")
               setTimeout(function() {
                 playerSpeach("You damn killer robot!! I'll show you!!")
@@ -102,7 +105,7 @@ $(document).ready(function () {
     } else if (action === "Use paper on") {
       playerSpeach("There's nothing to compare here")
     } else {
-      playerSpeach("I'm not sure what you want me to here")
+      // playerSpeach("I'm not sure what you want me to here")
     }
   });
   $(".robot").click(function() {
@@ -112,15 +115,23 @@ $(document).ready(function () {
       $("#gunshot")[0].play();
       $("#electrics")[0].play();
       setTimeout(function() {
-        $("img.gurneySprite3").remove();
+        $("img.gurneySprite3").hide();
       }, 40)
       setTimeout(function() {
         playerSpeach("Scrap metal....I need to find the first killer robot. And fast.")
         setTimeout(function() {
           $("#save").prop('disabled', false);
           $("#stationDoor")[0].play();
+
+          // reset scene in case of loading without refreshing the browser
+          $("#jenkins, #jenkinsImage, img.gurneySprite").show()
+          $("img.gurneySprite2, img.gurneySprite, img.gurneySprite4").css({"animation": "none"})
+
           $(".analysisRoomScene").toggle();
+          $("#terror")[0].pause();
           currentScene = "policeStationInteriorScene";
+          action = "Walk to";
+          $(".playerAction, .playerActionCar").html("Walk to");
           // $("#policeStationSceneMusic")[0].play();
           $("#analysisRoomMusic")[0].pause()
           $(".policeStationInteriorScene").fadeIn(1000);
@@ -131,6 +142,7 @@ $(document).ready(function () {
           npcSpeach("Dick! I heard a gun shot! What happened?")
           setTimeout(function() {
             playerSpeach("Robots Jen. They got Jenkins! Don't go in there!")
+
           }, 3000)
         }, 5500)
       }, 1500)

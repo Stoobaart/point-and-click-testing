@@ -21,6 +21,7 @@ $(document).ready(function () {
     localStorage.jenkinsIntro = JSON.stringify(jenkinsIntro);
     localStorage.exit = JSON.stringify(exit);
     localStorage.interrogationDone = JSON.stringify(interrogationDone);
+    alert("Progress saved");
   }
 
   function loadGame() {
@@ -28,6 +29,7 @@ $(document).ready(function () {
     $('#crimeSceneMusic')[0].pause();
     $('#policeStationSceneMusic')[0].pause();
     $('#themeMusic')[0].pause();
+    $("#analysisRoomMusic")[0].pause();
     $("#analysisRoomMusic")[0].pause()
 
     items = JSON.parse(localStorage.items);
