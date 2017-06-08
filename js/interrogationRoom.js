@@ -1,4 +1,4 @@
-var interrogationDone = true;
+var interrogationDone = false;
 
 $(document).ready(function () { 
 
