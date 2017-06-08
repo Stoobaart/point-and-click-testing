@@ -61,7 +61,7 @@ $(document).ready(function () {
         },2000)
       }, 2500)
     } else if (action === "Talk to") {
-      // crackheadConvo()
+      crackheadTalk()
     } else {
       playerSpeach("I don't know what you want me to do")
     }
