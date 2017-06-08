@@ -355,3 +355,10 @@ img.crackheadSprite {
     transform: translateX(-256rem);
   }
 }
+img.crackFace {
+  width: 73rem;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -webkit-transform: translate3d(0,0,0);
+  animation: portrait 300ms steps(6) infinite;
+}
