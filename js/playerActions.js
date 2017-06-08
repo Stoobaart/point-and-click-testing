@@ -117,7 +117,7 @@ $(document).ready(function () {
       $('#policeStationSceneMusic')[0].play();
     } else if (currentScene === "analysisRoomScene") {
       $("#analysisRoomMusic")[0].play()
-    } else if (currentScene === interrogationRoomScene) {
+    } else if (currentScene === "interrogationRoomScene") {
       $("#interrogationRoomMusic")[0].play();
     }
   })
