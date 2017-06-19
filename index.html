@@ -17,6 +17,7 @@
   <script type="text/javascript" src="js/analysisRoom.js"></script>
   <script type="text/javascript" src="js/jenkinsConvo.js"></script>
   <script type="text/javascript" src="js/interrogationRoom.js"></script>
+  <script type="text/javascript" src="js/crackHeadConvo.js"></script>
   <!-- retro font style -->
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <!-- links to css files -->
@@ -39,6 +40,8 @@
   <audio id="gunshot" src="assets/sfx/gunshot.wav"></audio>
   <audio id="electrics" src="assets/sfx/electrics.wav"></audio>
   <audio id="jump" src="assets/music/jump.mp3"></audio>
+  <audio loop id="terror" src="assets/music/terror.wav"></audio>
+
   <!-- Start screen -->
   <section class="startScreen">
     <h1 class="title">DICK MALLONE</h1>
@@ -271,19 +274,17 @@
     </section>
 
     <!-- convo options when talking to the crack head -->
-    <!-- <section class="options">
+    <section class="options">
       <ul>
-        <li class="talkChoices aboutCase">What's the deal then Doc?</li>
-        <li class="talkChoices aboutBlood">Tell me about the wierdness of the blood</li>
-        <li class="talkChoices aboutVicDeath">Tell me about the victim's death</li>
-        <li class="talkChoices byeJenkins">Bye Doc Jenkins</li>
+        <li class="talkChoices murder">What happened at the scene?</li>
+        <li class="talkChoices byeCrackhead">We'll continue this later</li>
       </ul>
-    </section> --> 
+    </section> 
 
     <!-- Crack head's convo portrait -->
     <section class="npcSpeak">
       <div class="npcPortrait">
-        <!-- <img class="jenkinsFace" src="assets/images/jenkinsFace.png"> -->
+        <img class="crackFace" src="assets/images/crackFace.png">
       </div>
       <section class="npcSpeach"></section>
     </section>

@@ -56,12 +56,15 @@ $(document).ready(function () {
         setTimeout(function(){
           playerSpeach("A 'machine man'? like.. half man, half machine?")
           setTimeout(function() {
-            npcSpeach("No maaan, it was a machine. maaaaan")
-          }, 3000)
+            npcSpeach("No maaan, it was a machine")
+            setTimeout(function() {
+              npcSpeach("Maaaaaaan")
+            }, 3500)
+          }, 3500)
         },2000)
       }, 2500)
     } else if (action === "Talk to") {
-      // crackheadConvo()
+      crackheadTalk()
     } else {
       playerSpeach("I don't know what you want me to do")
     }
