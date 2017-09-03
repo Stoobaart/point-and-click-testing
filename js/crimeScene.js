@@ -1,12 +1,12 @@
-var aboutVictim = false;
-var suspects = false;
-var witnesses = false;
-var shardCollected = false;
-var weeCollected = false;
+let aboutVictim = false;
+let suspects = false;
+let witnesses = false;
+let shardCollected = false;
+let weeCollected = false;
 
-$(document).ready(function () {
+$(document).ready(() => {
   // init the crime scene
-  startCrimeScene = function(){
+  startCrimeScene = () => {
     currentScene = "crimeScene";
     $(".menuArea, .sceneOneScreen, .inventoryIcon, .stopMusic, .playMusic").fadeIn(2000);
     $("#player").fadeIn(1000);
@@ -14,7 +14,7 @@ $(document).ready(function () {
   };
 
   // All functions for looking at stuff on the screen
-  $("#victim").click(function(e) {
+  $("#victim").click((e) => {
     distanceFromThing("#victim");
     if (distance > 35 && action === "Look at" || distance < -280 && action === "Look at") {
       playerSpeach("I need to get closer")
@@ -23,7 +23,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#shards").click(function(e) {
+  $("#shards").click((e) => {
     distanceFromThing("#shards");
     if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick up") {
       playerSpeach("I need to get closer")
@@ -35,7 +35,7 @@ $(document).ready(function () {
       } else {
         playerSpeach("I'll take a small piece for analysis")
         shardCollected = true;
-        setTimeout(function() {
+        setTimeout(() => {
           items.push({"name": "shard", "url": "assets/images/shard.png"});
           updateInventory();
         }, 1500);
@@ -44,7 +44,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#head").click(function(e) {
+  $("#head").click((e) => {
     distanceFromThing("#head");
     if (distance > 35 && action === "Look at" || distance < -260 && action === "Look at") {
       playerSpeach("I need to get closer")
@@ -55,7 +55,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#car").click(function(e) {
+  $("#car").click((e) => {
     distanceFromThing("#car");
     if (action === "Look at") {
       playerSpeach("My wheels, she aint much to look at, but it beats walking")
@@ -64,7 +64,7 @@ $(document).ready(function () {
     }
   });
   
-  $("#brokenWindow").click(function(e) {
+  $("#brokenWindow").click((e) => {
     distanceFromThing("#brokenWindow");
     if (distance > -65 && action === "Look at" || distance < -400 && action === "Look at") {
       playerSpeach("I need to get closer")
@@ -73,13 +73,13 @@ $(document).ready(function () {
     }
   });
 
-  $("#handPrint").click(function(e) {
+  $("#handPrint").click((e) => {
     if (action === "Look at") {
       playerSpeach("I should run this for prints back at HQ")
     }
   });
 
-  $("#urine").click(function(e) {
+  $("#urine").click((e) => {
     distanceFromThing("#urine");
     if (distance > 60 && action === "Look at" || distance < -220 && action === "Look at" || distance > 60 && action === "Pick up" || distance < -220 && action === "Pick Up" || distance > 60 && action === "Use cup on" || distance < -220 && action === "Use cup on") {
       playerSpeach("I need to get closer")
@@ -94,7 +94,7 @@ $(document).ready(function () {
       action = "Walk to";
       findWithAttr(items, 'name', 'cup');
       items.splice(itemToRemove, 1);
-      setTimeout(function() {
+      setTimeout(() => {
         items.push({"name": "cup of pee", "url": "assets/images/cupFull.png"});
         updateInventory();
       }, 1500);
@@ -102,7 +102,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#syringe").click(function(e) {
+  $("#syringe").click((e) => {
     distanceFromThing("#syringe");
     if (distance > 35 && action === "Look at" || distance < -160 && action === "Look at") {
       playerSpeach("I need to get closer")
@@ -113,7 +113,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#npcRodriguez").click(function(e) {
+  $("#npcRodriguez").click((e) => {
     distanceFromThing("#npcRodriguez");
     if (distance > 135 && action === "Look at" || distance < -460 && action === "Look at") {
       playerSpeach("I need to get closer")

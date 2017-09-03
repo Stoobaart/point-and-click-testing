@@ -1,23 +1,23 @@
-$(document).ready(function () {
+$(document).ready(() => {
   // hide everything and fade in the start screen
   $(".startScreen, .sceneOneScreen, .menuArea, .inventory, .inventoryIcon, .dickMobileInterior, .policeStationScene, .policeStationInteriorScene, .analysisRoomScene, .interrogationRoomScene, #player").hide();
-  setTimeout(function() {
+  setTimeout(() => {
     $(".startScreen").fadeIn(1500);
   }, 1000);
   // play theme music (doesn't work on mobile)
-  $(".playTheme").click(function() {
+  $(".playTheme").click(() => {
     $("#themeMusic")[0].play();
   })
   // click start button to hide start screen and show crime scene with music
-  $(".startGameBtn").click(function() {
+  $(".startGameBtn").click(() => {
     $(".startScreen").fadeOut(1500);
     $("#themeMusic").animate({volume: 0}, 1500);
-    setTimeout(function(){
+    setTimeout(() => {
       startCrimeScene();
       $(".playerPortrait, .npcPortrait, .playerSpeach, .npcSpeach, .travel").toggle();
     }, 1500);
-    var startX = ($("div#car.thing").position().left) + 411;
-    var startY = ($("div#car.thing").position().top) + 314;
+    let startX = ($("div#car.thing").position().left) + 411;
+    let startY = ($("div#car.thing").position().top) + 314;
     $("#player").css({ top: startY, left: startX});
   });
 });

@@ -1,8 +1,8 @@
 var interrogationDone = true;
 
-$(document).ready(function () { 
+$(document).ready(() => { 
 
-  startInterrogationRoom = function() {
+  startInterrogationRoom = () => {
     currentScene = "interrogationRoomScene";
     $("#stationDoor")[0].play();
     $(".policeStationInteriorScene, #player").hide();
@@ -16,7 +16,7 @@ $(document).ready(function () {
     $("#player").fadeIn(500);
   }
 
-  $(".interrogationExit").click(function() {
+  $(".interrogationExit").click(() => {
     if (action === "Walk to") {
       $("#stationDoor")[0].play();
       $(".interrogationRoomScene").toggle();
@@ -32,7 +32,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#crackhead").click(function() {
+  $("#crackhead").click(() => {
     if (action === "Look at") {
       playerSpeach("He saw something.. I just wonder how high he was at the time..")
     } else if (action === "Use gun on") {
@@ -46,18 +46,18 @@ $(document).ready(function () {
       findWithAttr(items, 'name', 'cup of pee');
       items.splice(itemToRemove, 1);
       updateInventory()
-      setTimeout(function() {
+      setTimeout(() => {
         playerSpeach("Yeah.. Lemonade.. mmmm")
       }, 3000)
     } else if (action === "Use shard on") {
       playerSpeach("Who broke the window in the alley way?")
-      setTimeout(function() {
+      setTimeout(() => {
         npcSpeach("It was a machine maaaaann")
-        setTimeout(function(){
+        setTimeout(() => {
           playerSpeach("A 'machine man'? like.. half man, half machine?")
-          setTimeout(function() {
+          setTimeout(() => {
             npcSpeach("No maaan, it was a machine")
-            setTimeout(function() {
+            setTimeout(() => {
               npcSpeach("Maaaaaaan")
             }, 3500)
           }, 3500)

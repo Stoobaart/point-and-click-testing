@@ -1,6 +1,6 @@
-$(document).ready(function () { 
+$(document).ready(() => { 
 
-  $("#jen").click(function(e) {
+  $("#jen").click((e) => {
     distanceFromThing("#jen");
     if (distance > -125 && action === "Talk to" || distance < -460 && action === "Talk to") {
       playerSpeach("I need to get closer")
@@ -20,43 +20,43 @@ $(document).ready(function () {
     }
   });
 
-  jenTalk = function() {
+  jenTalk = () => {
     $("img.thing.jenSprite").css("animation", "none");
     $(".walk, .look, .talk, .pickUp").prop('disabled',true);
     $(".playerAction").html("");
     playerSpeach("Hey Jen, how are things?")
-    setTimeout(function() {
+    setTimeout(() => {
       npcSpeach("Hey Dick. Pretty quiet today. Apart from that crack head that was brought in. What's up?")
     }, 2000)
     setTimeout(toggleOptions, 6500)
   }
-  $(".aboutCrackHead").click(function() {
+  $(".aboutCrackHead").click(() => {
     $(this).css("color", "grey");
     toggleOptions();
     playerSpeach("So the crack head give you any trouble?")
-    setTimeout(function(){
+    setTimeout(() => {
       npcSpeach("Well not personally, but he sure made a lot of noise. Screaming about aliens or robots or something")
     }, 2500)
-    setTimeout(function() {
+    setTimeout(() => {
       playerSpeach("Damn crazies. What a waste of time")
     }, 7000)
     setTimeout(toggleOptions, 9500)
   });
-  $(".aboutJenkins").click(function() {
+  $(".aboutJenkins").click(() => {
     $(this).css("color", "grey");
     toggleOptions();
     playerSpeach("Is Jenkins in analysis?")
-    setTimeout(function() {
+    setTimeout(() => {
       npcSpeach("Yes, he's waiting for you")
     }, 2000);
     setTimeout(toggleOptions, 3500)
   });
-  $(".byeJen").click(function() {
+  $(".byeJen").click(() => {
     $("img.thing.jenSprite").removeAttr("style")
     $(this).css("color", "grey");
     toggleOptions();
     playerSpeach("Chat to ya later, Jen")
-    setTimeout(function() {
+    setTimeout(() => {
       npcSpeach("Chat to you soon Dick")
     }, 1500);
     $(".walk, .look, .talk, .pickUp").prop('disabled',false);

@@ -1,34 +1,34 @@
-var paperCollected = false;
+let paperCollected = false;
 
-$(document).ready(function () {
+$(document).ready(() => {
 
   // init the police station
-  startPoliceStation = function(){
+  startPoliceStation = () => {
     currentScene = "policeStationScene";
     $("#policeStationSceneMusic")[0].play();
     $("#player").hide();
     $(".policeStationScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic").fadeIn(1000);
-    var startX = ($(".stationDoor").position().left) - 20;
-    var startY = ($(".stationDoor").position().top) - 200;
+    let startX = ($(".stationDoor").position().left) - 20;
+    let startY = ($(".stationDoor").position().top) - 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveUp.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(500);
   };
 
   // init the interior of the police station
-  startPoliceStationInterior = function() {
+  startPoliceStationInterior = () => {
     currentScene = "policeStationInteriorScene";
     $("#stationDoor")[0].play();
     $(".policeStationInteriorScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic").fadeIn(1000);
-    var startX = ($(".policeStationExit").position().left) - 50;
-    var startY = ($(".policeStationExit").position().top) + 200;
+    let startX = ($(".policeStationExit").position().left) - 50;
+    let startY = ($(".policeStationExit").position().top) + 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(500);
   };
 
   // All the things outside the police station
-  $(".stationDoor").click(function() {
+  $(".stationDoor").click(() => {
     if (action === "Look at") {
       playerSpeach("The front door to the station. Shocking.")
     } else if (action === "Walk to") {
@@ -42,7 +42,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".sign").click(function() {
+  $(".sign").click(() => {
     if (action === "Look at") {
       playerSpeach("Damn kids messing with the sign again")
     } else if (action === "Pick up") {
@@ -53,7 +53,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".graffiti").click(function() {
+  $(".graffiti").click(() => {
     if (action === "Look at") {
       playerSpeach("Bacon. That's original..")
     } else if (action === "Use cup of pee on") {
@@ -64,7 +64,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".policeCar").click(function() {
+  $(".policeCar").click(() => {
     if (action === "Look at") {
       playerSpeach("Aaah.. the precincts squad car. We used to have two of these")
     } else if (action === "Use cup of pee on") {
@@ -77,7 +77,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".graffitiTwo").click(function() {
+  $(".graffitiTwo").click(() => {
     if (action === "Look at") {
       playerSpeach("Red Dragons...must be a new gang in town.. and Ollie... if I get my hands on that punk...")
     } else if (action === "Use cup of pee on") {
@@ -88,14 +88,14 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".station").click(function() {
+  $(".station").click(() => {
     if (action === "Look at") {
       playerSpeach("Home sweet home")
     } else {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $("div#car.thing.policeStationExteriorThing").click(function() {
+  $("div#car.thing.policeStationExteriorThing").click(() => {
     if (action === "Look at") {
       playerSpeach("Hope I don't need gas...")
     } else if (action === "Walk to") {
@@ -105,25 +105,25 @@ $(document).ready(function () {
 
 // =============================INTERIOR OF THE POLICE STATION=============================
   // make Dick have to walk to bottom of entrance hall before he can walk up up the corridor, to stop him walking through walls!
-  $(".walkableArea.policeStationInterior").click(function(e) {
-    var playerPositionX = $("#player").position().left
-    var playerPositionY = $("#player").position().top
-    var wallX = $(".wallCorner").position().left;
-    var wallY = $(".wallCorner").position().top;
+  $(".walkableArea.policeStationInterior").click((e) => {
+    let playerPositionX = $("#player").position().left
+    let playerPositionY = $("#player").position().top
+    let wallX = $(".wallCorner").position().left;
+    let wallY = $(".wallCorner").position().top;
     if ((playerPositionX > wallX) && (e.pageY < wallY) || (playerPositionY < wallY) && (e.pageX > wallX)) {
       $('#player').stop();
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     }
   });
   // Exit the station
-  $(".policeStationExit").click(function() {
+  $(".policeStationExit").click(() => {
     if (action ==="Walk to") {
       $("#stationDoor")[0].play();
       $(".policeStationInteriorScene, #player").hide();
       $(".policeStationScene").fadeIn(1000);
       currentScene = "policeStationScene";
-      var startX = ($(".stationDoor").position().left) + 50;
-      var startY = ($(".stationDoor").position().top) + 150;
+      let startX = ($(".stationDoor").position().left) + 50;
+      let startY = ($(".stationDoor").position().top) + 150;
       $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
       $("#player").fadeIn(500);
@@ -135,7 +135,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".interrogation").click(function() {
+  $(".interrogation").click(() => {
     if (action === "Look at") {
       playerSpeach("Goes towards the interrogation room")
     } else if (action === "Walk to") {
@@ -146,7 +146,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".evidence").click(function() {
+  $(".evidence").click(() => {
     if (action === "Look at") {
       playerSpeach("Goes towards the analysis room")
     } else if (action === "Walk to" && exit === false) {
@@ -159,7 +159,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".waterDispenser").click(function() {
+  $(".waterDispenser").click(() => {
     if (action === "Look at") {
       playerSpeach("Cold, fresh water...mmmm")
     } else if (action === "Use gun on") {
@@ -170,14 +170,14 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".noticeBoard").click(function() {
+  $(".noticeBoard").click(() => {
     if (action === "Look at") {
       playerSpeach("The weekly 'Hit list', this month's calendar, leaflets, and some blank paper")
     } else if (action === "Use gun on") {
       playerSpeach("I don't know why you'd try that")
     } else if (action === "Pick up" && paperCollected === false) {
       playerSpeach("Maybe some of this blank paper will come in handy if I need to print something")
-      setTimeout(function(){
+      setTimeout(() => {
         items.push({"name": "paper", "url": "assets/images/paper.png"});
         updateInventory();
         paperCollected = true;
@@ -189,7 +189,7 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".filingCabinets").click(function() {
+  $(".filingCabinets").click(() => {
     if (action === "Look at") {
       playerSpeach("General files. Nothing of importance")
     } else if (action === "Use paper on") {

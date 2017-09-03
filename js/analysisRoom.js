@@ -1,42 +1,42 @@
-var exit = true;
+let exit = true;
 
 
-$(document).ready(function () { 
-  startAnalysisRoom = function() {
+$(document).ready(() => { 
+  startAnalysisRoom = () => {
     currentScene = "analysisRoomScene";
     $("#stationDoor")[0].play();
     $(".policeStationInteriorScene, #player").hide();
     $(".analysisRoomScene, .inventoryIcon, .menuArea, .stopMusic, .playMusic").fadeIn(1000);
     $("#policeStationSceneMusic")[0].pause();
     $("#analysisRoomMusic")[0].play()
-    var startX = ($(".analysisExit").position().left) - 50;
-    var startY = ($(".analysisExit").position().top) + 200;
+    let startX = ($(".analysisExit").position().left) - 50;
+    let startY = ($(".analysisExit").position().top) + 200;
     $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetectiveLeft.png">');
     $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
     $("#player").fadeIn(500);
-    setTimeout(function() {
+    setTimeout(() => {
       if (interrogationDone === true && aboutBlood === true && aboutVicDeath === true) {
         $("#jenkins, #jenkinsImage, img.gurneySprite, img.gurneySprite2, img.gurneySprite3").show()
         $("img.gurneySprite2, img.gurneySprite").css({"animation": "none"})
         exit = false;
         playerSpeach("Jenkins! I think the body needs to be placed under watc..")
         $("#save").prop('disabled',true);
-        setTimeout(function() {
+        setTimeout(() => {
           $("img.gurneySprite").css({"animation": "gurney 5800ms steps(30) normal"})
           $("#terror")[0].play();
-          setTimeout(function() {
+          setTimeout(() => {
             $("#jenkins, #jenkinsImage").hide()
             $("#jump")[0].play();
             $("#robot")[0].play();
 
           }, 1150)
-          setTimeout(function() {
+          setTimeout(() => {
             $("img.gurneySprite").hide();
             $("img.gurneySprite2").show().css({"animation": "gurneyTwo 1200ms steps(5) normal"})
-            setTimeout(function() {
+            setTimeout(() => {
               $("img.gurneySprite2").hide();
               playerSpeach("Jenkins!! NOOOOOOOO!")
-              setTimeout(function() {
+              setTimeout(() => {
                 playerSpeach("You damn killer robot!! I'll show you!!")
               }, 2000)
             }, 1100)
@@ -47,7 +47,7 @@ $(document).ready(function () {
   }
 
   // All the things in the analysis room
-  $(".analysisExit").click(function () {
+  $(".analysisExit").click(() => {
     if (exit === false) {
       playerSpeach("I have to deal with this Robot!")
     } else if (action === "Walk to") {
@@ -57,14 +57,14 @@ $(document).ready(function () {
       $("#policeStationSceneMusic")[0].play();
       $("#analysisRoomMusic")[0].pause()
       $(".policeStationInteriorScene").fadeIn(1000);
-      var startX = ($(".evidence").position().left) + 50;
-      var startY = ($(".evidence").position().top) + 150;
+      let startX = ($(".evidence").position().left) + 50;
+      let startY = ($(".evidence").position().top) + 150;
       $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
       $(".playerSprite").removeClass("walkRightAnim walkLeftAnim walkUpAnim walkDownAnim");
       $("#player").fadeIn(500);
     }
   });
-  $(".volatileSubstanceMachine").click(function() {
+  $(".volatileSubstanceMachine").click(() => {
     if (exit === false) {
       playerSpeach("I have to deal with this Robot!")
     } else if (action === "Look at") {
@@ -77,25 +77,25 @@ $(document).ready(function () {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".labCabinets").click(function() {
+  $(".labCabinets").click(() => {
     if(exit === false) {
       playerSpeach("I have to deal with this Robot!")
     } else if (action === "Look at") {
-      playerSpeach("Various bottles of chemicals and equipment for Jenkins' work")
+      playerSpeach("letious bottles of chemicals and equipment for Jenkins' work")
     } else if (action === "Pick up") {
       playerSpeach("I probably shouldn't touch ay of this stuff")
     } else if (action === "Use cup of pee on") {
       playerSpeach("I should give this directly to Jenkins")
     } else if (action === "Use gun on") {
       playerSpeach("Have you got any idea how many expolosive chemicals are in here?")
-      setTimeout(function(){
+      setTimeout(() => {
         playerSpeach("I don't, but I don't want to find out!")
       }, 3000)
     } else {
       playerSpeach("I'm not sure what you want me to do here")
     }
   });
-  $(".gurney").click(function() {
+  $(".gurney").click(() => {
     if (exit === false && action !== "Use gun on") {
       playerSpeach("I have to deal with this Robot!")
     } else if (action === "Look at") {
@@ -108,18 +108,18 @@ $(document).ready(function () {
       // playerSpeach("I'm not sure what you want me to here")
     }
   });
-  $(".robot").click(function() {
+  $(".robot").click(() => {
     if (action === "Use gun on") {
       $("img.gurneySprite4").css({"animation": "gurneyFour 600ms steps(15) normal"})
       $("#robot")[0].pause();
       $("#gunshot")[0].play();
       $("#electrics")[0].play();
-      setTimeout(function() {
+      setTimeout(() => {
         $("img.gurneySprite3").hide();
       }, 40)
-      setTimeout(function() {
+      setTimeout(() => {
         playerSpeach("Scrap metal....I need to find the first killer robot. And fast.")
-        setTimeout(function() {
+        setTimeout(() => {
           $("#save").prop('disabled', false);
           $("#stationDoor")[0].play();
 
@@ -135,12 +135,12 @@ $(document).ready(function () {
           // $("#policeStationSceneMusic")[0].play();
           $("#analysisRoomMusic")[0].pause()
           $(".policeStationInteriorScene").fadeIn(1000);
-          var startX = ($(".evidence").position().left) + 50;
-          var startY = ($(".evidence").position().top) + 150;
+          let startX = ($(".evidence").position().left) + 50;
+          let startY = ($(".evidence").position().top) + 150;
           $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
           $("#player").fadeIn(500);
           npcSpeach("Dick! I heard a gun shot! What happened?")
-          setTimeout(function() {
+          setTimeout(() => {
             playerSpeach("Robots Jen. They got Jenkins! Don't go in there!")
 
           }, 3000)

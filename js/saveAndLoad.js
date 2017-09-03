@@ -1,11 +1,11 @@
-$(document).ready(function () { 
-  var load = $('#load');
+$(document).ready(() => { 
+  let load = $('#load');
 
-  $('#save').click(function() {
+  $('#save').click(() => {
     saveGame()
   })
 
-  $('.load').click(function() {
+  $('.load').click(() => {
     loadGame()
   })
 
@@ -44,13 +44,13 @@ $(document).ready(function () {
     exit = JSON.parse(localStorage.exit);
     interrogationDone = JSON.parse(localStorage.interrogationDone);
 
-    setTimeout(function() {
+    setTimeout(() => {
       if (currentScene === "crimeScene") {
         startCrimeScene();
       } else if (currentScene === "policeStationScene") {
         startPoliceStation();
-        var startX = ($(".stationDoor").position().left) + 50;
-        var startY = ($(".stationDoor").position().top) + 150;
+        let startX = ($(".stationDoor").position().left) + 50;
+        let startY = ($(".stationDoor").position().top) + 150;
         $("#player").stop().css({ top: startY, left: startX}).html('<img class="playerSprite" src="assets/images/TheDetective.png">');
         $("#player").fadeIn(700);
       } else if (currentScene === "policeStationInteriorScene") {

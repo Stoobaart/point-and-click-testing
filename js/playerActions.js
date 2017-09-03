@@ -1,13 +1,13 @@
-var action = "Walk to";
-var items = [{"name": "gun", "url": "assets/images/gun.png"}];
-var currentScene = null;
-var itemToRemove = null;
-var distance = null;
+let action = "Walk to";
+let items = [{"name": "gun", "url": "assets/images/gun.png"}];
+let currentScene = null;
+let itemToRemove = null;
+let distance = null;
 
-$(document).ready(function () {
+$(document).ready(() => {
 
   // show/hide Inventory
-  $(".inventoryIcon").click(function() {
+  $(".inventoryIcon").click(() => {
     if ($(".inventory").is(":visible")) {
       $(".inventory").slideUp(300);
     } else {
@@ -15,71 +15,69 @@ $(document).ready(function () {
     }
   });
   // used to update inventory when an item is picked up/changes/is used
-  updateInventory = function(){
-    $(".items").html(items.map(function(item) {
+  updateInventory = () => {
+    $(".items").html(items.map((item) => {
       return('<img class="item" src="' + item.url + '" name="' + item.name + '">');
     }).join(""));
   }
   updateInventory();
   // function to find an object in the items array based on it's name for correct removal
-  findWithAttr = function(array, attr, value) {
+  findWithAttr = (array, attr, value) => {
     for(var i = 0; i < array.length; i += 1) {
         if(array[i][attr] === value) {
           itemToRemove = i;
-          console.log(itemToRemove);
           return i;
         }
     }
-    console.log(-1);
     return -1;
   }
   // check distance of character to thing of interest
-  distanceFromThing = function(thing) {
+  distanceFromThing = (thing) => {
     distance = (($(thing).position().left) + ($(thing).position().top)) - (($("#player").position().left) + ($("#player").position().top));
   };
   // player speach function
-  playerSpeach = function(words) {
+  playerSpeach = (words) => {
     $(".playerSpeach").html(words);
     $(".playerPortrait, .playerSpeach").toggle();
     speakClear();
-  }
-  npcSpeach = function(words) {
+  };
+  npcSpeach = (words) => {
     $(".npcSpeach").html(words);
     $(".npcPortrait, .npcSpeach").toggle();
     npcSpeakClear();
-  }
+  };
   // clear speach after a few seconds
-  speakClear = function() {
-    var words = $(".playerSpeach").html();
-    setTimeout(function() {
+  speakClear = () => {
+    const words = $(".playerSpeach").html();
+    setTimeout(() => {
       $(".playerPortrait, .playerSpeach").toggle();
     }, words.length * 75);
   };
-  npcSpeakClear = function() {
-    var words = $(".npcSpeach").html();
+  npcSpeakClear = () => {
+    const words = $(".npcSpeach").html();
     setTimeout(function() {
       $(".npcPortrait, .npcSpeach").toggle();
     }, words.length * 55);
   };
   // show/hide the convo options
-  toggleOptions = function(){
+  toggleOptions = () => {
     $(".options").toggle();
-  }
+  };
 
   // change player action choice
-  $(".look").click(function() {
+  $(".look").click(() => {
     $(".playerAction, .playerActionCar").html("Look at");
     action = "Look at";
   });
-  $(".walk").click(function() {
+  $(".walk").click(() => {
     $(".playerAction, .playerActionCar").html("Walk to");
     action = "Walk to";
   });
-  $(".talk").click(function() {
+  $(".talk").click(() => {
     $(".playerAction, .playerActionCar").html("Talk to");
     action = "Talk to";
   });  
-  $(".pickUp").click(function() {
+  $(".pickUp").click(() => {
     $(".playerAction, .playerActionCar").html("Pick up");
     action = "Pick up";
   });
@@ -102,7 +100,7 @@ $(document).ready(function () {
   });
 
   // Music control
-  $(".stopMusic").click(function() {
+  $(".stopMusic").click(() => {
     $('#crimeSceneMusic')[0].pause();
     $('#policeStationSceneMusic')[0].pause();
     $('#themeMusic')[0].pause();
@@ -110,22 +108,26 @@ $(document).ready(function () {
     $("#interrogationRoomMusic")[0].pause();
 
   })  
-  $(".playMusic").click(function() {
-    if (currentScene === "crimeScene") {
-      $('#crimeSceneMusic')[0].play();
-    } else if (currentScene === "policeStationScene") {
-      $('#policeStationSceneMusic')[0].play();
-    } else if (currentScene === "analysisRoomScene") {
-      $("#analysisRoomMusic")[0].play()
-    } else if (currentScene === "interrogationRoomScene") {
-      $("#interrogationRoomMusic")[0].play();
+  $(".playMusic").click(() => {
+    switch (currentScene) {
+      case 'crimeScene': 
+        $('#crimeSceneMusic')[0].play();
+        break;
+      case 'policeStationScene': 
+        $('#policeStationSceneMusic')[0].play();
+        break;      
+      case 'analysisRoomScene': 
+        $('#analysisRoomMusic')[0].play();
+        break;      
+      case 'interrogationRoomScene': 
+        $('#interrogationRoomMusic')[0].play();
     }
-  })
+  });
 
-  $('.walkableArea').click(function(e) {
+  $('.walkableArea').click((e) => {
     // player can walk in front or behind
-    var rodPos = $("#npcRodriguez").position().top;
-    var dickPos = e.pageY - 129;
+    let rodPos = $("#npcRodriguez").position().top;
+    let dickPos = e.pageY - 129;
     if(dickPos <= rodPos){
       $("#npcRodriguez").addClass("behind");
     } else {
@@ -134,14 +136,14 @@ $(document).ready(function () {
     // When the player clicks somewhere on the screen (walkable area)
 
     // store the current position of the player Sprite
-    var playerPositionX = $("#player").position().left
-    var playerPositionY = $("#player").position().top
+    let playerPositionX = $("#player").position().left
+    let playerPositionY = $("#player").position().top
 
     // get the difference of where the player has clicked, minus where the sprite is
-    var playerPositionXDiff = e.pageX - playerPositionX;
-    var playerPositionYDiff = e.pageY - playerPositionY;
+    let playerPositionXDiff = e.pageX - playerPositionX;
+    let playerPositionYDiff = e.pageY - playerPositionY;
    
-    var timeToWalk = (Math.abs(playerPositionXDiff) + Math.abs(playerPositionYDiff)) * 5;
+    let timeToWalk = (Math.abs(playerPositionXDiff) + Math.abs(playerPositionYDiff)) * 5;
     // if the sprite is being told to move right of it's original position...
     if (action === "Walk to") {
       if((playerPositionXDiff > 0) && ((Math.abs(playerPositionXDiff)) > (Math.abs(playerPositionYDiff)))) {
